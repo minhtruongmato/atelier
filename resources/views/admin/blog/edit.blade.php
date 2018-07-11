@@ -1,7 +1,7 @@
 @extends('admin.blog.base')
 
 @section('action-content')
-    <div class="container">
+    <div class="content">
         <div class="row">
             <div class="col-md-12 col-md-offset-0">
                 <div class="panel panel-default">
@@ -9,6 +9,7 @@
                     <div class="panel-body">
                         <form class="form-horizontal" role="form" method="POST" action="{{ route('blog.update', ['id' => $blog->id]) }}" enctype="multipart/form-data">
                             {{ csrf_field() }}
+                            <input type="hidden" name="type" value="{{ ($type == 'advise') ? 0 : 1 }}">
                             <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
                                 <label for="title" class="col-md-2 control-label">Tên bài viết</label>
                                 <div class="col-md-8">
@@ -32,7 +33,13 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="avatar" class="col-md-2 control-label" >Hình ảnh</label>
+                                <label for="avatar" class="col-md-2 control-label" >Hình ảnh đang sử dụng</label>
+                                <div class="col-md-8">
+                                    <img src="{{ asset('storage/app/'. $blog->image) }}" width="150">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="image" class="col-md-2 control-label" >Hình ảnh</label>
                                 <div class="col-md-8">
                                     <input type="file" id="image" name="image">
                                 </div>

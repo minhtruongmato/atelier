@@ -159,7 +159,8 @@ class CategoryController extends Controller
 
     private function doSearchingQuery($constraints){
         $query = DB::table('product_category')
-            ->select('*');
+            ->select('*')
+            ->where('is_deleted', 0);
         $fields = array_keys($constraints);
         $index = 0;
         foreach ($constraints as $constraint) {

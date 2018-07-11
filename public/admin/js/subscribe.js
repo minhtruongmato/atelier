@@ -23,7 +23,7 @@ $('.btn-send-mail').click(function(e){
     var email = $(this).data('email');
     jQuery.ajax({
         method: "get",
-        url: url + '/hamruouthinh24/admin/subscrie/send/{email}',
+        url: url + '/atelier/admin/subscrie/send/{email}',
         // url: location.protocol + "//" + location.host + (location.port ? ':' + location.port : '') + "/tuoithantien/comment/create_comment",
         data: {email : email},
         beforeSend: function() {
@@ -49,7 +49,7 @@ $('#sendAll').click(function(e){
     if(ids != ''){
         jQuery.ajax({
             method: "post",
-            url: url + '/hamruouthinh24/admin/subscrie/sendAll',
+            url: url + '/atelier/admin/subscrie/sendAll',
             // url: location.protocol + "//" + location.host + (location.port ? ':' + location.port : '') + "/tuoithantien/comment/create_comment",
             data: {ids : ids, _token : token},
             beforeSend: function() {

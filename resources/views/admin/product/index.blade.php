@@ -91,7 +91,7 @@
                                 <th colspan="2" style="background: #CEF3FB; text-align: center;">Thông Số Sản Phẩm</th>
                                 <?php $stt = 1 ?>
                                   @foreach($item->template as $k => $val)
-                                    <tr style="{{ ($stt % 2 == 0)? 'background: #B7FF9B' : '' }}">
+                                    <tr style="{{ ($stt % 2 == 0)? 'background: #e6ede3' : '' }}">
                                       <td style="width: 50%;"><strong style="text-transform: capitalize;">{{ $k }}:</strong></td>
                                       <td>{{ $val }}</td>
                                     </tr>
@@ -99,8 +99,8 @@
                                   @endforeach
                               </table>
                               <strong>Đánh giá:</strong>
-                              <div class="rateit" data-rateit-value="{{ ($item->rating)? $item->rating : 0 }}"  data-rateit-readonly="true"></div>
-                              ({{ $item->count }} lượt đánh giá)
+                              {{-- <div class="rateit" data-rateit-value="{{ ($item->rating)? $item->rating : 0 }}"  data-rateit-readonly="true"></div> --}}
+                              {{-- ({{ $item->count }} lượt đánh giá) --}}
                           </div>
                           <div class="col-md-7">
                               <table style="width: 100%">

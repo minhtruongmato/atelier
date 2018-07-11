@@ -5,7 +5,7 @@ window.onload = function(){
         var id = $(this).data('id');
         var url = window.location.origin;
         $.ajax({
-            url: url + '/hamruouthinh24/admin/tasting/ajax-finish/{id}',
+            url: url + '/atelier/admin/tasting/ajax-finish/{id}',
             method: 'GET',
             data: {
                 id : id

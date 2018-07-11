@@ -40,22 +40,24 @@ class ProductController extends Controller
 
         foreach ($products as $key => $value) {
             $products[$key]['template'] = array_combine(json_decode($value->template_title), json_decode($value->template_content));
-        }
+        };
+        // $products = $products->toArray();
         $averageRating = 0;
         foreach ($products as $key => $value) {
             // echo $value->id.'<br>';
             $count = DB::table('product_comment')
-                ->where('product_id', $value->id)
+                ->where('product_id', $value['id'])
                 ->where('is_deleted', '=', 0)   
                 ->count();
-            
             $rating = DB::table('product_comment')
                 ->select('rating')
-                ->where('product_id', $value->id)
-                ->get();
+                ->where('product_id', $value['id'])
+                ->get()->toArray();
             $totalRating = 0;
-            foreach ($rating as $k => $val) {
-                $totalRating = $totalRating + $val->rating;
+            if(!empty($rating)){
+                foreach ($rating as $k => $val) {
+                    $totalRating = $totalRating + $val['rating'];
+                }
             }
             
             if($count != 0){
@@ -63,10 +65,9 @@ class ProductController extends Controller
             }else{
                 $averageRating = 0;
             }
-            $products[$key]->rating = $averageRating;
-            $products[$key]->count = $count;
+            $products[$key]['rating'] = $averageRating;
+            $products[$key]['count'] = $count;
         }
-        // dd($products);die;
         return view('admin/product/index', [
             'products' => $products,
             'type_collection' => $this->fetchAllType(),
@@ -244,7 +245,32 @@ class ProductController extends Controller
             'name' => $request['name']
         ];
         $products = $this->doSearchingQuery($constraints);
-
+        $averageRating = 0;
+        foreach ($products as $key => $value) {
+            $products[$key]->template = array_combine(json_decode($value->template_title), json_decode($value->template_content));
+            $count = DB::table('product_comment')
+                ->where('product_id', $value->id)
+                ->where('is_deleted', '=', 0)   
+                ->count();
+            $rating = DB::table('product_comment')
+                ->select('rating')
+                ->where('product_id', $value->id)
+                ->get()->toArray();
+            $totalRating = 0;
+            if(!empty($rating)){
+                foreach ($rating as $k => $val) {
+                    $totalRating = $totalRating + $val->rating;
+                }
+            }
+            
+            if($count != 0){
+                $averageRating = $totalRating/$count;
+            }else{
+                $averageRating = 0;
+            }
+            $products[$key]->rating = $averageRating;
+            $products[$key]->count = $count;
+        };
         return view('admin/product/index', ['products' => $products, 'searchingVals' => $constraints]);
     }
 
@@ -253,8 +279,8 @@ class ProductController extends Controller
             ->where('product.is_deleted', '=', 0)
             ->join('type', 'type.id', '=', 'product.type_id')
             ->join('kind', 'kind.id', '=', 'product.kind_id')
-            ->join('product_trademark', 'product_trademark.id', '=', 'product.trademark_id')
-            ->select('product.*', 'type.title as type_title', 'kind.title as kind_title', 'product_trademark.name as trademark_title');
+            ->select('product.*', 'type.title as type_title', 'kind.title as kind_title')
+            ->where('product.is_deleted', 0);
         $fields = array_keys($constraints);
         $index = 0;
         foreach ($constraints as $constraint) {

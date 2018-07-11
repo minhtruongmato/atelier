@@ -6,7 +6,7 @@ window.onload = function(){
         var type_id = $(this).val();
         var url = window.location.origin;
         $.ajax({
-            url: url + '/hamruouthinh24/admin/trademark/kind/{type_id}',
+            url: url + '/atelier/admin/trademark/kind/{type_id}',
             method: 'GET',
             data: {
                 type_id : type_id
@@ -29,7 +29,7 @@ window.onload = function(){
         var url = window.location.origin;
         var check = '';
         $.ajax({
-            url: url + '/hamruouthinh24/admin/trademark/kind/{type_id}',
+            url: url + '/atelier/admin/trademark/kind/{type_id}',
             method: 'GET',
             data: {
                 type_id : type_id

@@ -51,7 +51,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost/hamruouthinh24'),
+    'url' => env('APP_URL', 'http://localhost/atelier'),
 
     /*
     |--------------------------------------------------------------------------
@@ -181,7 +181,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
+        // Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
 
     ],

@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Cookie;
 use File;
 use App\Type;
 use App\Kind;
+use Session;
 
 class KindController extends Controller
 {
@@ -139,14 +140,18 @@ class KindController extends Controller
      */
     public function destroy($id)
     {
-        $kind = Kind::find($id);
-        if(!$kind){
-            return redirect()->intended('admin/kind');
+        $detail = Kind::where('id', $id)->first();
+        $path = base_path() . '/storage/app/kind/'. $detail->image;
+        if($this->checkActive('product', 'kind_id', $detail)){
+            $destroy = Kind::where('id', $id)->update(['is_deleted' => 1]);
+
+            if($destroy){
+                File::delete($path);
+                Session::flash('success', 'Xóa thành công!');
+                return redirect()->intended('admin/kind');
+            }
         }
-        $path = base_path() . '/storage/app/kind/'. $kind->image;
-        if(Kind::where('id', $id)->delete()){
-            File::delete($path);
-        }
+        Session::flash('error', 'Xóa thất bại do dòng sản phẩm nay tồn tại sản phẩm!');
         return redirect()->intended('admin/kind');
     }
 

@@ -1,18 +1,18 @@
-@extends('admin.blog-category.base')
+@extends('admin.trend-category.base')
 
 @section('action-content')
     <div class="content">
         <div class="row">
             <div class="col-md-12 col-md-offset-0">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Thêm mới danh mục sản phẩm</div>
+                    <div class="panel-heading">Thêm mới danh mục trends</div>
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ route('blog-category.store') }}" enctype="multipart/form-data">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ route('trend-category.store') }}" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
-                                <label for="title" class="col-md-4 control-label">Tên danh mục</label>
+                                <label for="title" class="col-md-2 control-label">Tên danh mục</label>
 
-                                <div class="col-md-6">
+                                <div class="col-md-8">
                                     <input id="title" type="text" class="form-control" name="title" value="{{ old('title') }}" required autofocus>
 
                                     @if ($errors->has('title'))
@@ -23,9 +23,9 @@
                                 </div>
                             </div>
                             <div class="form-group{{ $errors->has('slug') ? ' has-error' : '' }}">
-                                <label for="name" class="col-md-4 control-label">Slug</label>
+                                <label for="name" class="col-md-2 control-label">Slug</label>
 
-                                <div class="col-md-6">
+                                <div class="col-md-8">
                                     <input id="slug" type="text" class="form-control" name="slug" value="{{ old('slug') }}" required readonly>
 
                                     @if ($errors->has('slug'))
@@ -37,9 +37,9 @@
                             </div>
                             <input type="hidden" name="is_active" value="0">
                             <div class="form-group{{ $errors->has('is_active') ? ' has-error' : '' }}">
-                                <label for="is_active" class="col-md-4 control-label">Dùng danh mục?</label>
+                                <label for="is_active" class="col-md-2 control-label">Dùng danh mục?</label>
 
-                                <div class="col-md-6">
+                                <div class="col-md-8">
                                     <input id="is_active" type="checkbox" class="minimal" name="is_active" value="1" checked
                                            @if(old('is_active') == 1)
                                            checked
@@ -52,32 +52,16 @@
                                     @endif
                                 </div>
                             </div>
-                            <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
-                                <label for="type" class="col-md-4 control-label">Loại bài viết</label>
-
-                                <div class="col-md-6">
-                                    <select name="type">
-                                        <option value="">Chọn loại bài viết</option>
-                                        <option value="0" @if (old('type') == "0") selected="selected" @endif>Tư vấn</option>
-                                        <option value="1" @if (old('type') == "1") selected="selected" @endif>Tin tức</option>
-                                    </select>
-                                    @if ($errors->has('type'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('type') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
                             <div class="form-group">
-                                <label for="avatar" class="col-md-4 control-label" >Hình ảnh</label>
-                                <div class="col-md-6">
+                                <label for="avatar" class="col-md-2 control-label" >Hình ảnh</label>
+                                <div class="col-md-8">
                                     <input type="file" id="image" name="image" required >
                                 </div>
                             </div>
                             <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
-                                <label for="description" class="col-md-4 control-label">Giới thiệu ngắn</label>
+                                <label for="description" class="col-md-2 control-label">Giới thiệu ngắn</label>
 
-                                <div class="col-md-6">
+                                <div class="col-md-8">
                                     <textarea id="description" rows="10" class="form-control" name="description" value="{{ old('description') }}"></textarea>
 
                                     @if ($errors->has('description'))
@@ -88,7 +72,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-6 col-md-offset-4">
+                                <div class="col-md-8 col-md-offset-2">
                                     <button type="submit" class="btn btn-primary">
                                         OK
                                     </button>

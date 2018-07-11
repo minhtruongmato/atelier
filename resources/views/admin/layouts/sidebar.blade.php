@@ -125,6 +125,23 @@
             </li>
           </ul>
         </li>
+
+        <li class="treeview {{(Request::segment(2) == 'trend-category' || Request::segment(2) == 'trned')? 'active' : '' }}">
+          <a href="#"><i class="fa fa-link"></i> <span>Quản lý xu hướng</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="{{(Request::segment(2) == 'trend-category')? 'active' : '' }}">
+              <a href="{{ url('admin/trend-category') }}">Danh mục</a>
+            </li>
+            <li class="{{(Request::segment(2) == 'trend')? 'active' : '' }}">
+              <a href="{{ url('admin/trend') }}">Danh sách</a>
+            </li>
+          </ul>
+        </li>
+
         {{-- <li class="treeview {{(Request::segment(2) == 'tasting')? 'active' : '' }}">
           <a href="#"><i class="fa fa-link"></i> <span>Quản lý thử rượu</span>
             <span class="pull-right-container">

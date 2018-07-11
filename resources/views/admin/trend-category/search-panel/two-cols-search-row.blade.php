@@ -7,10 +7,10 @@
       <div class="form-group">
           @php
             $stringFormat =  strtolower(str_replace(' ', '', $item));
-            $label = ($stringFormat == 'name') ? 'Dòng sản phẩm' : $stringFormat;
+            $label = ($stringFormat == 'name') ? 'Tên danh mục' : $stringFormat;
           @endphp
-          <label for="input<?=$stringFormat?>" class="col-sm-4 control-label">{{$label}}</label>
-          <div class="col-sm-8">
+          <label for="input<?=$stringFormat?>" class="col-sm-3 control-label">{{$label}}</label>
+          <div class="col-sm-9">
             <input value="{{isset($oldVals) ? $oldVals[$index] : ''}}" type="text" class="form-control" name="<?=$stringFormat?>" id="input<?=$stringFormat?>" placeholder="{{$label}}">
           </div>
       </div>

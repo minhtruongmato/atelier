@@ -126,7 +126,7 @@ class BlogController extends Controller
     public function edit($id){
         $blog = Blog::find($id);
         // Redirect to product list if updating product wasn't existed
-        if ($blog == null || count($blog) == 0) {
+        if ($blog == null || empty($blog)) {
             return redirect()->intended(($blog->type == 0) ? 'admin/advise' : 'admin/news');
         }
         return view('admin/blog/edit', [
@@ -148,7 +148,7 @@ class BlogController extends Controller
         $uniqueSlug = $this->buildUniqueSlug('blog', $request->id, $request->slug);
 
 
-        $keys = ['title', 'description', 'content'];
+        $keys = ['title', 'description', 'type'];
         $input = $this->createQueryInput($keys, $request);
         $input['slug'] = $uniqueSlug;
 
@@ -179,11 +179,13 @@ class BlogController extends Controller
     public function search(Request $request){
         $blogs = $this->doSearchingQuery($request);
         $key = ($request['type'] == 'advise') ? 'advises' : 'news';
+        $categories = $this->getCategoryByType($request['type']);
 
         return view(($request['type'] == 'advise') ? 'admin/blog/advise' : 'admin/blog/news', [
             'type' => $request['type'],
             $key => $blogs,
-            'searchingVals' => $request
+            'searchingVals' => $request,
+            'categories' => $categories
         ]);
     }
 
@@ -206,6 +208,7 @@ class BlogController extends Controller
         $query = DB::table('blog')
             ->select('*')
             ->where('type', '=', $type)
+            ->where('is_deleted', 0)
             ->where('title', 'like', '%' . $constraints['title'] . '%');
 
         return $query->paginate(10);
