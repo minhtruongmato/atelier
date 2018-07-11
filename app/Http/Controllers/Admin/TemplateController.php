@@ -133,7 +133,8 @@ class TemplateController extends Controller
 
     private function doSearchingQuery($constraints){
         $query = DB::table('template')
-                ->select('*');
+                ->select('*')
+                ->where('is_deleted', 0);
         $fields = array_keys($constraints);
         $index = 0;
         foreach ($constraints as $constraint) {

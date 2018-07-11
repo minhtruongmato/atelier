@@ -6,7 +6,7 @@ window.onload = function(){
         var url = window.location.origin;
         var check = '';
         $.ajax({
-            url: url + '/hamruouthinh24/admin/category/fetchByType/{type_id}',
+            url: url + '/atelier/admin/category/fetchByType/{type_id}',
             method: 'GET',
             data: {
                 type_id : type_id
@@ -29,7 +29,7 @@ window.onload = function(){
         var type_id = $(this).val();
         var url = window.location.origin;
         $.ajax({
-            url: url + '/hamruouthinh24/admin/category/fetchByType/{type_id}',
+            url: url + '/atelier/admin/category/fetchByType/{type_id}',
             method: 'GET',
             data: {
                 type_id : type_id
@@ -51,7 +51,7 @@ window.onload = function(){
         var kind_id = $(this).val();
         var url = window.location.origin;
         $.ajax({
-            url: url + '/hamruouthinh24/admin/category/fetchByKind/{kind_id}',
+            url: url + '/atelier/admin/category/fetchByKind/{kind_id}',
             method: 'GET',
             data: {
                 kind_id : kind_id
@@ -77,7 +77,7 @@ window.onload = function(){
         var url = window.location.origin;
         var check = '';
         $.ajax({
-            url: url + '/hamruouthinh24/admin/category/fetchByKind/{kind_id}',
+            url: url + '/atelier/admin/category/fetchByKind/{kind_id}',
             method: 'GET',
             data: {
                 kind_id : kind_id

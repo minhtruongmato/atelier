@@ -3,7 +3,7 @@
     display: none;
   }
 </style>
-<div class="box box-default collapsed-box">
+<div class="box box-default {{ (Request::segment(3) == 'search')? '' : 'collapsed-box' }}">
   <div class="box-header with-border">
     <button type="button" class="btn btn-box-tool" data-widget="collapse"><h3 class="box-title fa fa-minus">&nbsp&nbsp&nbsp{{isset($title) ? $title : 'Search'}}</h3></button>
   </div>

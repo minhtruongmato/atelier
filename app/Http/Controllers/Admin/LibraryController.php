@@ -76,7 +76,7 @@ class LibraryController extends Controller
      public function edit($id){
         $library = Library::find($id);
         // Redirect to product list if updating product wasn't existed
-        if ($library == null || count($library) == 0) {
+        if ($library == null || empty($library)) {
             return redirect()->intended('admin/library');
         }
         return view('admin/library/edit', ['library' => $library]);

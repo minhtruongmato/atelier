@@ -5,6 +5,12 @@
       <div class="box">
   <div class="box-header">
     <div class="row">
+          @if(Session::has('error'))
+            <p class="alert {{ Session::get('alert-class', 'alert-warning') }}">{{ Session::get('error') }}<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></p>
+          @endif
+          @if(Session::has('success'))
+            <p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('success') }}<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></p>
+          @endif
         <div class="col-sm-4">
           <a class="btn btn-primary" href="{{ route('type.create') }}">Thêm mới loại sản phẩm</a>
         </div>

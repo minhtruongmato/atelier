@@ -16,9 +16,26 @@ class Controller extends BaseController
         'isNotEmpty' => '%s %s không trống, không thể %s'
     ];
 
-    protected function buildUniqueSlug($table, $id, $slug){
-        $slugCount = count(DB::table($table)->select('*')->whereRaw("slug REGEXP '^{$slug}(-[0-9]+)?$'")->where('id', '<>', $id)->get());
-        return ($slugCount > 0) ? "{$slug}-{$slugCount}" : $slug;
+    public function buildUniqueSlug($table, $id = 0, $slug)
+    {
+        $allSlugs = $this->getRelatedSlugs($table, $id, $slug);
+        if (! $allSlugs->contains('slug', $slug)){
+            return $slug;
+        }
+        for ($i = 1; $i <= 10; $i++) {
+            $newSlug = $slug.'-'.$i;
+            if (! $allSlugs->contains('slug', $newSlug)) {
+                return $newSlug;
+            }
+        }
+        throw new \Exception('Can not create a unique slug');
+    }
+
+    protected function getRelatedSlugs($table, $id = 0, $slug)
+    {
+        return DB::table($table)->select('slug')->where('slug', 'like', $slug.'%')
+        ->where('id', '<>', $id)
+        ->get();
     }
 
     protected function createQueryInput($keys, $request) {
@@ -37,5 +54,18 @@ class Controller extends BaseController
             ->where('is_deleted', 0)
             ->count();
         return $count;
+    }
+
+    protected function checkActive($table, $detailKey, $detail, $subTable = ''){
+        $checkCategory = DB::table($table)->where([$detailKey => $detail['id'], 'is_deleted' => 0])->count();
+        $checkSubCategory = 0;
+        if($subTable != ''){
+            $checkSubCategory = DB::table($subTable)->where([$detailKey => $detail['id'], 'is_deleted' => 0])->count();
+        }
+        if($checkCategory > 0 || $checkSubCategory > 0){
+            return false;
+        }else{
+            return true;
+        }
     }
 }

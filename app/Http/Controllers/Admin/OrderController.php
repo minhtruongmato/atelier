@@ -128,7 +128,8 @@ class OrderController extends Controller
 
     private function doSearchingQuery($constraints){
         $query = DB::table('order')
-            ->select('order.*');
+            ->select('order.*')
+            ->where('is_deleted', 0);
         $fields = array_keys($constraints);
         $index = 0;
         foreach ($constraints as $constraint) {
@@ -151,17 +152,15 @@ class OrderController extends Controller
      */
     public function approve($id){
         $order = $this->fetchOrderById($id);
-
         if(!empty($order)){
             $orderProducts = DB::table('order_product')
                 ->where('order_id', $order[0]->id)
                 ->get();
-
             foreach($orderProducts as $value){
                 $product = $this->fetchProductById($value->product_id);
 
                 if(empty($product)){
-                    return redirect()->intended('admin/order/ongoing');
+                    return redirect()->intended('admin/order/pending');
                 }
                 if($product[0]->quantity <= 0){
                     return redirect()->intended('admin/order/ongoing');
@@ -173,7 +172,7 @@ class OrderController extends Controller
                     ->update(['quantity' => $new_quantity]);
             }
 
-            DB::table('order')
+            $update = DB::table('order')
                 ->where('id', $id)
                 ->update([
                     'status' => 1,

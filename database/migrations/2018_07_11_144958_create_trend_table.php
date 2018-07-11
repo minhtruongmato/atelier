@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTeamplateTable extends Migration
+class CreateTrendTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,14 @@ class CreateTeamplateTable extends Migration
      */
     public function up()
     {
-        Schema::create('template', function (Blueprint $table) {
+        Schema::create('trend', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->text('title');
+            $table->tinyInteger('category_id');
+            $table->string('title', 255);
+            $table->string('slug', 255);
+            $table->text('image');
+            $table->text('description');
+            $table->longText('content');
             $table->tinyInteger('is_deleted')->default(0);
             $table->timestamps();
         });
@@ -29,6 +33,6 @@ class CreateTeamplateTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('template');
+        Schema::dropIfExists('trend');
     }
 }

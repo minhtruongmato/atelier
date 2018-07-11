@@ -5,6 +5,12 @@
       <div class="box ">
   <div class="box-header">
     <div class="row">
+          @if(Session::has('error'))
+            <p class="alert {{ Session::get('alert-class', 'alert-warning') }}">{{ Session::get('error') }}<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></p>
+          @endif
+          @if(Session::has('success'))
+            <p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('success') }}<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></p>
+          @endif
         <div class="col-sm-4">
           <a class="btn btn-primary" href="{{ route('blog-category.create') }}">Thêm mới danh mục</a>
         </div>
@@ -20,7 +26,7 @@
          {{ csrf_field() }}
          @component('admin.layouts.search', ['title' => 'Tìm kiếm'])
           @component('admin.blog-category.search-panel.two-cols-search-row', ['items' => ['Name'],
-          'oldVals' => [isset($searchingVals) ? $searchingVals['name'] : '']])
+          'oldVals' => [isset($searchingVals) ? $searchingVals['title'] : '']])
           @endcomponent
           <br>
         @endcomponent
@@ -31,10 +37,10 @@
           <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
             <thead>
               <tr role="row">
-                <th width="40%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" aria-sort="ascending">Tên danh mục</th>
-                <th width="30%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" aria-sort="ascending">Loại bài viết</th>
-                <th width="10%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Sử dụng?</th>
-                <th tabindex="0" aria-controls="example2" rowspan="1" colspan="2" aria-label="Action: activate to sort column ascending">Hành động</th>
+                <th>Tên danh mục</th>
+                <th>Loại bài viết</th>
+                <th>Sử dụng?</th>
+                <th>Hành động</th>
               </tr>
             </thead>
             <tbody>
@@ -67,10 +73,10 @@
             @if(count($categories) > 0)
             <tfoot>
               <tr>
-                <th width="10%" rowspan="1" colspan="1">Tên danh mục</th>
-                <th width="10%" rowspan="1" colspan="1">Thương hiệu</th>
-                <th class="hidden-xs" width="20%" rowspan="1" colspan="1">Sử dụng?</th>
-                <th rowspan="1" colspan="2">Hành động</th>
+                <th>Tên danh mục</th>
+                <th>Loại bài viết</th>
+                <th>Sử dụng?</th>
+                <th>Hành động</th>
               </tr>
             </tfoot>
             @endif

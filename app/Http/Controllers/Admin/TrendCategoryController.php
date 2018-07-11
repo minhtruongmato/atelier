@@ -3,37 +3,35 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Input;
-use App\BlogCategory;
-use Response;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use App\TrendCategory;
+use App\Type;
 use Session;
 use File;
 
-class BlogCategoryController extends Controller
+
+class TrendCategoryController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
+     * [__construct description]
      */
     public function __construct(){
         $this->middleware('auth:admin');
     }
-
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
-        $categories = DB::table('blog_category')
+    public function index()
+    {
+        $categories = DB::table('trend_category')
             ->select('*')
             ->where('is_deleted', 0)
             ->paginate(10);
-        return view('admin/blog-category/index', ['categories' => $categories]);
+        return view('admin/trend-category/index', ['categories' => $categories]);
     }
 
     /**
@@ -41,8 +39,9 @@ class BlogCategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(){
-        return view('admin/blog-category/create');
+    public function create()
+    {
+        return view('admin.trend-category.create');
     }
 
     /**
@@ -51,20 +50,19 @@ class BlogCategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $this->validateInput($request);
-        $uniqueSlug = $this->buildUniqueSlug('blog_category', null, $request->slug);
-
-        // Upload image
-        $path = $request->file('image')->store(($request->type == '0') ? 'advises/category' : 'news/category');
-        $keys = ['title', 'type', 'is_active', 'description'];
+        $uniqueSlug = $this->buildUniqueSlug('trend_category', null, $request->slug);
+        $path = $request->file('image')->store('trend-category');
+        $keys = ['title', 'image', 'description', 'is_active'];
         $input = $this->createQueryInput($keys, $request);
         $input['image'] = $path;
         $input['slug'] = $uniqueSlug;
-        // Not implement yet
-        BlogCategory::create($input);
 
-        return redirect()->intended('admin/blog-category');
+        TrendCategory::create($input);
+
+        return redirect()->intended('admin/trend-category');
     }
 
     /**
@@ -86,9 +84,8 @@ class BlogCategoryController extends Controller
      */
     public function edit($id)
     {
-        $detail = BlogCategory::where(['is_deleted' => 0, 'id' => $id])->first();
-        
-        return view('admin.blog-category.edit', ['detail' => $detail]);
+        $detail = TrendCategory::where(['is_deleted' => 0, 'id' => $id])->first();
+        return view('admin.trend-category.edit', ['detail' => $detail]);
     }
 
     /**
@@ -101,18 +98,26 @@ class BlogCategoryController extends Controller
     public function update(Request $request, $id)
     {
         $this->validateInput($request);
-        $uniqueSlug = $this->buildUniqueSlug('blog_category', $id, $request->slug);
-        $keys = ['title', 'type', 'is_active', 'description'];
+        $detail = TrendCategory::where(['is_deleted' => 0, 'id' => $id])->first();
+        $oldImage = ltrim($detail['image'], 'trend-category/');
+        // echo $oldImage;die;
+        $uniqueSlug = $this->buildUniqueSlug('trend_category', $id, $request->slug);
+        $keys = ['title', 'description', 'is_active'];
         $input = $this->createQueryInput($keys, $request);
         $input['slug'] = $uniqueSlug;
-        if($request->file('image')){
-            $path = $request->file('image')->store(($request->type == '0') ? 'advises/category' : 'news/category');
+        if($request->image){
+            $path = $request->file('image')->store('trend-category');
             $input['image'] = $path;
-        };
-        BlogCategory::where('id', $id)
+        }
+        $update = TrendCategory::where('id', $id)
             ->update($input);
-        
-        return redirect()->intended('admin/blog-category');
+        if($update){
+            $exists = File::exists('storage/app/' . $detail['image']);
+            if($request->image && $exists){
+                Storage::delete($detail['image']);
+            }
+        }
+        return redirect()->intended('admin/trend-category');
     }
 
     /**
@@ -123,24 +128,29 @@ class BlogCategoryController extends Controller
      */
     public function destroy($id)
     {
-        $detail = BlogCategory::where('id', $id)->first();
-        if($this->checkActive('blog', 'category_id', $detail)){
-            $destroy = BlogCategory::where('id', $id)->update(['is_deleted' => 1]);
+        $detail = TrendCategory::where('id', $id)->first();
+        if($this->checkActive('trend', 'category_id', $detail)){
+            $destroy = TrendCategory::where('id', $id)->update(['is_deleted' => 1]);
 
             if($destroy){
                 Session::flash('success', 'Xóa thành công!');
-                return redirect()->intended('admin/blog-category');
+                return redirect()->intended('admin/trend-category');
             }
         }
         Session::flash('error', 'Xóa thất bại do danh mục nay tồn tại bài viết!');
-        return redirect()->intended('admin/blog-category');
+        return redirect()->intended('admin/trend-category');
+    }
+
+    private function validateInput($request) {
+        $this->validate($request, [
+            'title' => 'required|max:60',
+        ]);
     }
 
     /**
-     * Search state from database base on some specific constraints
-     *
-     * @param  \Illuminate\Http\Request  $request
-     *  @return \Illuminate\Http\Response
+     * [search description]
+     * @param  Request $request [description]
+     * @return [type]           [description]
      */
     public function search(Request $request){
         $constraints = [
@@ -148,11 +158,11 @@ class BlogCategoryController extends Controller
         ];
         $categories = $this->doSearchingQuery($constraints);
 
-        return view('admin/blog-category/index', ['categories' => $categories, 'searchingVals' => $constraints]);
+        return view('admin/trend-category/index', ['categories' => $categories, 'searchingVals' => $constraints]);
     }
 
     private function doSearchingQuery($constraints){
-        $query = DB::table('blog_category')
+        $query = DB::table('trend_category')
             ->select('*')
             ->where('is_deleted', 0);
         $fields = array_keys($constraints);
@@ -165,11 +175,5 @@ class BlogCategoryController extends Controller
             $index++;
         }
         return $query->paginate(10);
-    }
-
-    private function validateInput($request) {
-        $this->validate($request, [
-            'title' => 'required|max:60',
-        ]);
     }
 }

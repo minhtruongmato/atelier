@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use File;
+use Session;
 use App\Type;
 
 class TypeController extends Controller
@@ -128,14 +129,18 @@ class TypeController extends Controller
      */
     public function destroy($id)
     {
-        $type = Type::find($id);
-        if(!$type){
-            return redirect()->intended('admin/type');
+        $detail = Type::where('id', $id)->first();
+        $path = base_path() . '/storage/app/type/'. $detail->image;
+        if($this->checkActive('product', 'type_id', $detail, 'kind')){
+            $destroy = Type::where('id', $id)->update(['is_deleted' => 1]);
+
+            if($destroy){
+                File::delete($path);
+                Session::flash('success', 'Xóa thành công!');
+                return redirect()->intended('admin/type');
+            }
         }
-        $path = base_path() . '/storage/app/type/'. $type->image;
-        if(Type::where('id', $id)->delete()){
-            File::delete($path);
-        }
+        Session::flash('error', 'Xóa thất bại do loại sản phẩm nay tồn tại dòng sản phẩm hoặc sản phẩm!');
         return redirect()->intended('admin/type');
     }
 

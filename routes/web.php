@@ -272,6 +272,7 @@ Route::prefix('admin')->group(function() {
         Route::resource('blog-category', 'BlogCategoryController');
         Route::post('blog-category/search', 'BlogCategoryController@search')->name('blog-category.search');
         Route::post('blog-category/store', 'BlogCategoryController@store')->name('blog-category.store');
+        Route::post('blog-category/update/{id}', 'BlogCategoryController@update')->name('blog-category.update');
 
         //Tasting routes
         // Route::get('tasting/finish', 'TastingController@finish');
@@ -297,5 +298,16 @@ Route::prefix('admin')->group(function() {
         Route::resource('template', 'TemplateController');
         Route::post('template/search', 'TemplateController@search')->name('template.search');
         Route::post('template/update/{id}', 'TemplateController@update')->name('template.update');
+
+        //Trend Category router
+        Route::resource('trend-category', 'TrendCategoryController');
+        Route::post('trend-category/search', 'TrendCategoryController@search')->name('trend-category.search');
+        Route::post('trend-category/update/{id}', 'TrendCategoryController@update')->name('trend-category.update');
+
+        //Trend router
+        Route::resource('trend', 'TrendController');
+        Route::post('trend/search', 'TrendController@search')->name('trend.search');
+        Route::post('trend/update/{id}', 'TrendController@update')->name('trend.update');
+        Route::post('trend/deleteImage', 'TrendController@delete_image');
     });
 });
