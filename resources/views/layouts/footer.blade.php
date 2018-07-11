@@ -87,23 +87,8 @@
       </div>
     </section>
   </section>
-  <section class="container-fluid copyright">
-    <section class="container">
-      <div class="col-md-6 col-sm-6 col-xs-12">
-        Copyright 2018 hamruouthinh24. All Rights Reversed.
-      </div>
-      <div class="col-md-6 col-sm-6 col-xs-12 text-right">
-
-      </div>
-    </section>
-  </section>
+  <div class="copyright text-center">
+      Copyright 2018 Atelier. All Rights Reversed.
+  </div>
 </footer>
-
-<button type="button" id="requestQuotationBtn" class="btn btn-primary" data-toggle="modal" data-target="#requestQuotation">
-    <i class="fa fa-2x fa-dollar" aria-hidden="true" title="Đăng ký nhận báo giá"></i>
-</button>
-
-<div class="scrollup">
-    <i class="fa fa-chevron-up fa-2x"></i>
-</div>
 

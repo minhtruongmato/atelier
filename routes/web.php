@@ -46,6 +46,13 @@ Route::get('/gioi-thieu', function () {
 });
 
 /**
+ * Trends routes
+ */
+Route::get('/xu-huong', function () {
+    return view('list-trends');
+});
+
+/**
  * Lirary routes
  */
 Route::get('/thu-vien-anh', function () {

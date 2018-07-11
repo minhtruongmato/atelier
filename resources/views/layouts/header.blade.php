@@ -1,49 +1,107 @@
-<section class="top_header container-fluid">
-    <div class="container">
-        <div class="social_link col-md-6">
-            <ul class="list-inline">
-                <li>
-                    <a href="javascript:void(0)" target="_blank">
-                        <i class="fa fa-facebook-f"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)" target="_blank">
-                        <i class="fa fa-youtube-square"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)" target="_blank">
-                        <i class="fa fa-phone"></i> Hotline: <strong>(024) 1234 5678</strong>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="secondary_nav col-md-6">
-            <ul class="list-inline text-right">
-                <li>
-                    <a href="{{ url('/dieu-khoan') }}" target="_blank">
-                        Quy định & Chính sách
-                    </a>
-                </li>
-                <li>
-                    |
-                </li>
-                <li>
-                    <a href="{{ url('/tin-tuc/danh-muc/tuyen-dung') }}" target="_blank">
-                        Tuyển dụng
-                    </a>
-                </li>
-            </ul>
-        </div>
+<header class="header container-fluid dark">
+    <div class="left col-sm-2">
+        <a href="{{ url('') }}" target="_self">
+            <div class="logo"></div>
+        </a>
     </div>
-</section>
 
+    <div class="center col-sm-7">
+        <nav class="nav-main">
+            <ul>
+                <li>
+                    <a href="{{ url('') }}" target="_self">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url('san-pham') }}" target="_self">
+                        Product
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url('xu-huong') }}" target="_self">
+                        Trends
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url('') }}" target="_self">
+                        Creative
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url('tin-tuc') }}" target="_self">
+                        News
+                    </a>
+                </li>
+                <li>
+                    <a class="outline" href="{{ url('') }}" target="_self">
+                        Contact
+                    </a>
+                </li>
+                <li>
+                    <div class="line"></div>
+                </li>
+                <li>
+                    Hotline: <b>024 1234 5678</b>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="right col-sm-3">
+        <nav class="nav-user">
+            <ul>
+                <li>
+                    <a href="{{ url('') }}" target="_self">
+                        <i class="fa fa-search" aria-hidden="false"></i> Search
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url('') }}" target="_self">
+                        <i class="fa fa-user" aria-hidden="false"></i> Log In
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url('') }}" target="_self">
+                        <i class="fa fa-shopping-cart" aria-hidden="false"></i> My Cart
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="nav-side dark">
+    <ul>
+        <li>
+            Follow Us
+        </li>
+        <li>
+            <div class="line"></div>
+        </li>
+        <li class="re-rotate">
+            <a href="#" target="_self">
+                <i class="fa fa-2x fa-facebook-f" aria-hidden="false"></i>
+            </a>
+        </li>
+        <li class="re-rotate">
+            <a href="javascript:void(0);" target="_self">
+                <i class="fa fa-2x fa-pinterest-p" aria-hidden="false"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+
+
+
+<!--
 <header class="header">
     <section class="container">
         <div class="container-fluid">
             <a href="{{ url('') }}" target="_self">
-                <div class="logo"></div> <!--image logo-->
+                <div class="logo"></div>
             </a>
 
             <ul class="user_activities list-inline list-unstyled pull-right hidden-xs hidden-sm">
@@ -216,3 +274,4 @@
         </div>
     </section>
 </header>
+-->

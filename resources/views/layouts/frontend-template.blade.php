@@ -7,26 +7,18 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Hầm rượu Thịnh 24</title>
+    <title>Atelier 31</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
-    <link href="{{ asset("public/frontend/css/lib/bootstrap.min.css") }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset("public/frontend/lib/bootstrap/css/bootstrap.min.css") }}" rel="stylesheet" type="text/css" />
     <!-- Font Awesome -->
-    <link href="{{ asset("public/frontend/css/lib/font-awesome.min.css") }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset("public/frontend/lib/fontAwesome/css/font-awesome.min.css") }}" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Theme style -->
-    <link href="{{ asset("public/frontend/css/font_settings.css")}}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset("public/frontend/css/main.css")}}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset("public/frontend/css/reset.css")}}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset("public/frontend/css/cart.css")}}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset("public/frontend/css/checkout.css")}}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset("public/frontend/css/intro.css")}}" rel="stylesheet" type="text/css" />
 
-    <link href="{{ asset("public/frontend/theme/original/css/theme.css")}}" rel="stylesheet" type="text/css" /> <!--THEME CSS-->
 
-    <script src="{{ asset ("public/frontend/js/lib/jquery-1.9.1.min.js") }}"></script>
-    <script src="{{ asset ("public/frontend/js/lib/bootstrap.js") }}"></script>
+    <script src="{{ asset ("public/frontend/lib/jquery/jquery.min.js") }}"></script>
+    <script src="{{ asset ("public/frontend/lib/bootstrap/js/bootstrap.min.js") }}"></script>
     <script src="{{ asset ("public/frontend/app/lib/angular-1.6.6/angular.min.js") }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-animate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-aria.min.js"></script>

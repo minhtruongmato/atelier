@@ -1,8 +1,48 @@
 @extends('layouts.frontend-template')
 @section('content')
-    <link href="{{ asset("public/frontend/css/blog.css")}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset("public/frontend/scss/blogs.css")}}" rel="stylesheet" type="text/css" />
+
+    <section class="section-header">
+        <div class="container-fluid">
+            <div class="container header">
+                <h1 class="heading dark">
+                    News
+                </h1>
+            </div>
+        </div>
+    </section>
+
+    <section id="list-news" class="list-blogs">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <?php for ($i = 0; $i < 7; $i++) { ?>
+                    <div class="item col-sm-4 col-xs-12">
+                        <div class="inner">
+                            <a href="{{ url('') }}">
+                                <div class="mask">
+                                    <img src="https://images.unsplash.com/photo-1493552152660-f915ab47ae9d?ixlib=rb-0.3.5&s=f9b25a4ab324ba2ab945f4af82d6e743&auto=format&fit=crop&w=934&q=80" alt="image news">
+                                </div>
+                            </a>
+
+                            <a href="{{ url('') }}">
+                                <h2 class="post-heading dark">Global Travel And Vacations Luxury Travel On A Tight Budget</h2>
+                            </a>
+                            <p class="description">Nunc accumsan purus vel ex laoreet vulputate. In ac ex sed lectus sodales pellentesque vel at ante. Nam in eros eget dui elementum tincidunt. Phasellus at diam ac nisl aliquet congue. Suspendisse sollicitudin sagittis felis, at consectetur justo suscipit vel. Quisque ac velit eu metus cursus accumsan eget ac lacus. Integer lacinia ex mi, et interdum nunc consequat quis. Fusce consectetur dui at felis tincidunt, quis sollicitudin libero euismod. Ut bibendum lobortis odio.</p>
+                            <a href="{{ url('') }}" class="btn btn-outline" role="button">
+                                See Detail
+                            </a>
+                        </div>
+                    </div>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
     <section class="main_content" ng-controller="BlogController">
-        <!-- InstanceBeginEditable name="content" -->
+
         <div class="container">
             <div class="row">
                 <div class="col-md-9 col-sm-9 col-xs-12">
@@ -28,10 +68,10 @@
                 </div>
                 <div class="nav_side col-md-3 col-sm-3 col-xs-12">
                     <div class="panel panel-default">
-                        <!-- Default panel contents -->
+
                         <div class="panel-heading">Danh mục tin tức</div>
 
-                        <!-- List group -->
+
                         <ul class="list-group" ng-repeat="category in categories">
                             <li class="list-group-item">
                                 <a href="{{ url('tin-tuc/danh-muc') }}/<% category.slug %>" target="_self" ><% category.title %></a>
@@ -41,8 +81,9 @@
                 </div>
             </div>
         </div>
-        <!-- InstanceEndEditable -->
     </section>
+    -->
+
     <script src="{{ asset ("public/frontend/app/controllers/blog.js") }}"></script>
     <script>
         $(window).scroll(function () {
