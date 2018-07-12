@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="container header">
                 <h1 class="heading dark">
-                    Our Product
+                    sản phẩm của chúng tôi
                 </h1>
             </div>
             <div class="introduce">
@@ -37,7 +37,7 @@
                     </h1>
 
                     <a href="{{ url('') }}" class="btn btn-outline">
-                        See All
+                        Xem tất cả
                     </a>
                 </div>
                 <div class="grid-item">

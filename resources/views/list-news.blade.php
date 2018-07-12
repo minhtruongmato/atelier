@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="container header">
                 <h1 class="heading dark">
-                    News
+                    Tin tức
                 </h1>
             </div>
         </div>

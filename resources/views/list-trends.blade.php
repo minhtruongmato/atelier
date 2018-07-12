@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="container header">
                 <h1 class="heading dark">
-                    Trends
+                    Xu hướng
                 </h1>
             </div>
             <div class="introduce">
@@ -39,7 +39,7 @@
                 <div class="grid-sizer"></div>
                 <div class="grid-item title">
                     <div class="inner">
-                        <h2 class="heading">Trends</h2>
+                        <h2 class="heading">Xu hướng</h2>
                     </div>
                 </div>
 
