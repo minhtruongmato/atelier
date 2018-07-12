@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use App\BlogCategory;
+use App\Blog;
 use Response;
 use Session;
 use File;
@@ -109,8 +110,15 @@ class BlogCategoryController extends Controller
             $path = $request->file('image')->store(($request->type == '0') ? 'advises/category' : 'news/category');
             $input['image'] = $path;
         };
-        BlogCategory::where('id', $id)
+        $update = BlogCategory::where('id', $id)
             ->update($input);
+        if($update){
+            if($request->is_active == 1){
+                Blog::where('category_id', $id)->update(['category_active' => 1]);
+            }else{
+                Blog::where('category_id', $id)->update(['category_active' => 0]);
+            }
+        }
         
         return redirect()->intended('admin/blog-category');
     }

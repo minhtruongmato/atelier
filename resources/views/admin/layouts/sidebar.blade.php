@@ -126,7 +126,7 @@
           </ul>
         </li>
 
-        <li class="treeview {{(Request::segment(2) == 'trend-category' || Request::segment(2) == 'trned')? 'active' : '' }}">
+        <li class="treeview {{(Request::segment(2) == 'trend-category' || Request::segment(2) == 'trend')? 'active' : '' }}">
           <a href="#"><i class="fa fa-link"></i> <span>Quản lý xu hướng</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>

@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Cookie;
 use File;
 use App\Type;
 use App\Kind;
+use App\Product;
 use Session;
 
 class KindController extends Controller
@@ -115,15 +116,22 @@ class KindController extends Controller
         if(Input::file('image')){
             $file = Input::file('image')->getClientOriginalName();
         }
+
+        $detailType = Type::where(['id' => $request->type_id, 'is_deleted' => 0])->first();
         
         // echo $file;die;
         $uniqueSlug = $this->buildUniqueSlug('kind', $request->id, $request->slug);
         $newFolderPath = $this->buildNewFolderPath($path, $file);
-        $data =  ['type_id' => $input['type'],'title' => $input['name'], 'slug' => $uniqueSlug, 'description' => $input['description'], 'is_active' => $input['is_active'], 'updated_at' => date('Y:m:d H:i:s')];
+        $data =  ['type_id' => $input['type'],'title' => $input['name'], 'slug' => $uniqueSlug, 'description' => $input['description'], 'is_active' => $input['is_active'], 'type_active' => $detailType['is_active'],'updated_at' => date('Y:m:d H:i:s')];
         if(Input::file('image')){
             $data['image'] = $newFolderPath[0];
         }
         if(DB::table('kind')->where('id', $id)->update($data)){
+            if($request->is_active == 1){
+                Product::where('kind_id', $id)->update(['kind_active' => 1]);
+            }else{
+                Product::where('kind_id', $id)->update(['kind_active' => 0]);
+            }
             if(Input::file('image')){
                 File::delete($path.'/'.$kind->image);
                 Input::file('image')->move($path, $newFolderPath[0]);

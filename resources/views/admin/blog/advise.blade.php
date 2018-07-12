@@ -32,9 +32,10 @@
                             <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
                                 <thead>
                                 <tr role="row">
-                                    <th width="30%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" aria-sort="ascending">Bài viết</th>
-                                    <th width="20%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" aria-sort="ascending">Danh mục</th>
-                                    <th tabindex="0" aria-controls="example2" rowspan="1" colspan="2" aria-label="Action: activate to sort column ascending">Hành động</th>
+                                    <th>Bài viết</th>
+                                    <th>Danh mục</th>
+                                    <th>Sử dụng?</th>
+                                    <th>Hành động</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -42,6 +43,11 @@
                                     <tr role="row" class="odd">
                                         <td class="sorting_1">{{ $item->title }}</td>
                                         <td class="sorting_1">{{ $categories[$item->category_id] }}</td>
+                                        @if($item->is_active != 0)
+                                            <td class="hidden-xs"><span class="glyphicon glyphicon-ok"></span></td>
+                                        @else
+                                            <td class="hidden-xs"></td>
+                                        @endif
                                         <td>
                                             <form class="row" method="POST" action="{{ route('blog.destroy', ['id' => $item->id]) }}" onsubmit = "return confirm('Chắc chắn xoá?')">
                                                 <input type="hidden" name="_method" value="DELETE">
@@ -65,8 +71,10 @@
                                 @if(count($advises) > 0)
                                     <tfoot>
                                     <tr>
-                                        <th width="10%" rowspan="1" colspan="1">Bài viết</th>
-                                        <th rowspan="1" colspan="2">Hành động</th>
+                                        <th>Bài viết</th>
+                                        <th>Danh mục</th>
+                                        <th>Sử dụng?</th>
+                                        <th>Hành động</th>
                                     </tr>
                                     </tfoot>
                                 @endif

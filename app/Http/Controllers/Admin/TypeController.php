@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Cookie;
 use File;
 use Session;
 use App\Type;
+use App\Kind;
+use App\Product;
 
 class TypeController extends Controller
 {
@@ -113,6 +115,13 @@ class TypeController extends Controller
             $data['image'] = $newFolderPath[0];
         }
         if(DB::table('type')->where('id', $id)->update($data)){
+            if($request->is_active == 1){
+                Kind::where('type_id', $id)->update(['type_active' => 1]);
+                Product::where('type_id', $id)->update(['type_active' => 1]);
+            }else{
+                Kind::where('type_id', $id)->update(['type_active' => 0]);
+                Product::where('type_id', $id)->update(['type_active' => 0]);
+            }
             if(Input::file('image')){
                 File::delete($path.'/'.$type->image);
                 Input::file('image')->move($path, $newFolderPath[0]);

@@ -194,6 +194,9 @@ class ProductController extends Controller
             rename($path . '/' . $product->slug, $path . '/' . $uniqueSlug);
         }
 
+        $detailType = Type::where(['id' => $request->type_id, 'is_deleted' => 0])->first();
+        $detailKind = Kind::where(['id' => $request->kind_id, 'is_deleted' => 0])->first();
+
         $keys = ['name','type_id', 'kind_id', 'content', 'description', 'template_id', 'quantity'];
         $input = $this->createQueryInput($keys, $request);
         $input['slug'] = $uniqueSlug;
@@ -202,6 +205,8 @@ class ProductController extends Controller
         $input['is_active'] = ($request->is_active == true) ? 1 : 0;
         $input['template_title'] = $template['title'];
         $input['template_content'] = json_encode($request->template_content);
+        $input['type_active'] = $detailType['is_active'];
+        $input['kind_active'] = $detailKind['is_active'];
 
         $fileName = [];
         $fileName = json_decode($product->image);

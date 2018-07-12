@@ -32,6 +32,23 @@
                                     @endif
                                 </div>
                             </div>
+                            <input type="hidden" name="is_active" value="0">
+                            <div class="form-group">
+                                <label for="is_active" class="col-md-2 control-label">Dùng bài viết?</label>
+
+                                <div class="col-md-8">
+                                    <input id="is_active" type="checkbox" class="minimal" name="is_active" value="1"
+                                           @if($blog['is_active'] == 1)
+                                           checked
+                                            @endif
+                                    >
+                                    @if ($errors->has('is_active'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('is_active') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label for="avatar" class="col-md-2 control-label" >Hình ảnh đang sử dụng</label>
                                 <div class="col-md-8">
@@ -73,7 +90,7 @@
                             <div class="form-group">
                                 <div class="col-md-2 col-md-offset-9">
                                     <button type="submit" class="btn btn-primary">
-                                        Thêm
+                                        OK
                                     </button>
                                 </div>
                             </div>

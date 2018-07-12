@@ -31,11 +31,30 @@
                                     @endif
                                 </div>
                             </div>
+
+                            <input type="hidden" name="is_active" value="0">
+                            <div class="form-group">
+                                <label for="is_active" class="col-md-2 control-label">Dùng bài viết?</label>
+
+                                <div class="col-md-8">
+                                    <input id="is_active" type="checkbox" class="minimal" name="is_active" value="1" checked
+                                           @if(old('is_active') == 1)
+                                           checked
+                                            @endif
+                                    >
+                                    @if ($errors->has('is_active'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('is_active') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+
                             <div class="form-group{{ $errors->has('category_id') ? ' has-error' : '' }}">
                                 <label for="category_id" class="col-md-2 control-label">Danh mục</label>
 
                                 <div class="col-md-8">
-                                    <select name="category_id" id="category_id">
+                                    <select name="category_id" id="category_id" class="form-control">
                                         <option value="">Chọn danh mục</option>
                                         @if(!empty($categories))
                                             @foreach($categories as $key => $item)

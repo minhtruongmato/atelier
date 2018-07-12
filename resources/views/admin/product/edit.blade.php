@@ -92,7 +92,7 @@
                                     <div class="form-group">
                                         <label for="is_active" class="col-md-2 control-label" >Tạm thời chưa sử dụng</label>
                                         <div class="col-md-8">
-                                            <input type="checkbox" id="is_active" name="is_active" value="1" {{ ($product->is_active == 1)? 'checked' : '' }} >
+                                            <input type="checkbox" id="is_active" name="is_active" value="1" {{ ($product->is_active == 1)? '' : 'checked' }} >
                                         </div>
                                     </div>
 
