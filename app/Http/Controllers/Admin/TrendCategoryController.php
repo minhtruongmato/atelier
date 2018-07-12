@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use App\TrendCategory;
+use App\Trend;
 use App\Type;
 use Session;
 use File;
@@ -112,6 +113,11 @@ class TrendCategoryController extends Controller
         $update = TrendCategory::where('id', $id)
             ->update($input);
         if($update){
+            if($request->is_active == 1){
+                Trend::where('category_id', $id)->update(['category_active' => 1]);
+            }else{
+                Trend::where('category_id', $id)->update(['category_active' => 0]);
+            }
             $exists = File::exists('storage/app/' . $detail['image']);
             if($request->image && $exists){
                 Storage::delete($detail['image']);

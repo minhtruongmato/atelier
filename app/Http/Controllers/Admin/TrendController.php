@@ -67,10 +67,13 @@ class TrendController extends Controller
 
         $image_json = json_encode($fileName);
 
+        
+
         $keys = ['category_id', 'title', 'description', 'content', 'is_active'];
         $input = $this->createQueryInput($keys, $request);
         $input['image'] = $image_json;
         $input['slug'] = $uniqueSlug;
+        
 
         $insert = Trend::create($input);
         if(!$insert){
@@ -122,10 +125,12 @@ class TrendController extends Controller
         if($request->slug != $detail->slug){
             rename($path . '/' . $detail->slug, $path . '/' . $uniqueSlug);
         };
+        $detailCategory = TrendCategory::where(['id' => $request->category_id, 'is_deleted' => 0])->first();
 
         $keys = ['category_id', 'title', 'description', 'content', 'is_active'];
         $input = $this->createQueryInput($keys, $request);
         $input['slug'] = $uniqueSlug;
+        $input['category_active'] = $detailCategory['is_active'];
 
         $fileName = [];
         $fileName = json_decode($detail->image);

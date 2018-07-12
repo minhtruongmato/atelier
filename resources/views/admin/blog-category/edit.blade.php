@@ -40,7 +40,7 @@
                                 <label for="is_active" class="col-md-4 control-label">Dùng danh mục?</label>
 
                                 <div class="col-md-6">
-                                    <input id="is_active" type="checkbox" class="minimal" name="is_active" value="1" checked
+                                    <input id="is_active" type="checkbox" class="minimal" name="is_active" value="1"
                                            @if($detail['is_active'] == 1)
                                            checked
                                             @endif

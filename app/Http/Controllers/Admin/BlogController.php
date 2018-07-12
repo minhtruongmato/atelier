@@ -62,8 +62,10 @@ class BlogController extends Controller
             ->where('type', '=', 1)
             ->where('is_deleted', '=', 0)
             ->paginate(10);
+        $categories = $this->getCategoryByType('');
         return view('admin/blog/news', [
             'type' => 'news',
+            'categories' => $categories,
             'news' => $news
         ]);
     }
@@ -95,7 +97,7 @@ class BlogController extends Controller
 
         // Upload image
         $path = $request->file('image')->store(($type == 'advise') ? 'advises' : 'news');
-        $keys = ['title', 'category_id', 'description', 'content'];
+        $keys = ['title', 'category_id', 'description', 'content', 'is_active'];
         $input = $this->createQueryInput($keys, $request);
         $input['type'] = ($type == 'advise') ? 0 : 1;
         $input['image'] = $path;
@@ -148,7 +150,7 @@ class BlogController extends Controller
         $uniqueSlug = $this->buildUniqueSlug('blog', $request->id, $request->slug);
 
 
-        $keys = ['title', 'description', 'type'];
+        $keys = ['title', 'description', 'type', 'is_active'];
         $input = $this->createQueryInput($keys, $request);
         $input['slug'] = $uniqueSlug;
 
