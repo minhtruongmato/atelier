@@ -197,6 +197,7 @@ Route::prefix('admin')->group(function() {
 
     // Admin routes
     Route::group(array('namespace' => 'Admin'), function() {
+        Route::get('message', 'MessageController@index');
         // Introduce routes
         Route::get('introduce/aboutUs', 'IntroduceController@aboutUs');
         Route::get('introduce/{type}', 'IntroduceController@introduce');

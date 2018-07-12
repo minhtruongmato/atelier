@@ -181,8 +181,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
-        Intervention\Image\ImageServiceProvider::class,
+//        Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
+//        Intervention\Image\ImageServiceProvider::class,
 
     ],
 
@@ -236,7 +236,7 @@ return [
         'HTML' => Collective\Html\HtmlFacade::class,
         'Form' => Collective\Html\FormFacade::class,
 
-        'Image' => Intervention\Image\Facades\Image::class,
+//        'Image' => Intervention\Image\Facades\Image::class,
 
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
