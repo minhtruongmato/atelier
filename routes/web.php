@@ -251,22 +251,6 @@ Route::prefix('admin')->group(function() {
         Route::get('order/rollback/{id}', 'OrderController@rollback')->name('order.rollback');
         Route::get('export-pending', 'OrderController@excelPending')->name('export.pending');
 
-        // Product Trademark routes
-        // Route::resource('trademark', 'TrademarkController');
-        // Route::post('trademark/search', 'TrademarkController@search')->name('trademark.search');
-        // Route::post('trademark/store', 'TrademarkController@store')->name('trademark.store');
-        // Route::post('trademark/update/{id}', 'TrademarkController@update')->name('trademark.update');
-        // Route::get('trademark/kind/{type_id}', 'TrademarkController@selectKind');
-
-        // Product Category routes
-        Route::resource('category', 'CategoryController');
-        Route::post('category/search', 'CategoryController@search')->name('category.search');
-        Route::post('category/store', 'CategoryController@store')->name('category.store');
-        Route::post('category/update/{id}', 'CategoryController@update')->name('category.update');
-        Route::get('category/fetchByType/{type_id}', 'CategoryController@fetchByType');
-        Route::get('category/fetchByKind/{kind_id}', 'CategoryController@fetchByKind');
-        Route::get('category/fetchByTrademark/{trademark_id}', 'CategoryController@fetchByTrademark');
-
         // Blog routes
         Route::resource('blog', 'BlogController');
         Route::get('advise', 'BlogController@advise')->name('blog.advise');

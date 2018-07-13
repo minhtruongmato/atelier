@@ -128,8 +128,7 @@ class OrderController extends Controller
 
     private function doSearchingQuery($constraints){
         $query = DB::table('order')
-            ->select('order.*')
-            ->where('is_deleted', 0);
+            ->select('order.*');
         $fields = array_keys($constraints);
         $index = 0;
         foreach ($constraints as $constraint) {
