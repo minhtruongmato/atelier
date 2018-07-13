@@ -43,7 +43,7 @@
                 <div class="grid-item">
                     <a href="{{ url('') }}">
                         <div class="mask">
-                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ee7b83f80f90879486ced1b45501ce21&auto=format&fit=crop&w=1949&q=80" alt="slide">
+                            <img src="{{ asset('public/frontend/img/demo-product-1.jpg') }}" alt="slide">
 
                             <div class="price">
                                 <h3>999.000.000 vnd</h3>
@@ -62,7 +62,7 @@
                 <div class="grid-item grid-item-width-2">
                     <a href="{{ url('') }}">
                         <div class="mask">
-                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ee7b83f80f90879486ced1b45501ce21&auto=format&fit=crop&w=1949&q=80" alt="slide">
+                            <img src="{{ asset('public/frontend/img/demo-product-2.jpg') }}" alt="slide">
 
                             <div class="price">
                                 <h3>999.000.000 vnd</h3>
@@ -84,7 +84,7 @@
                 <div class="grid-item grid-item-width-2">
                     <a href="{{ url('') }}">
                         <div class="mask">
-                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ee7b83f80f90879486ced1b45501ce21&auto=format&fit=crop&w=1949&q=80" alt="slide">
+                            <img src="{{ asset('public/frontend/img/demo-product-1.jpg') }}" alt="slide">
 
                             <div class="price">
                                 <h3>999.000.000 vnd</h3>
@@ -106,7 +106,7 @@
                 <div class="grid-item">
                     <a href="{{ url('') }}">
                         <div class="mask">
-                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ee7b83f80f90879486ced1b45501ce21&auto=format&fit=crop&w=1949&q=80" alt="slide">
+                            <img src="{{ asset('public/frontend/img/demo-product-2.jpg') }}" alt="slide">
 
                             <div class="price">
                                 <h3>999.000.000 vnd</h3>
@@ -125,7 +125,7 @@
                 <div class="grid-item">
                     <a href="{{ url('') }}">
                         <div class="mask">
-                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ee7b83f80f90879486ced1b45501ce21&auto=format&fit=crop&w=1949&q=80" alt="slide">
+                            <img src="{{ asset('public/frontend/img/demo-product-1.jpg') }}" alt="slide">
 
                             <div class="price">
                                 <h3>999.000.000 vnd</h3>

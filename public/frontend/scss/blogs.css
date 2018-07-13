@@ -143,7 +143,8 @@ HEADER
 header.header {
   width: 100%;
   padding-left: 0;
-  padding-right: 0; }
+  padding-right: 0;
+  background-color: rgba(255, 255, 255, 0.6); }
   header.header .left .logo {
     width: 130px;
     height: 130px;
@@ -216,11 +217,11 @@ header.header {
   right: 16px;
   z-index: 1010;
   width: 32px;
-  height: 250px;
+  height: 350px;
   margin-top: -125px; }
   .nav-side ul {
     list-style: none;
-    width: 250px;
+    width: 350px;
     position: absolute;
     top: 0;
     left: 100%;

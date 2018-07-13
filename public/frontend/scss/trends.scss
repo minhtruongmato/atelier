@@ -83,12 +83,12 @@ section{
 
             .grid{
                 .grid-sizer{
-                    width: 50%;
+                    width: 33%;
                 }
 
                 .grid-item{
-                    width: 50%;
-                    height: 550px;
+                    width: 33%;
+                    height: 400px;
 
                     margin-bottom: 30px;
 
@@ -100,7 +100,7 @@ section{
                     }
 
                     &.grid-item-height-2{
-                        height: 650px;
+                        height: 450px;
                     }
 
                     .inner{

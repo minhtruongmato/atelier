@@ -27,7 +27,7 @@
 
             <div class="container cover">
                 <div class="mask">
-                    <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7eb3cf84fa5988885f62b3ee0dfac1fe&auto=format&fit=crop&w=1873&q=80" alt="trends cover image">
+                    <img src="{{ asset('public/frontend/img/demo-product-1.jpg') }}" alt="trends cover image">
                 </div>
             </div>
         </div>
@@ -48,7 +48,7 @@
                     <a href="{{ url('') }}">
                         <div class="inner">
                             <div class="mask">
-                                <img src="https://images.unsplash.com/photo-1523755231516-e43fd2e8dca5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6fd823fe16fab3f55144f2cb4dcf2fc3&auto=format&fit=crop&w=975&q=80" alt="image trend">
+                                <img src="{{ asset('public/frontend/img/demo-trends.jpg') }}" alt="image trend">
 
                                 <div class="content">
                                     <h4 class="post-subheading dark">Trends Category</h4>
@@ -63,7 +63,7 @@
                     <a href="{{ url('') }}}">
                         <div class="inner">
                             <div class="mask">
-                                <img src="https://images.unsplash.com/photo-1523755231516-e43fd2e8dca5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6fd823fe16fab3f55144f2cb4dcf2fc3&auto=format&fit=crop&w=975&q=80" alt="image trend">
+                                <img src="{{ asset('public/frontend/img/demo-product-1.jpg') }}" alt="image trend">
 
                                 <div class="content">
                                     <h4 class="post-subheading dark">Trends Category</h4>

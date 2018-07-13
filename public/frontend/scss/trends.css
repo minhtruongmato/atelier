@@ -143,7 +143,8 @@ HEADER
 header.header {
   width: 100%;
   padding-left: 0;
-  padding-right: 0; }
+  padding-right: 0;
+  background-color: rgba(255, 255, 255, 0.6); }
   header.header .left .logo {
     width: 130px;
     height: 130px;
@@ -216,11 +217,11 @@ header.header {
   right: 16px;
   z-index: 1010;
   width: 32px;
-  height: 250px;
+  height: 350px;
   margin-top: -125px; }
   .nav-side ul {
     list-style: none;
-    width: 250px;
+    width: 350px;
     position: absolute;
     top: 0;
     left: 100%;
@@ -358,17 +359,17 @@ section#list-trends .container {
   padding-left: 50px;
   padding-right: 50px; }
   section#list-trends .container .grid .grid-sizer {
-    width: 50%; }
+    width: 33%; }
   section#list-trends .container .grid .grid-item {
-    width: 50%;
-    height: 550px;
+    width: 33%;
+    height: 400px;
     margin-bottom: 30px; }
     section#list-trends .container .grid .grid-item.title {
       padding-top: 50px;
       padding-bottom: 50px;
       height: 200px; }
     section#list-trends .container .grid .grid-item.grid-item-height-2 {
-      height: 650px; }
+      height: 450px; }
     section#list-trends .container .grid .grid-item .inner {
       padding-left: 15px;
       padding-right: 15px;
