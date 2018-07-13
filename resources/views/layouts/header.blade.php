@@ -1,12 +1,15 @@
 <header class="header container-fluid dark">
-    <div class="left col-sm-2">
+    <div class="left col-sm-2 col-xs-2">
         <a href="{{ url('') }}" target="_self">
             <div class="logo"></div>
         </a>
     </div>
 
-    <div class="center col-sm-7">
-        <nav class="nav-main">
+    <div class="center col-sm-7 col-xs-10">
+        <a href="" class="btn-nav-expand" role="button" id="btn-nav-expand">
+            <span class="nav-icon"></span>
+        </a>
+        <nav class="nav-main" id="nav-main">
             <ul>
                 <li>
                     <a href="{{ url('') }}" target="_self">
@@ -38,17 +41,61 @@
                         Liên hệ
                     </a>
                 </li>
-                <li>
+                <li class="hidden-xs">
                     <div class="line"></div>
                 </li>
-                <li>
+                <li class="hidden-xs">
                     Hotline: <b>024 1234 5678</b>
                 </li>
             </ul>
+
+            <ul class="visible-xs">
+                <li>
+                    <a href="{{ url('') }}" target="_self">
+                        <i class="fa fa-search" aria-hidden="false"></i> Tìm kiếm
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url('') }}" target="_self">
+                        <i class="fa fa-user" aria-hidden="false"></i> Đăng nhập
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url('') }}" target="_self">
+                        <i class="fa fa-shopping-cart" aria-hidden="false"></i> Giỏ hàng
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="visible-xs">
+                <li>
+                    <a href="#" target="_self">
+                        <i class="fa fa-facebook-f" aria-hidden="false"></i> Facebook
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" target="_self">
+                        <i class="fa fa-pinterest-p" aria-hidden="false"></i> Pinterest
+                    </a>
+                </li>
+            </ul>
+
+            <div class="info hidden">
+
+                <b>Trụ sở chính</b>
+                <p>905 Kub Turnpike Suite 638</p>
+
+                <b>TEL</b>
+                <p>024 1234 5678</p>
+
+                <b>Email</b>
+                <p>contact@atelier.vn</p>
+            </div>
+
         </nav>
     </div>
 
-    <div class="right col-sm-3">
+    <div class="right col-sm-3 hidden-xs">
         <nav class="nav-user">
             <ul>
                 <li>
@@ -71,7 +118,7 @@
     </div>
 </header>
 
-<div class="nav-side dark">
+<div class="nav-side dark hidden-xs">
     <ul>
         <li>
             Theo dõi chúng tôi tại
