@@ -1,6 +1,6 @@
 @extends('layouts.frontend-template')
 @section('content')
-    <link href="{{ asset("public/frontend/scss/homepage.min.css")}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset("public/frontend/scss/homepage.css")}}" rel="stylesheet" type="text/css" />
     <link href="{{ asset("public/frontend/lib/fullpage/css/jquery.fullpage.min.css")}}" rel="stylesheet" type="text/css" />
 
     <div id="homepage">
@@ -31,7 +31,7 @@
                     <div class="carousel-inner" role="listbox">
                         <div class="item active">
                             <div class="mask">
-                                <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ee7b83f80f90879486ced1b45501ce21&auto=format&fit=crop&w=1949&q=80" alt="slide">
+                                <img src="{{ asset('public/frontend/img/demo-top-slider-1.jpg') }}" alt="slide">
                             </div>
                             <div class="carousel-caption">
                                 <h1 class="heading light">
@@ -44,7 +44,7 @@
                         </div>
                         <div class="item">
                             <div class="mask">
-                                <img src="https://images.unsplash.com/photo-1492371451031-f0830e91b3d9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8805f144b084b01beda524a625f5f68e&auto=format&fit=crop&w=1461&q=80" alt="slide">
+                                <img src="{{ asset('public/frontend/img/demo-top-slider-2.jpg') }}" alt="slide">
                             </div>
                             <div class="carousel-caption">
                                 <h1 class="heading light">
@@ -91,10 +91,10 @@
                         </div>
                         <div class="right col-sm-8 col-xs-12">
                             <div class="mask wow fadeInUp" id="image-top">
-                                <img src="https://images.unsplash.com/photo-1531114181037-5e61a592cf2a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=23dbfaafedbf9400522ef9c47334f99a&auto=format&fit=crop&w=1950&q=80" alt="image about 1">
+                                <img src="{{ asset('public/frontend/img/demo-about-1.jpg') }}" alt="image about 1">
                             </div>
                             <div class="mask wow fadeInUp" id="image-bottom">
-                                <img src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?ixlib=rb-0.3.5&s=95dd30420d67e619a823f5d08f2e8565&auto=format&fit=crop&w=1951&q=80" alt="image about 2">
+                                <img src="{{ asset('public/frontend/img/demo-about-2.jpg') }}" alt="image about 2">
                             </div>
                         </div>
                     </div>
@@ -111,19 +111,19 @@
                                 <div class="carousel-inner" role="listbox">
                                     <div class="item active">
                                         <div class="mask">
-                                            <img src="https://images.unsplash.com/photo-1531114181037-5e61a592cf2a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=23dbfaafedbf9400522ef9c47334f99a&auto=format&fit=crop&w=1950&q=80" alt="image about 1">
+                                            <img src="{{ asset('public/frontend/img/demo-product-1.jpg') }}" alt="image about 1">
                                         </div>
                                         <div class="carousel-caption">
                                             <h4 class="sub-heading light">Product</h4>
 
-                                            <h1 class="heading light">Living Room</h1>
+                                            <h1 class="heading light">Bathroom</h1>
 
                                             <a href="" class="btn btn-default" role="button">View detail</a>
                                         </div>
                                     </div>
                                     <div class="item">
                                         <div class="mask">
-                                            <img src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?ixlib=rb-0.3.5&s=95dd30420d67e619a823f5d08f2e8565&auto=format&fit=crop&w=1951&q=80" alt="image about 2">
+                                            <img src="{{ asset('public/frontend/img/demo-product-2.jpg') }}" alt="image about 2">
                                         </div>
                                         <div class="carousel-caption">
                                             <h4 class="sub-heading light">Product</h4>
@@ -173,7 +173,7 @@
 
             </div>
 
-            <div class="section" id="trends" style="background-image: url('https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4d19695422a0150c535cd6963fadae83&auto=format&fit=crop&w=1947&q=80');">
+            <div class="section" id="trends" style="background-image: url('{{ asset('public/frontend/img/demo-trends.jpg') }}');">
                 <div class="container">
                     <div class="heading">
                         <h1 class="heading light">Xu hướng</h1>
@@ -182,14 +182,16 @@
                     <div class="row">
                         <?php for ($i = 0; $i < 9; $i++) { ?>
                         <div class="item col-sm-2 col-xs-6">
-                            <a href="{{ url('') }}">
-                                <div class="icon">
-                                    <i class="fa fa-plus fa-2x" aria-hidden="false"></i>
-                                </div>
-                                <div class="title">
-                                    <h4>the future of loft living</h4>
-                                </div>
-                            </a>
+                            <div class="inner">
+                                <a href="{{ url('') }}">
+                                    <div class="icon">
+                                        <i class="fa fa-plus fa-2x" aria-hidden="false"></i>
+                                    </div>
+                                    <div class="title">
+                                        <h4>the future of loft living</h4>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                         <?php } ?>
                     </div>
@@ -232,7 +234,7 @@
                         <div class="left col-sm-4 col-xs-12 wow fadeInLeft">
                             <div class="" id="cover">
                                 <div class="mask">
-                                    <img src="https://images.unsplash.com/photo-1493552152660-f915ab47ae9d?ixlib=rb-0.3.5&s=f9b25a4ab324ba2ab945f4af82d6e743&auto=format&fit=crop&w=934&q=80" alt="image news cover">
+                                    <img src="{{ asset('public/frontend/img/demo-news-1.jpg') }}" alt="image news cover">
 
                                     <h1 class="heading light">Tin tức</h1>
                                 </div>
@@ -246,7 +248,7 @@
                                 <div class="item col-sm-6 col-xs-12 wow fadeInUp">
                                     <div class="inner">
                                         <div class="mask">
-                                            <img src="https://images.unsplash.com/photo-1493552152660-f915ab47ae9d?ixlib=rb-0.3.5&s=f9b25a4ab324ba2ab945f4af82d6e743&auto=format&fit=crop&w=934&q=80" alt="image news">
+                                            <img src="{{ asset('public/frontend/img/demo-news-2.jpg') }}" alt="image news">
                                         </div>
 
                                         <h2 class="post-heading dark">Global Travel And Vacations Luxury Travel On A Tight Budget</h2>
@@ -264,7 +266,7 @@
                             <ul class="list-inline">
                                 <li>
                                     <a href="{{ url('') }}" class="btn btn-primary" role="button">
-                                        Khám phá ngay
+                                        Xem tất cả tin tức
                                     </a>
                                 </li>
                             </ul>

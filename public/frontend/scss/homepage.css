@@ -143,7 +143,8 @@ HEADER
 header.header {
   width: 100%;
   padding-left: 0;
-  padding-right: 0; }
+  padding-right: 0;
+  background-color: rgba(255, 255, 255, 0.6); }
   header.header .left .logo {
     width: 130px;
     height: 130px;
@@ -216,11 +217,11 @@ header.header {
   right: 16px;
   z-index: 1010;
   width: 32px;
-  height: 250px;
+  height: 350px;
   margin-top: -125px; }
   .nav-side ul {
     list-style: none;
-    width: 250px;
+    width: 350px;
     position: absolute;
     top: 0;
     left: 100%;
@@ -543,48 +544,49 @@ header.header {
     background-attachment: fixed;
     background-repeat: no-repeat; }
     #homepage #fullpage .section#trends .container .heading {
-      margin-bottom: 50px; }
+      margin-bottom: 30px; }
     #homepage #fullpage .section#trends .container .row .item {
-      width: 180px;
-      height: 220px;
-      border-radius: 0px;
-      border: 2px solid #fff;
-      margin-right: 15px;
-      margin-bottom: 15px;
-      position: relative;
-      display: inline-block; }
-      #homepage #fullpage .section#trends .container .row .item a {
-        color: #fff; }
-      #homepage #fullpage .section#trends .container .row .item .icon {
-        width: 100%;
-        padding: 15px;
-        position: absolute;
-        top: 0;
-        left: 0; }
-      #homepage #fullpage .section#trends .container .row .item .title {
-        width: 100%;
-        padding: 15px;
-        position: absolute;
-        bottom: 0;
-        left: 0; }
-        #homepage #fullpage .section#trends .container .row .item .title h4 {
-          font-size: 1em;
-          text-transform: uppercase;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          display: -webkit-box;
-          line-height: 1.2;
-          height: 2.4em;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical; }
-      #homepage #fullpage .section#trends .container .row .item:last-of-type {
+      height: 27vh;
+      padding: 15px; }
+      #homepage #fullpage .section#trends .container .row .item .inner {
+        height: 100%;
+        border-radius: 0px;
+        border: 2px solid #fff;
+        position: relative; }
+        #homepage #fullpage .section#trends .container .row .item .inner a {
+          color: #fff; }
+        #homepage #fullpage .section#trends .container .row .item .inner .icon {
+          width: 100%;
+          padding: 15px;
+          position: absolute;
+          top: 0;
+          left: 0; }
+        #homepage #fullpage .section#trends .container .row .item .inner .title {
+          width: 100%;
+          padding: 15px;
+          position: absolute;
+          bottom: 0;
+          left: 0; }
+          #homepage #fullpage .section#trends .container .row .item .inner .title h4 {
+            font-size: 1em;
+            text-transform: uppercase;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            line-height: 1.2;
+            height: 2.4em;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical; }
+      #homepage #fullpage .section#trends .container .row .item:last-of-type .inner {
         background-color: #fff; }
-        #homepage #fullpage .section#trends .container .row .item:last-of-type a {
+        #homepage #fullpage .section#trends .container .row .item:last-of-type .inner a {
           color: #333; }
       #homepage #fullpage .section#trends .container .row .item:hover {
-        background-color: #fff; }
-        #homepage #fullpage .section#trends .container .row .item:hover a {
-          color: #333; }
+        cursor: pointer; }
+        #homepage #fullpage .section#trends .container .row .item:hover .inner {
+          background-color: #fff; }
+          #homepage #fullpage .section#trends .container .row .item:hover .inner a {
+            color: #333; }
   #homepage #fullpage .section#creative .title-side {
     width: 100vh;
     height: 100px;

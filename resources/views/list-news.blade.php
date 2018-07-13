@@ -21,7 +21,7 @@
                         <div class="inner">
                             <a href="{{ url('') }}">
                                 <div class="mask">
-                                    <img src="https://images.unsplash.com/photo-1493552152660-f915ab47ae9d?ixlib=rb-0.3.5&s=f9b25a4ab324ba2ab945f4af82d6e743&auto=format&fit=crop&w=934&q=80" alt="image news">
+                                    <img src="{{ asset('public/frontend/img/demo-news-2.jpg') }}" alt="image news">
                                 </div>
                             </a>
 
