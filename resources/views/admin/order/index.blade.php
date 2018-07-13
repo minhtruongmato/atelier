@@ -25,14 +25,14 @@
                             <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
                                 <thead>
                                 <tr role="row">
-                                    <th width="20%" class="" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" aria-sort="ascending">Tên khách hàng</th>
-                                    <th width="10%" class="" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" aria-sort="ascending">Mã đơn hàng</th>
-                                    <th width="10%" class="" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">T/g đặt hàng</th>
-                                    <th width="10%" class="" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">T/g cập nhật</th>
-                                    <th width="10%" class=" hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Tổng giá trị</th>
-                                    <th width="10%" class=" hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Chi tiết</th>
-                                    <th width="10%" class=" hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Trạng thái</th>
-                                    <th tabindex="0" aria-controls="example2" rowspan="1" colspan="2" aria-label="Action: activate to sort column ascending">Hành động</th>
+                                    <th width="20%" rowspan="1" colspan="1">Tên khách hàng</th>
+                                    <th width="10%" rowspan="1" colspan="1">Mã đơn hàng</th>
+                                    <th width="10%" rowspan="1" colspan="1">Thời gian đặt hàng</th>
+                                    <th width="10%" rowspan="1" colspan="1">Cập nhật lần cuối</th>
+                                    <th class="hidden-xs" width="10%" rowspan="1" colspan="1">Tổng giá trị</th>
+                                    <th class="hidden-xs" width="10%" rowspan="1" colspan="1">Chi tiết</th>
+                                    <th class="hidden-xs" width="10%" rowspan="1" colspan="1">Trạng thái</th>
+                                    <th rowspan="1" colspan="2">Hành động</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -58,18 +58,18 @@
                                         @endif
                                         <td>
                                             @if($item->status == 0)
-                                                <a href="{{ route('order.approve', ['id' => $item->id]) }}" class="btn btn-warning col-sm-5 col-xs-5 btn-margin" onclick = "return confirm('Xác nhận đơn hàng (kho sẽ tự động giảm đi số lượng tương ứng trong đơn hàng)?')">
+                                                <a href="{{ route('order.approve', ['id' => $item->id]) }}" class="btn btn-warning col-sm-4 col-xs-4 btn-margin" onclick = "return confirm('Xác nhận đơn hàng (kho sẽ tự động giảm đi số lượng tương ứng trong đơn hàng)?')">
                                                     Xác nhận
                                                 </a>
-                                                <a href="{{ route('order.cancel', ['id' => $item->id]) }}" class="btn btn-danger col-sm-5 col-xs-5 btn-margin" onclick = "return confirm('Bỏ qua đơn hàng?')">
-                                                    Bỏ qua đơn hàng
+                                                <a href="{{ route('order.cancel', ['id' => $item->id]) }}" class="btn btn-danger col-sm-4 col-xs-4 btn-margin" onclick = "return confirm('Bỏ qua đơn hàng?')">
+                                                    Bỏ qua
                                                 </a>
                                             @elseif($item->status == 1)
-                                                <a href="{{ route('order.complete', ['id' => $item->id]) }}" class="btn btn-success col-sm-5 col-xs-5 btn-margin" onclick = "return confirm('Đóng và đánh dấu đơn hàng đã hoàn thành?')">
-                                                    Đóng đơn hàng
+                                                <a href="{{ route('order.complete', ['id' => $item->id]) }}" class="btn btn-success col-sm-4 col-xs-4 btn-margin" onclick = "return confirm('Đóng và đánh dấu đơn hàng đã hoàn thành?')">
+                                                    Đóng đơn
                                                 </a>
-                                                <a href="{{ route('order.rollback', ['id' => $item->id]) }}" class="btn btn-danger col-sm-5 col-xs-5 btn-margin" onclick = "return confirm('Huỷ đơn hàng (kho sẽ tự hoàn lại số lượng sản phẩm đơn hàng đã trừ khi xác nhận)?')">
-                                                    Huỷ đơn hàng
+                                                <a href="{{ route('order.rollback', ['id' => $item->id]) }}" class="btn btn-danger col-sm-4 col-xs-4 btn-margin" onclick = "return confirm('Huỷ đơn hàng (kho sẽ tự hoàn lại số lượng sản phẩm đơn hàng đã trừ khi xác nhận)?')">
+                                                    Huỷ đơn
                                                 </a>
                                             @else
                                                 <strong>N/A</strong>
