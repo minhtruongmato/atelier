@@ -89,7 +89,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="right col-sm-8 col-xs-12">
+                        <div class="right col-sm-8 hidden-xs">
                             <div class="mask wow fadeInUp" id="image-top">
                                 <img src="{{ asset('public/frontend/img/demo-about-1.jpg') }}" alt="image about 1">
                             </div>
@@ -102,9 +102,13 @@
             </div>
 
             <div class="section" id="product">
+                <div class="title-side visible-xs">
+                    <h1>Sản phẩm</h1>
+                </div>
+
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="left col-sm-6 col-xs-12">
+                        <div class="left col-sm-6 col-xs-12 hidden-xs">
                             <div id="slider-product" class="carousel slide" data-ride="carousel">
 
                                 <!-- Wrapper for slides -->
@@ -141,29 +145,35 @@
                         <div class="right col-sm-6 col-xs-12">
                             <ul class="slide-control">
                                 <li data-target="#slider-product" data-slide-to="0">
-                                    <div class="icon">
-                                        <i class="fa fa-plus fa-2x" aria-hidden="false"></i>
-                                    </div>
-                                    <div class="title">
-                                        <h4>the future of loft living</h4>
+                                    <div class="inner">
+                                        <div class="icon">
+                                            <i class="fa fa-plus fa-2x" aria-hidden="false"></i>
+                                        </div>
+                                        <div class="title">
+                                            <h4>the future of loft living</h4>
+                                        </div>
                                     </div>
                                 </li>
                                 <?php for ($i = 0; $i < 4; $i++) { ?>
                                 <li data-target="#slider-product" data-slide-to="1">
-                                    <div class="icon">
-                                        <i class="fa fa-plus fa-2x" aria-hidden="false"></i>
-                                    </div>
-                                    <div class="title">
-                                        <h4>the future of loft living</h4>
+                                    <div class="inner">
+                                        <div class="icon">
+                                            <i class="fa fa-plus fa-2x" aria-hidden="false"></i>
+                                        </div>
+                                        <div class="title">
+                                            <h4>the future of loft living</h4>
+                                        </div>
                                     </div>
                                 </li>
                                 <?php } ?>
                                 <li>
-                                    <div class="icon">
-                                        <i class="fa fa-plus fa-2x" aria-hidden="false"></i>
-                                    </div>
-                                    <div class="title">
-                                        <h4>others</h4>
+                                    <div class="inner">
+                                        <div class="icon">
+                                            <i class="fa fa-plus fa-2x" aria-hidden="false"></i>
+                                        </div>
+                                        <div class="title">
+                                            <h4>Sản phẩm khác</h4>
+                                        </div>
                                     </div>
                                 </li>
                             </ul>
@@ -175,13 +185,17 @@
 
             <div class="section" id="trends" style="background-image: url('{{ asset('public/frontend/img/demo-trends.jpg') }}');">
                 <div class="container">
-                    <div class="heading">
+                    <div class="heading hidden-xs">
                         <h1 class="heading light">Xu hướng</h1>
                     </div>
 
+                    <div class="title-side visible-xs">
+                        <h1>Xu hướng</h1>
+                    </div>
+
                     <div class="row">
-                        <?php for ($i = 0; $i < 9; $i++) { ?>
-                        <div class="item col-sm-2 col-xs-6">
+                        <?php for ($i = 0; $i < 8; $i++) { ?>
+                        <div class="item col-sm-2 col-xs-4">
                             <div class="inner">
                                 <a href="{{ url('') }}">
                                     <div class="icon">
@@ -194,6 +208,19 @@
                             </div>
                         </div>
                         <?php } ?>
+
+                        <div class="item col-sm-2 col-xs-4">
+                            <div class="inner">
+                                <a href="{{ url('') }}">
+                                    <div class="icon">
+                                        <i class="fa fa-plus fa-2x" aria-hidden="false"></i>
+                                    </div>
+                                    <div class="title">
+                                        <h4>Xem thêm</h4>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -229,9 +256,13 @@
             </div>
 
             <div class="section" id="news">
+                <div class="title-side">
+                    <h1>Tin tức</h1>
+                </div>
+
                 <div class="container">
                     <div class="row">
-                        <div class="left col-sm-4 col-xs-12 wow fadeInLeft">
+                        <div class="left col-sm-4 hidden-xs wow fadeInLeft">
                             <div class="" id="cover">
                                 <div class="mask">
                                     <img src="{{ asset('public/frontend/img/demo-news-1.jpg') }}" alt="image news cover">
@@ -252,7 +283,7 @@
                                         </div>
 
                                         <h2 class="post-heading dark">Global Travel And Vacations Luxury Travel On A Tight Budget</h2>
-                                        <p class="description">Nunc accumsan purus vel ex laoreet vulputate. In ac ex sed lectus sodales pellentesque vel at ante. Nam in eros eget dui elementum tincidunt. Phasellus at diam ac nisl aliquet congue. Suspendisse sollicitudin sagittis felis, at consectetur justo suscipit vel. Quisque ac velit eu metus cursus accumsan eget ac lacus. Integer lacinia ex mi, et interdum nunc consequat quis. Fusce consectetur dui at felis tincidunt, quis sollicitudin libero euismod. Ut bibendum lobortis odio.</p>
+                                        <p class="description hidden-xs">Nunc accumsan purus vel ex laoreet vulputate. In ac ex sed lectus sodales pellentesque vel at ante. Nam in eros eget dui elementum tincidunt. Phasellus at diam ac nisl aliquet congue. Suspendisse sollicitudin sagittis felis, at consectetur justo suscipit vel. Quisque ac velit eu metus cursus accumsan eget ac lacus. Integer lacinia ex mi, et interdum nunc consequat quis. Fusce consectetur dui at felis tincidunt, quis sollicitudin libero euismod. Ut bibendum lobortis odio.</p>
                                         <a href="{{ url('') }}" class="btn btn-outline" role="button">
                                             Xem chi tiết
                                         </a>
@@ -285,7 +316,7 @@
                         <div class="map col-xs-12">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18792.74236719761!2d105.8378046859102!3d21.006773993256186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac0f33bf8dad%3A0x31d0e909c37a459f!2zVmluY29tIENlbnRlciBCw6AgVHJp4buHdQ!5e0!3m2!1svi!2s!4v1531293697579" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
                         </div>
-                        <div class="left col-sm-4 col-xs-12">
+                        <div class="left col-sm-4 hidden-xs">
                             <h2>Ghé thăm chúng tôi</h2>
                             <b>Trụ sở chính</b>
                             <p>905 Kub Turnpike Suite 638</p>

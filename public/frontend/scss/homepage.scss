@@ -35,6 +35,40 @@ header.header{
             width: 100%;
             height: 100vh;
 
+            position: relative;
+
+            .title-side{
+                width: 100vh;
+                height: 100px;
+
+                position: absolute;
+                bottom: 100%;
+                left: 20px;
+
+                text-align: center;
+
+                -webkit-transform: rotateZ(90deg);
+                -moz-transform: rotateZ(90deg);
+                -ms-transform: rotateZ(90deg);
+                -o-transform: rotateZ(90deg);
+                transform: rotateZ(90deg);
+
+                -webkit-transform-origin: bottom left;
+                -moz-transform-origin: bottom left;
+                -ms-transform-origin: bottom left;
+                -o-transform-origin: bottom left;
+                transform-origin: bottom left;
+
+                h1{
+                    font-size: 9.375em;
+                    font-weight: 700;
+
+                    text-transform: uppercase;
+
+                    color: #ccc;
+                }
+            }
+
             &#slider{
                 .slide{
 
@@ -194,44 +228,10 @@ header.header{
             }
 
             &#about{
-                position: relative;
-
                 background-image: url("../img/pattern.png");
                 background-size: cover;
                 background-position: center center;
                 background-blend-mode: overlay;
-
-                .title-side{
-                    width: 100vh;
-                    height: 100px;
-
-                    position: absolute;
-                    bottom: 100%;
-                    left: 20px;
-
-                    text-align: center;
-
-                    -webkit-transform: rotateZ(90deg);
-                    -moz-transform: rotateZ(90deg);
-                    -ms-transform: rotateZ(90deg);
-                    -o-transform: rotateZ(90deg);
-                    transform: rotateZ(90deg);
-
-                    -webkit-transform-origin: bottom left;
-                    -moz-transform-origin: bottom left;
-                    -ms-transform-origin: bottom left;
-                    -o-transform-origin: bottom left;
-                    transform-origin: bottom left;
-
-                    h1{
-                        font-size: 9.375em;
-                        font-weight: 700;
-
-                        text-transform: uppercase;
-
-                        color: #ccc;
-                    }
-                }
 
                 .container{
                     .row{
@@ -339,57 +339,62 @@ header.header{
                                 list-style: none;
 
                                 li{
-                                    width: 180px;
-                                    height: 220px;
-
-                                    border-radius: 0px;
-                                    border: 2px solid $gray-dark;
-
-                                    margin-right: 15px;
-                                    margin-bottom: 15px;
-
-                                    position: relative;
+                                    width: 30%;
+                                    height: 30vh;
 
                                     display: inline-block;
 
-                                    color: $gray-dark;
+                                    padding: 15px;
 
-                                    .icon{
-                                        width: 100%;
-                                        padding: 15px;
+                                    .inner{
+                                        position: relative;
 
-                                        position: absolute;
-                                        top: 0;
-                                        left: 0;
-                                    }
+                                        height: 100%;
 
-                                    .title{
-                                        width: 100%;
-                                        padding: 15px;
+                                        border-radius: 0px;
+                                        border: 2px solid $gray-dark;
 
-                                        position: absolute;
-                                        bottom: 0;
-                                        left: 0;
+                                        color: $gray-dark;
 
-                                        h4{
-                                            font-size: 1em;
-                                            text-transform: uppercase;
+                                        .icon{
+                                            width: 100%;
+                                            padding: 15px;
 
-                                            overflow: hidden;
-                                            text-overflow: ellipsis;
-                                            display: -webkit-box;
-                                            line-height: 1.2;
-                                            height: 2.4em;
-                                            -webkit-line-clamp: 2;
-                                            -webkit-box-orient: vertical;
+                                            position: absolute;
+                                            top: 0;
+                                            left: 0;
+                                        }
+
+                                        .title{
+                                            width: 100%;
+                                            padding: 15px;
+
+                                            position: absolute;
+                                            bottom: 0;
+                                            left: 0;
+
+                                            h4{
+                                                font-size: 1em;
+                                                text-transform: uppercase;
+
+                                                overflow: hidden;
+                                                text-overflow: ellipsis;
+                                                display: -webkit-box;
+                                                line-height: 1.2;
+                                                height: 2.4em;
+                                                -webkit-line-clamp: 2;
+                                                -webkit-box-orient: vertical;
+                                            }
                                         }
                                     }
 
                                     &:hover, &.active{
-                                        background-color: #fff;
-                                        color: $gray-dark;
+                                        .inner{
+                                            background-color: $gray-dark;
+                                            color: #fff;
 
-                                        cursor: pointer;
+                                            cursor: pointer;
+                                        }
                                     }
 
                                     &.active{
@@ -493,41 +498,9 @@ header.header{
             }
 
             &#creative{
-                .title-side{
-                    width: 100vh;
-                    height: 100px;
-
-                    position: absolute;
-                    bottom: 100%;
-                    left: 20px;
-
-                    text-align: center;
-
-                    -webkit-transform: rotateZ(90deg);
-                    -moz-transform: rotateZ(90deg);
-                    -ms-transform: rotateZ(90deg);
-                    -o-transform: rotateZ(90deg);
-                    transform: rotateZ(90deg);
-
-                    -webkit-transform-origin: bottom left;
-                    -moz-transform-origin: bottom left;
-                    -ms-transform-origin: bottom left;
-                    -o-transform-origin: bottom left;
-                    transform-origin: bottom left;
-
-                    h1{
-                        font-size: 9.375em;
-                        font-weight: 700;
-
-                        text-transform: uppercase;
-
-                        color: #ccc;
-                    }
-                }
-
                 .container{
                     .row{
-                        .left{
+                        .right{
                             .head{
                                 h1{
                                     color: $gray;
@@ -551,35 +524,6 @@ header.header{
                                             }
                                         }
                                     }
-                                }
-                            }
-                        }
-
-                        .right{
-                            position: relative;
-
-                            .mask{
-                                width: 100%;
-                                height: 400px;
-
-                                position: absolute;
-
-                                -webkit-box-shadow: 3px 3px 10px #333333;
-                                -moz-box-shadow: 3px 3px 10px #333333;
-                                box-shadow: 3px 3px 10px #333333;
-
-                                &#image-top{
-                                    top: 0px;
-                                    left: 150px;
-
-                                    z-index: 2;
-                                }
-
-                                &#image-bottom{
-                                    top: 150px;
-                                    left: 70px;
-
-                                    z-index: 1;
                                 }
                             }
                         }
@@ -672,38 +616,6 @@ header.header{
                 background-position: center center;
                 background-blend-mode: overlay;
 
-                .title-side{
-                    width: 100vh;
-                    height: 100px;
-
-                    position: absolute;
-                    bottom: 100%;
-                    left: 20px;
-
-                    text-align: center;
-
-                    -webkit-transform: rotateZ(90deg);
-                    -moz-transform: rotateZ(90deg);
-                    -ms-transform: rotateZ(90deg);
-                    -o-transform: rotateZ(90deg);
-                    transform: rotateZ(90deg);
-
-                    -webkit-transform-origin: bottom left;
-                    -moz-transform-origin: bottom left;
-                    -ms-transform-origin: bottom left;
-                    -o-transform-origin: bottom left;
-                    transform-origin: bottom left;
-
-                    h1{
-                        font-size: 9.375em;
-                        font-weight: 700;
-
-                        text-transform: uppercase;
-
-                        color: #ccc;
-                    }
-                }
-
                 .container{
 
                     h2{
@@ -756,6 +668,228 @@ header.header{
 
                                     textarea{
                                         resize: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+    #homepage {
+        #fullpage {
+            .section{
+                .title-side{
+                    left: -15px;
+
+                    h1{
+                        font-size: 7em;
+
+                        color: #eaeaea;
+                    }
+                }
+
+                &#slider{
+                    .slide{
+                        .carousel-inner{
+                            .item{
+                                .carousel-caption{
+                                    width: 100%;
+                                    top: 40%;
+                                    padding-left: 30px;
+                                }
+                            }
+                        }
+
+                        .slide-control{
+                            width: 100%;
+                            padding-left: 30px;
+
+                            li{
+                                width: 25%;
+                                height: 150px;
+                            }
+                        }
+                    }
+                }
+
+                &#about{
+
+                }
+
+                &#product{
+                    .container-fluid{
+                        .row{
+                            .right{
+                                .slide-control{
+                                    li{
+                                        width: 48%;
+                                        height: 25vh;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &#trends{
+                    .container{
+                        .row{
+                            padding-top: 50px;
+
+                            .item{
+                                height: 25vh;
+                            }
+                        }
+                    }
+                }
+
+                &#creative{
+                    .container{
+                        .row{
+                            .right{
+                                .body{
+                                    p{
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                        display: -webkit-box;
+                                        line-height: 1.2;
+                                        height: 7em;
+                                        -webkit-line-clamp: 6;
+                                        -webkit-box-orient: vertical;
+                                    }
+
+                                    ol{
+                                        li{
+                                            font-size: 1.125em;
+
+                                            a{
+                                                color: $gray;
+
+                                                &:hover{
+                                                    color: $gray-dark;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &#news{
+                    .container{
+                        .row{
+                            .right{
+                                .row{
+                                    .item{
+                                        height: auto;
+                                        margin-bottom: 15px;
+
+                                        .inner{
+                                            padding-bottom: 15px;
+
+                                            .mask{
+                                                height: 150px;
+
+                                            }
+
+                                            h2.post-heading{
+                                                margin-bottom: 15px;
+                                            }
+
+                                            a.btn-outline{
+                                                margin-left: 15px;
+                                            }
+                                        }
+
+                                        &:hover{
+                                            .inner{
+                                                -webkit-box-shadow:  0 4px 15px #000;
+                                                -moz-box-shadow:  0 4px 15px #000;
+                                                box-shadow:  0 4px 15px #000;
+
+                                                @include transition(500ms);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .slide-control{
+                            margin-top: 0px;
+                        }
+                    }
+                }
+
+                &#contact{
+                    background-image: url("../img/pattern.png");
+                    background-size: cover;
+                    background-position: center center;
+                    background-blend-mode: overlay;
+
+                    .container{
+
+                        h2{
+                            font-size: 1.5em;
+                            font-weight: 700;
+
+                            text-transform: uppercase;
+                        }
+
+                        b{
+                            font-size: 1em;
+                            font-weight: 500;
+
+                            text-transform: uppercase;
+                        }
+
+                        p{
+                            font-size: 1em;
+                            font-weight: 400;
+
+                            color: $gray-light;
+                        }
+
+                        .row{
+                            .map{
+                                iframe{
+                                    height: 190px !important;
+                                }
+
+                            }
+
+                            .left{
+
+                            }
+
+                            .right{
+                                .row{
+                                    .form-group{
+                                        .form-control{
+                                            -webkit-border-radius: 0;
+                                            -moz-border-radius: 0;
+                                            border-radius: 0;
+
+                                            border: none;
+                                            border-bottom: 1px solid #e7e7e7;
+
+                                            box-shadow: none;
+
+                                            color: #e7e7e7;
+
+                                            background-color: transparent;
+                                        }
+
+                                        textarea{
+                                            resize: none;
+                                        }
                                     }
                                 }
                             }
