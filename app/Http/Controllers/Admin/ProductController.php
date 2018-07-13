@@ -145,7 +145,13 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $detail = Product::where(['is_deleted' => 0, 'id' => $id])->first();
+        $detail['template'] = array_combine(json_decode($detail['template_title']), json_decode($detail['template_content']));
+        $type = Type::where(['is_deleted' => 0, 'id' => $detail['type_id']])->first();
+        $kind = Kind::where(['is_deleted' => 0, 'id' => $detail['kind_id']])->first();
+        // dd($detail);die;
+        return view('admin.product.detail', ['detail' => $detail, 'type' => $type, 'kind' => $kind]);
     }
 
     /**

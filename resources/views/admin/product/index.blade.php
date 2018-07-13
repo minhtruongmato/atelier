@@ -31,12 +31,12 @@
           <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
             <thead>
               <tr role="row">
-                <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Tên sản phẩm</th>
-                <th width="12%" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Giá thành</th>
-                <th width="6%" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Khuyến mại</th>
-                <th width="10%" class="hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Loại sản phẩm</th>
-                <th width="15%" class="hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Nhóm sản phẩm</th>
-                <th  width="35%" tabindex="0" aria-controls="example2" rowspan="1" colspan="2">Hành động</th>
+                <th>Tên sản phẩm</th>
+                <th>Giá thành</th>
+                <th>Khuyến mại</th>
+                <th>Loại sản phẩm</th>
+                <th>Nhóm sản phẩm</th>
+                <th width="17%">Hành động</th>
               </tr>
             </thead>
             <tbody>
@@ -49,20 +49,26 @@
                   <td>{{ (!empty($kind_collection[$item->kind_id]))? $kind_collection[$item->kind_id] : '' }}</td>
                   <td>
                     <form class="row" method="POST" action="{{ route('product.destroy', ['id' => $item->id]) }}" onsubmit = "return confirm('Chắc chắn xoá?')">
-                        <button class="btn btn-primary collapsed col-sm-2 col-xs-5 btn-margin" type="button" data-toggle="collapse" href="#{{ $item->id }}" aria-expanded="true" aria-controls="messageContent">Chi tiết</button>
+                        <a class="collapsed col-sm-1" data-toggle="collapse" href="#{{ $item->id }}" aria-expanded="true" aria-controls="messageContent" title="Xem thêm">
+                          <i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
+                        </a>
 
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <a href="{{ route('product.edit', ['id' => $item->id]) }}" class="btn btn-warning col-sm-2 col-xs-5 btn-margin">
-                        Sửa
+                        <a href="{{ route('product.show', ['id' => $item->id]) }}" class="col-sm-1" title="Chi tiết">
+                          <i class="fa fa-eye" aria-hidden="true" style="color: #398439"></i>
                         </a>
-                        {{--@if ($user->username != Auth::user()->username)--}}
-                         <button type="submit" class="btn btn-danger col-sm-2 col-xs-5 btn-margin">
-                          Xoá
+
+                        <a href="{{ route('product.edit', ['id' => $item->id]) }}" class="col-sm-1" title="chỉnh sửa">
+                          <i class="fa fa-pencil-square-o" aria-hidden="true" style="color: #f0ad4e"></i>
+                        </a>
+
+                        <button type="submit" class="col-sm-1" style="border: none; background: none" title="Xóa">
+                          <i class="fa fa-trash-o" aria-hidden="true" style="color: red"></i>
                         </button>
                         {{--@endif--}}
-                        <a href="{{ route('comment.fetchProductComment', ['id' => $item->id]) }}" class="btn btn-warning col-sm-2 col-xs-5 btn-margin">
-                        Bình luận
+                        <a href="{{ route('comment.fetchProductComment', ['id' => $item->id]) }}" class="col-sm-1" title="Bình luận">
+                          <i class="fa fa-commenting-o" aria-hidden="true" style="color: #204d74"></i>
                         </a>
                     </form>
                   </td>
@@ -71,7 +77,7 @@
                 <td colspan="7" class="no_border">
                     <div class="collapse" id="{{ $item->id }}">
                       <div clas="row">
-                          <div class="col-md-5">
+                          <div class="col-md-12">
                               <!-- <strong>Hình ảnh:</strong>
                               <br> -->
                               <?php $image = json_decode($item->image);?>
@@ -102,18 +108,6 @@
                               {{-- <div class="rateit" data-rateit-value="{{ ($item->rating)? $item->rating : 0 }}"  data-rateit-readonly="true"></div> --}}
                               {{-- ({{ $item->count }} lượt đánh giá) --}}
                           </div>
-                          <div class="col-md-7">
-                              <table style="width: 100%">
-                                  <tr>
-                                      <td style="width: 50%;"><strong>Giới thiệu</strong></td>
-                                      <td style="width: 50%;"><strong>Mô tả</strong></td>
-                                  </tr>
-                                  <tr>
-                                      <td>{!! $item->description !!}</td>
-                                      <td>{!! $item->content !!}</td>
-                                  </tr>
-                              </table>
-                          </div>
                       </div>
                     </div>
                 </td>
@@ -123,12 +117,12 @@
             @if(count($products) > 0)
             <tfoot>
               <tr>
-                <th width="10%" rowspan="1" colspan="1">Tên sản phẩm</th>
-                <th width="10%" rowspan="1" colspan="1">Giá thành</th>
-                <th width="20%" rowspan="1" colspan="1">  Khuyến mại</th>
-                <th class="hidden-xs" width="10%" rowspan="1" colspan="1">Đặc biệt?</th>
-                <th class="hidden-xs" width="5%" rowspan="1" colspan="1">Mới?</th>
-                <th rowspan="1" colspan="2">Hành động</th>
+                <th>Tên sản phẩm</th>
+                <th>Giá thành</th>
+                <th>Khuyến mại</th>
+                <th>Loại sản phẩm</th>
+                <th>Nhóm sản phẩm</th>
+                <th>Hành động</th>
               </tr>
             </tfoot>
             @endif
