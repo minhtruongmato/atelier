@@ -3,59 +3,153 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Input;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 use App\Introduce;
-use Response;
-use Illuminate\Support\Facades\Cookie;
+use File;
+use Illuminate\Support\Facades\Storage;
 
 class IntroduceController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
+     * [__construct description]
      */
     public function __construct(){
         $this->middleware('auth:admin');
-//        Cookie::queue('activeMenu', 'introduce', 45000);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $result = Introduce::where('is_deleted', 0)->paginate(10);
+        return view('admin.introduce.index', ['result' => $result]);
     }
 
-    public function introduce($type){
-        $result = DB::table('introduce')
-            ->select('*')
-            ->where('slug', '=', $type)
-            ->get();
-        return view('admin/introduce/index', [
-            'data' => $result[0]
-        ]);
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('admin.introduce.create');
     }
 
-    public function saveIntroduce(Request $request, $slug){
-        $keys = ['content'];
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $this->validateInput($request);
+        $uniqueSlug = $this->buildUniqueSlug('introduce', null, $request->slug);
+
+        $path = $request->file('image')->store('introduce');
+
+        $keys = ['title', 'content'];
         $input = $this->createQueryInput($keys, $request);
+        $input['image'] = $path;
+        $input['slug'] = $uniqueSlug;
 
-        // Upload image
+        $insert = Introduce::create($input);
+        if(!$insert){
+            Storage::delete($path);
+        }
+
+        return redirect()->intended('admin/introduce');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $detail = Introduce::where(['is_deleted' => 0, 'id' => $id])->first();
+        // echo '<pre>';
+        // dd($detail->toArray());die;
+        return view('admin.introduce.edit', ['detail' => $detail]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $this->validateInput($request, 'edit');
+        $detail = Introduce::where(['is_deleted' => 0, 'id' => $id])->first();
+        $uniqueSlug = $this->buildUniqueSlug('introduce', $request->id, $request->slug);
+        $keys = ['title', 'content'];
+        $input = $this->createQueryInput($keys, $request);
+        $input['slug'] = $uniqueSlug;
+
         if($request->file('image')){
             $path = $request->file('image')->store('introduce');
             $input['image'] = $path;
         }
 
-        Introduce::where('slug', $slug)
+        $update = Introduce::where('id', $id)
             ->update($input);
 
-        $item = $this->getBySlug($slug);
-        return view('admin/introduce/index', [
-            'data' => $item[0]
-        ]);
+        if(!$update){
+            Storage::delete($path);
+        }else{
+            Storage::delete($detail['image']);
+        }
+
+        return redirect()->intended('admin/introduce');
     }
 
-    public function getBySlug($slug){
-        $query = DB::table('introduce')
-            ->select('*')
-            ->where('slug', '=', $slug);
-        return $query->get();
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $destroy = Introduce::where('id', $id)->update(['is_deleted' => 1]);
+        if($destroy){
+            return redirect()->intended('admin/introduce');
+        }
+    }
+
+    private function validateInput($request, $action = '') {
+        $rules = [];
+
+        if($action != 'edit'){
+            $rules = [
+                    'title' => 'required|max:60',
+                    'slug' => 'required|max:60',
+                    'image' => 'required',
+                ];
+        }else{
+            $rules = [
+                    'title' => 'required|max:60',
+                    'slug' => 'required|max:60',
+                ];
+        }
+        $this->validate($request, $rules);
     }
 }

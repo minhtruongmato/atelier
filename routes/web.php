@@ -205,11 +205,8 @@ Route::prefix('admin')->group(function() {
     // Admin routes
     Route::group(array('namespace' => 'Admin'), function() {
         // Introduce routes
-        Route::get('introduce/aboutUs', 'IntroduceController@aboutUs');
-        Route::get('introduce/{type}', 'IntroduceController@introduce');
-        Route::post('introduce/saveIntroduce/{slug}', 'IntroduceController@saveIntroduce')->name('introduce.saveIntroduce');
-
-
+        Route::resource('introduce', 'IntroduceController');
+        Route::post('introduce/update/{id}', 'IntroduceController@update')->name('introduce.update');
 
         //image library
         Route::resource('library', 'LibraryController');

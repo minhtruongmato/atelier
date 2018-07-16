@@ -17,18 +17,6 @@
         </div>
       </div>
 
-      <!-- search form (Optional) -->
-      <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
-              <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-        </div>
-      </form>
-      <!-- /.search form -->
-
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
         <!-- Optionally, you can add icons to the links -->
@@ -39,21 +27,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="{{(Request::segment(3) == 've-chung-toi')? 'active' : '' }}">
-              <a href="{{ url('admin/introduce/ve-chung-toi') }}">Về chúng tôi</a>
+            <li class="{{(Request::segment(2) == 'introduce')? 'active' : '' }}">
+              <a href="{{ url('admin/introduce') }}">Danh sách bài viết giới thiệu</a>
             </li>
-            <li class="{{(Request::segment(3) == 'tam-nhin-chien-luoc')? 'active' : '' }}">
-              <a href="{{ url('admin/introduce/tam-nhin-chien-luoc') }}">Tầm nhìn chiến lược</a>
-            </li>
-            <li class="{{(Request::segment(3) == 'su-menh')? 'active' : '' }}">
-              <a href="{{ url('admin/introduce/su-menh') }}">Sứ mệnh</a>
-            </li>
-            <li class="{{(Request::segment(3) == 'chung-nhan')? 'active' : '' }}">
-              <a href="{{ url('admin/introduce/chung-nhan') }}">Chứng nhận</a>
-            </li>
-            <li class="{{(Request::segment(3) == 'dieu-khoan')? 'active' : '' }}">
-              <a href="{{ url('admin/introduce/dieu-khoan') }}">Điểu khoản</a
-                ></li>
             <li class="{{(Request::segment(2) == 'library' || Request::segment(2) == 'image')? 'active' : '' }}">
               <a href="{{ url('admin/library') }}">Thư viện ảnh</a>
             </li>
