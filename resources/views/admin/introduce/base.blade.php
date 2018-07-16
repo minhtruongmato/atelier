@@ -15,4 +15,4 @@
     <!-- /.content -->
     </div>
 @endsection
-<script src="{{ asset ("public/admin/js/introduce.js") }}" type="text/javascript"></script>
+{{-- <script src="{{ asset ("public/admin/js/introduce.js") }}" type="text/javascript"></script> --}}
