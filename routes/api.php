@@ -117,12 +117,16 @@ Route::prefix('v1')->group(function() {
         Route::resource('contact', 'ContactApiController');
         Route::get('sendmail', 'ContactApiController@sendMail')->name('subscrie.contact');
 
-        //contact routes
+        //quotation routes
         Route::resource('quotation', 'QuotationApiController');
         Route::get('sendMailQuotation', 'QuotationApiController@sendMail');
 
         //search routes
         Route::get('searchAllBlog', 'SearchApiController@searchAllBlog');
         Route::get('searchAllProduct', 'SearchApiController@searchAllProduct');
+
+        //trend routes
+        Route::get('trend-category', 'TrendApiController@fetchAllTrendCategory')->name('trend-category.fetchAllTrendCategory');
+        Route::get('trend', 'TrendApiController@fetchAllTrend')->name('trend.fetchAllTrend');
     });
 });
