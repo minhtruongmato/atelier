@@ -20,7 +20,7 @@ class IntroduceApiController extends Controller
             ->select('*')
             ->where('is_deleted', '=', 0)
             ->get();
-
+        
         if(!$result){
             return response()->json('No item found', 404);
         }
