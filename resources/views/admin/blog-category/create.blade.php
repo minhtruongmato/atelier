@@ -52,22 +52,6 @@
                                     @endif
                                 </div>
                             </div>
-                            <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
-                                <label for="type" class="col-md-4 control-label">Loại bài viết</label>
-
-                                <div class="col-md-6">
-                                    <select name="type">
-                                        <option value="">Chọn loại bài viết</option>
-                                        <option value="0" @if (old('type') == "0") selected="selected" @endif>Tư vấn</option>
-                                        <option value="1" @if (old('type') == "1") selected="selected" @endif>Tin tức</option>
-                                    </select>
-                                    @if ($errors->has('type'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('type') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
                             <div class="form-group">
                                 <label for="avatar" class="col-md-4 control-label" >Hình ảnh</label>
                                 <div class="col-md-6">

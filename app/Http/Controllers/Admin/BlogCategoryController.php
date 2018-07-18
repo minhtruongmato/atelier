@@ -58,7 +58,7 @@ class BlogCategoryController extends Controller
 
         // Upload image
         $path = $request->file('image')->store(($request->type == '0') ? 'advises/category' : 'news/category');
-        $keys = ['title', 'type', 'is_active', 'description'];
+        $keys = ['title', 'is_active', 'description'];
         $input = $this->createQueryInput($keys, $request);
         $input['image'] = $path;
         $input['slug'] = $uniqueSlug;
@@ -103,7 +103,7 @@ class BlogCategoryController extends Controller
     {
         $this->validateInput($request);
         $uniqueSlug = $this->buildUniqueSlug('blog_category', $id, $request->slug);
-        $keys = ['title', 'type', 'is_active', 'description'];
+        $keys = ['title', 'is_active', 'description'];
         $input = $this->createQueryInput($keys, $request);
         $input['slug'] = $uniqueSlug;
         if($request->file('image')){

@@ -19,4 +19,9 @@ class Blog extends Model
      * @var array
      */
     protected $guarded = [];
+
+    public function blog_category()
+    {
+        return $this->belongsTo('App\BlogCategory', 'category_id', 'id');
+    }
 }
