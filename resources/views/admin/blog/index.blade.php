@@ -30,8 +30,8 @@
                         <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
                             <thead>
                                 <tr role="row">
+                                    <th style="width: 150px">Hình Ảnh</th>
                                     <th>Tên xu hướng</th>
-                                    <th>Danh mục</th>
                                     <th>Sử dụng?</th>
                                     <th>Hành động</th>
                                 </tr>
@@ -39,8 +39,8 @@
                             <tbody>
                                 @foreach ($result as $item)
                                 <tr role="row" class="odd">
+                                    <td class="sorting_1"><img src="{{ asset('storage/app/' . $item['image']) }}" width="150px"></td>
                                     <td class="sorting_1">{{ $item->title }}</td>
-                                    <td class="sorting_1">{{ $item->blog_category->title }}</td>
                                     @if($item->is_active != 0)
                                     <td class="hidden-xs"><span class="glyphicon glyphicon-ok"></span></td>
                                     @else
@@ -65,8 +65,8 @@
                             @if(count($result) > 0)
                             <tfoot>
                                 <tr>
-                                    <th>Tên xu hướn</th>
-                                    <th>Danh mục</th>
+                                    <th>Hình Ảnh</th>
+                                    <th>Tên xu hướng</th>
                                     <th>Sử dụng?</th>
                                     <th>Hành động</th>
                                 </tr>

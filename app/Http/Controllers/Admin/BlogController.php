@@ -29,9 +29,7 @@ class BlogController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        $result = Blog::where('is_deleted', 0)->with(['blog_category' => function ($query) {
-            $query->where(['is_deleted' => 0]);
-        }])->paginate(10);
+        $result = Blog::where('is_deleted', 0)->paginate(10);
         // echo '<pre>';
         // print_r($result->toArray());die;
         return view('admin.blog.index', ['result' => $result]);
@@ -60,7 +58,7 @@ class BlogController extends Controller
         $uniqueSlug = $this->buildUniqueSlug('blog_category', null, $request->slug);
 
         $path = $request->file('image')->store('blogs');
-        $keys = ['category_id', 'title', 'description', 'content', 'is_active'];
+        $keys = ['title', 'description', 'content', 'is_active'];
         $input = $this->createQueryInput($keys, $request);
         $input['image'] = $path;
         $input['slug'] = $uniqueSlug;
@@ -110,7 +108,7 @@ class BlogController extends Controller
         $detail = Blog::where(['is_deleted' => 0, 'id' => $id])->first();
         $uniqueSlug = $this->buildUniqueSlug('blog', $id, $request->slug);
 
-        $keys = ['title', 'description', 'category_id', 'is_active'];
+        $keys = ['title', 'description', 'is_active'];
         $input = $this->createQueryInput($keys, $request);
         $input['slug'] = $uniqueSlug;
 
