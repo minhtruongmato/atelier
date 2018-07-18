@@ -64,7 +64,7 @@
     </style>
 </head>
 
-<body ng-app="hamruouthinh24App" ng-controller="MainController">
+<body ng-app="atelierApp" ng-controller="MainController">
 <!-- Main Header -->
 @include('layouts.header')
 @yield('content')

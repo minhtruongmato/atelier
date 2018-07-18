@@ -9,18 +9,7 @@
         var page = 1;
         $scope.count = 0;
         $urlSplit = $location.path().split("/");
-        if(($urlSplit[2] == 'tu-van' || $urlSplit[2] == 'tin-tuc') && $urlSplit.length >= 4){
-            var slug = $urlSplit[3];
-            $scope.slug = slug;
-
-        }
-
-        if($urlSplit[2] == 'tu-van' || $urlSplit[2] == 'tin-tuc'){
-            type = ($urlSplit[2] == 'tu-van') ? 0 : 1;
-            title = ($urlSplit[2] == 'tu-van') ? 'tư vấn' : 'tin tức';
-            $scope.title = title;
-            $scope.type = type;
-        }
+        slug = $urlSplit[4];
 
         $http({
             method: 'GET',
@@ -29,7 +18,7 @@
                 slug: slug
             }
         }).then(function(success){
-            $scope.selected = success.data[0];
+            $scope.selected = success.data;
             category_id = $scope.selected.category_id;
             blog_id = $scope.selected.id;
             $http({
@@ -40,7 +29,9 @@
                 }
             }).then(
                 function(res){
+                    
                     $scope.blogComments = res.data.result.data;
+                    console.log($scope.blogComments);
                     var check_page = res.data.total;
                     $scope.count = res.data.count;
                     if(page >= check_page || count == 0){
@@ -101,7 +92,6 @@
          */
         
         $scope.save = function(id){
-            var url = 'http://localhost/hamruouthinh24/';
             $("#sendComment").prop('disabled', true);
             $http({
                 method: 'GET',

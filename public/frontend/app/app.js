@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('hamruouthinh24App', ['ng', 'ngRoute', 'ngResource', 'ngMaterial', 'ui.bootstrap', 'ngCookies', 'jkAngularRatingStars'], function($interpolateProvider, $locationProvider){
+var app = angular.module('atelierApp', ['ng', 'ngRoute', 'ngResource', 'ngMaterial', 'ui.bootstrap', 'ngCookies', 'jkAngularRatingStars'], function($interpolateProvider, $locationProvider){
     $interpolateProvider.startSymbol('<%');
     $interpolateProvider.endSymbol('%>');
 
@@ -14,7 +14,7 @@ var app = angular.module('hamruouthinh24App', ['ng', 'ngRoute', 'ngResource', 'n
     //     $rootScope.countAddedProducts = 0;
     // })
     /* URL API */
-    .constant('API_URL', 'http://localhost/hamruouthinh24/api/v1/')
+    .constant('API_URL', 'http://localhost/atelier/api/v1/')
 
     .filter('commaToDot', [function() {
         return function(string) {

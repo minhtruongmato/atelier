@@ -133,27 +133,12 @@ Route::get('xac-nhan-thu-ruou', function(){
 /**
  * Frontend blog routes
  */
-Route::get('/tu-van', function () {
-    return view('list-advises');
-});
-
-Route::get('/tu-van/danh-muc/{slug}', function () {
-    return view('list-advises');
-});
 
 Route::get('/tin-tuc', function () {
     return view('list-news');
 });
 
-Route::get('/tin-tuc/danh-muc/{slug}', function () {
-    return view('list-news');
-});
-
-Route::get('/tu-van/{target}', function () {
-    return view('detail-blog');
-});
-
-Route::get('/tin-tuc/{target}', function () {
+Route::get('/tin-tuc/chi-tiet/{target}', function () {
     return view('detail-blog');
 });
 
