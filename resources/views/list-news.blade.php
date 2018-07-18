@@ -12,77 +12,31 @@
         </div>
     </section>
 
-    <section id="list-news" class="list-blogs">
+    <section id="list-news" class="list-blogs" ng-controller="BlogController">
         <div class="container-fluid">
             <div class="container">
                 <div class="row">
-                    <?php for ($i = 0; $i < 7; $i++) { ?>
-                    <div class="item col-sm-4 col-xs-12">
+                    <div class="item col-sm-4 col-xs-12" ng-repeat="blog in blogs">
                         <div class="inner">
-                            <a href="{{ url('') }}">
+                            <a href="#">
                                 <div class="mask">
-                                    <img src="{{ asset('public/frontend/img/demo-news-2.jpg') }}" alt="image news">
+                                    <img src="{{ asset('storage/app/') }}/<% blog.image %>" alt="image news">
                                 </div>
                             </a>
 
-                            <a href="{{ url('') }}">
-                                <h2 class="post-heading dark">Global Travel And Vacations Luxury Travel On A Tight Budget</h2>
+                            <a href="#">
+                                <h2 class="post-heading dark"><% blog.title %></h2>
                             </a>
-                            <p class="description">Nunc accumsan purus vel ex laoreet vulputate. In ac ex sed lectus sodales pellentesque vel at ante. Nam in eros eget dui elementum tincidunt. Phasellus at diam ac nisl aliquet congue. Suspendisse sollicitudin sagittis felis, at consectetur justo suscipit vel. Quisque ac velit eu metus cursus accumsan eget ac lacus. Integer lacinia ex mi, et interdum nunc consequat quis. Fusce consectetur dui at felis tincidunt, quis sollicitudin libero euismod. Ut bibendum lobortis odio.</p>
-                            <a href="{{ url('') }}" class="btn btn-outline" role="button">
+                            <p class="description"><% blog.description %></p>
+                            <a href="{{ url('tin-tuc/chi-tiet/') }}/<% blog.slug %>" class="btn btn-outline" role="button"  target="_self">
                                 See Detail
                             </a>
                         </div>
                     </div>
-                    <?php } ?>
                 </div>
             </div>
         </div>
     </section>
-
-    <!--
-    <section class="main_content" ng-controller="BlogController">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-9 col-sm-9 col-xs-12">
-                    <div class="row">
-
-                        <div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="new in news">
-                            <div class="inner">
-                                <div class="mask">
-                                    <img src="{{ asset('storage/app') }}/<% new.image %>" alt="ảnh mình họa bài viết">
-                                </div>
-
-                                <a href="#">
-                                    <h3><% new.title %></h3>
-                                </a>
-                                <br>
-                                <p ng-bind-html="$sce.trustAsHtml(new.description)"></p>
-                                <br>
-                                <a href="{{ url('/tin-tuc') }}/<% new.slug %>" class="btn btn-primary" target="_self" >Xem thêm <i class="fa fa-angle-double-right" aria-hidden="false"></i> </a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="nav_side col-md-3 col-sm-3 col-xs-12">
-                    <div class="panel panel-default">
-
-                        <div class="panel-heading">Danh mục tin tức</div>
-
-
-                        <ul class="list-group" ng-repeat="category in categories">
-                            <li class="list-group-item">
-                                <a href="{{ url('tin-tuc/danh-muc') }}/<% category.slug %>" target="_self" ><% category.title %></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    -->
 
     <script src="{{ asset ("public/frontend/app/controllers/blog.js") }}"></script>
     <script>

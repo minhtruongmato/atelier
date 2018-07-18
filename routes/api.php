@@ -53,13 +53,8 @@ Route::prefix('v1')->group(function() {
         /**
          * Blog API
          */
-        Route::resource('blog', 'BlogApiController');
-        Route::get('advises', 'BlogApiController@fetchAllAdvises')->name('blog.fetchAllAdvises');
-        Route::get('latest_advises', 'BlogApiController@fetchLatestAdvises')->name('blog.fetchLatestAdvises');
-        Route::get('news', 'BlogApiController@fetchAllNews')->name('blog.fetchAllNews');
-        Route::get('latest_news', 'BlogApiController@fetchLatestNews')->name('blog.fetchLatestNews');
-        Route::get('category', 'BlogApiController@fetchCategoryByType')->name('blog.fetchCategoryByType');
-        Route::get('blog_category', 'BlogApiController@fetchBlogByCategory')->name('blog.fetchCafetchBlogByCategorytegoryByType');
+        
+        Route::get('fetch_all_blog', 'BlogApiController@fetchAllBlog')->name('blog.fetchAllBlog');
         Route::get('detail', 'BlogApiController@detail')->name('blog.detail');
 
         /**
