@@ -38,7 +38,6 @@
             <thead>
               <tr role="row">
                 <th>Tên danh mục</th>
-                <th>Loại bài viết</th>
                 <th>Sử dụng?</th>
                 <th>Hành động</th>
               </tr>
@@ -47,7 +46,6 @@
             @foreach ($categories as $item)
                 <tr role="row" class="odd">
                   <td class="sorting_1">{{ $item->title }}</td>
-                  <td class="sorting_1">{{ ($item->type == '0') ? 'Tư vấn' : 'Tin tức' }}</td>
                   @if($item->is_active != 0)
                   <td class="hidden-xs"><span class="glyphicon glyphicon-ok"></span></td>
                   @else
@@ -74,7 +72,6 @@
             <tfoot>
               <tr>
                 <th>Tên danh mục</th>
-                <th>Loại bài viết</th>
                 <th>Sử dụng?</th>
                 <th>Hành động</th>
               </tr>

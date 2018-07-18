@@ -250,8 +250,6 @@ Route::prefix('admin')->group(function() {
 
         // Blog routes
         Route::resource('blog', 'BlogController');
-        Route::get('advise', 'BlogController@advise')->name('blog.advise');
-        Route::get('news', 'BlogController@news')->name('blog.news');
         Route::post('blog/search', 'BlogController@search')->name('blog.search');
         Route::post('blog/store', 'BlogController@store')->name('blog.store');
         Route::post('blog/update/{id}', 'BlogController@update')->name('blog.update');
