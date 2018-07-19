@@ -26,13 +26,19 @@ class ImageController extends Controller
 	public function index(){
         $id = $_GET['id'];
         $library = Library::find($id);
-        $images = DB::table('image')->where(['library_id' => $id])->get();
+        $images = DB::table('image')->where(['library_id' => $id])->orderBy('sort', 'asc')->get();
 
 		return view('admin/image/index', ['images' => $images, 'library' => $library, 'library_id' => $id]);
 	}
 
     public function create()
     {
+        // return view('admin/image/create');
+    }
+
+    public function show($id)
+    {
+        echo 2;die;
         // return view('admin/image/create');
     }
 
@@ -48,12 +54,37 @@ class ImageController extends Controller
         if($request->hasFile('image')){
             $image = $files->getClientOriginalName();
         }
-        $data = ['library_id' => $id, 'image' => $image];
+        $data = ['library_id' => $id, 'image' => $image, 'description' => $request->description];
         if(DB::table('image')->insert($data)){
             $files->move($path,$image);
         }
         return redirect()->route('image.index', ['id' => $id]);
         
+    }
+
+    public function update(Request $request, $id)
+    {
+        $library_id = $request->library_id;
+        $files = Input::file('image');
+        $image = Image::find($id);
+        $library = Library::find($image->library_id);
+        $slug = $library->slug;
+        $path = base_path() . '/storage/app/library/'. $slug .'/'. $image->image;
+        $data = ['description' => $request->description];
+        if($request->hasFile('image')){
+            $image = $files->hashName();
+            $data['image'] = $image;
+        }
+        if(Image::where('id', $id)->update($data)){
+            if($request->hasFile('image')){
+                $files->store('library/' . $slug);
+                File::delete($path);
+            }
+            
+        }
+
+        return redirect()->route('image.index', ['id' => $library_id]);
+
     }
 
     public function destroy($id){
@@ -70,6 +101,16 @@ class ImageController extends Controller
         }
         return redirect()->route('image.index', ['id' => $library_id]);
     }
+
+    public function sort(){
+        $params = [];
+        parse_str(Input::get('sort'), $params);
+        $i = 1;
+        foreach($params as $value){
+            Image::where('id', $value[0])->update(['sort' => $i]);
+            $i++;
+        }
+   }
 }
 
 
