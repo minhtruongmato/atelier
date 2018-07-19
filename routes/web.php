@@ -214,8 +214,10 @@ Route::prefix('admin')->group(function() {
         Route::post('library/update/{id}', 'LibraryController@update')->name('library.update');
 
         // list image
+        Route::get('image/sort', 'ImageController@sort')->name('image.sort');
         Route::resource('image', 'ImageController');
         Route::post('image/store/{id}', 'ImageController@store')->name('image.store');
+        Route::post('image/update/{id}', 'ImageController@update')->name('image.update');
 
         //Type routes
         Route::resource('type', 'TypeController');
