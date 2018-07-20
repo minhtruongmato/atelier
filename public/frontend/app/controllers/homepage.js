@@ -1,5 +1,9 @@
 (function(){
     app.controller('HomepageController', function($scope, $http, API_URL, $uibModal, $mdDialog, menuProductFactory, productsFactory, listNewsFactory, listAdvisesFactory, $sce){
+        $scope.libraries = [];
+        $scope.categoryTrendForHomePage = [];
+
+
         $scope.products = [];
         $scope.discounts = [];
         $scope.menuProduct = [];
@@ -16,50 +20,72 @@
             });
 
         // Fetch discount products
+        // $http({
+        //     method: 'GET',
+        //     url: API_URL + 'discount_product'
+        // }).then(function(success){
+        //     $scope.discounts = success.data;
+        //     $http({
+        //                 method: 'GET',
+        //                 url: API_URL + 'get_all_product',
+        //             }).then(function(response){
+        //                 $scope.addToLikeProduct = function(product_id){
+        //                     $http({
+        //                         method: 'GET',
+        //                         url: API_URL + 'user_like_product',
+        //                         params: {
+        //                             product_id: product_id
+        //                         }
+        //                     }).then(function(response){
+        //                         for(i = 0; i<$scope.discounts.length ; i++){
+        //                             if($scope.discounts[i].id == product_id){
+        //                                 if($scope.discounts[i].like == "bỏ yêu thích"){
+        //                                     $scope.discounts[i].like = "lưu yêu thích";
+        //                                 }else{
+        //                                     $scope.discounts[i].like = "bỏ yêu thích";
+        //                                 }
+        //                                 break;
+        //                             }
+        //                         }
+        //                     }, function(error){
+        //                         console.log(error);
+        //                     });
+        //                 };
+        //                 angular.forEach($scope.discounts, function(value, key){
+        //                     for(i = 0; i<response.data.result.length ; i++){
+        //                       if(value.id == response.data.result[i].product_id && response.data.result[i].user_id == document.getElementById("user_id").innerHTML){
+        //                          $scope.discounts[key].like = "bỏ yêu thích";
+        //                          break;
+        //                       }else{
+        //                          $scope.discounts[key].like = "lưu yêu thích";
+        //                       }
+        //                     }
+        //                 });     
+        //             }, function(error){
+                        
+        //             });
+        // }, function(error){
+
+        // });
+
+        // Fetch library
         $http({
             method: 'GET',
-            url: API_URL + 'discount_product'
+            url: API_URL + 'library'
         }).then(function(success){
-            $scope.discounts = success.data;
-            $http({
-                        method: 'GET',
-                        url: API_URL + 'get_all_product',
-                    }).then(function(response){
-                        $scope.addToLikeProduct = function(product_id){
-                            $http({
-                                method: 'GET',
-                                url: API_URL + 'user_like_product',
-                                params: {
-                                    product_id: product_id
-                                }
-                            }).then(function(response){
-                                for(i = 0; i<$scope.discounts.length ; i++){
-                                    if($scope.discounts[i].id == product_id){
-                                        if($scope.discounts[i].like == "bỏ yêu thích"){
-                                            $scope.discounts[i].like = "lưu yêu thích";
-                                        }else{
-                                            $scope.discounts[i].like = "bỏ yêu thích";
-                                        }
-                                        break;
-                                    }
-                                }
-                            }, function(error){
-                                console.log(error);
-                            });
-                        };
-                        angular.forEach($scope.discounts, function(value, key){
-                            for(i = 0; i<response.data.result.length ; i++){
-                              if(value.id == response.data.result[i].product_id && response.data.result[i].user_id == document.getElementById("user_id").innerHTML){
-                                 $scope.discounts[key].like = "bỏ yêu thích";
-                                 break;
-                              }else{
-                                 $scope.discounts[key].like = "lưu yêu thích";
-                              }
-                            }
-                        });     
-                    }, function(error){
-                        
-                    });
+            $scope.libraries = success.data;
+        }, function(error){
+
+        });
+
+
+        // Fetch trend
+        $http({
+            method: 'GET',
+            url: API_URL + 'trend-category-for-homepage'
+        }).then(function(success){
+            $scope.categoryTrendForHomePage = success.data;
+            console.log($scope.categoryTrendForHomePage);
         }, function(error){
 
         });
@@ -82,14 +108,7 @@
 
         });
 
-        $http({
-            method: 'GET',
-            url: API_URL + 'latest_advises'
-        }).then(function(success){
-            $scope.latestAdvises = success.data;
-        }, function(error){
-
-        });
+        
 
         $scope.open = function(item){
             $scope.selected = item;

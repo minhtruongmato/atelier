@@ -33,7 +33,7 @@
         </div>
     </section>
 
-    <section id="list-trends">
+    <section id="list-trends" ng-controller="TrendController">
         <div class="container">
             <div class="grid">
                 <div class="grid-sizer"></div>
@@ -43,41 +43,64 @@
                     </div>
                 </div>
 
-                <?php for ($i = 0; $i < 6; $i++) { ?>
-                <div class="grid-item wow fadeInUp">
+                <div class="grid-item wow fadeInUp" ng-class="($index % 2 = 0) ? 'grid-item-height-2' : '' " ng-repeat="trend in trends" id="<% $index %>">
                     <a href="{{ url('') }}">
                         <div class="inner">
                             <div class="mask">
-                                <img src="{{ asset('public/frontend/img/demo-trends.jpg') }}" alt="image trend">
+                                <img src="{{ asset('storage/app/trends') }}<% '/' + trend.slug + '/' + trend.image %>" alt="image trend">
 
                                 <div class="content">
-                                    <h4 class="post-subheading dark">Trends Category</h4>
-                                    <h2 class="post-heading dark">Fusce aliquet, eros eget egestas efficitur, lorem dolor fermentum elit, a imperdiet purus libero eget elit. In vel consequat ante</h2>
+                                    <h4 class="post-subheading dark"><% trend.cate_title %></h4>
+                                    <h2 class="post-heading dark"><% trend.title %></h2>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
-
-                <div class="grid-item grid-item-height-2 wow fadeInUp">
-                    <a href="{{ url('') }}}">
-                        <div class="inner">
-                            <div class="mask">
-                                <img src="{{ asset('public/frontend/img/demo-product-1.jpg') }}" alt="image trend">
-
-                                <div class="content">
-                                    <h4 class="post-subheading dark">Trends Category</h4>
-                                    <h2 class="post-heading dark">Fusce aliquet, eros eget egestas efficitur, lorem dolor fermentum elit, a imperdiet purus libero eget elit. In vel consequat ante</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <?php } ?>
             </div>
+
+
+        <?php for ($i = 0; $i < 6; $i++) { ?>
+            <div class="grid-item wow fadeInUp">
+                <a href="{{ url('') }}">
+                    <div class="inner">
+                        <div class="mask">
+                            <img src="{{ asset('public/frontend/img/demo-trends.jpg') }}" alt="image trend">
+
+                            <div class="content">
+                                <h4 class="post-subheading dark">Trends Category</h4>
+                                <h2 class="post-heading dark">Fusce aliquet, eros eget egestas efficitur, lorem dolor fermentum elit, a imperdiet purus libero eget elit. In vel consequat ante</h2>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="grid-item grid-item-height-2 wow fadeInUp">
+                <a href="{{ url('') }}}">
+                    <div class="inner">
+                        <div class="mask">
+                            <img src="{{ asset('public/frontend/img/demo-product-1.jpg') }}" alt="image trend">
+
+                            <div class="content">
+                                <h4 class="post-subheading dark">Trends Category</h4>
+                                <h2 class="post-heading dark">Fusce aliquet, eros eget egestas efficitur, lorem dolor fermentum elit, a imperdiet purus libero eget elit. In vel consequat ante</h2>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        <?php } ?>
+
+
+
+
+
+
+
         </div>
     </section>
-
+    <script src="{{ asset ("public/frontend/app/controllers/trend.js") }}"></script>
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
     <script>
         $('.grid').isotope({
