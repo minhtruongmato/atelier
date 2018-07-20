@@ -281,7 +281,11 @@ header.header {
   width: 100%;
   padding-left: 0;
   padding-right: 0;
-  background-color: rgba(255, 255, 255, 0.6); }
+  background-color: rgba(255, 255, 255, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1011; }
   header.header .left .logo {
     width: 130px;
     height: 130px;
@@ -466,12 +470,6 @@ Author: hung.luong@matocreative.vn
 
 ===================================
  */
-header.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1011; }
-
 #homepage #fullpage .section {
   width: 100%;
   height: 100vh;
@@ -908,123 +906,6 @@ Author: hung.luong@matocreative.vn
 
 ===================================
  */
-/*
-EMBED STYLE
- */
-/*
-===================================
-MAIN SETTINGS FOR ALL PAGES
-
-Author: hung.luong@matocreative.vn
-
-===================================
- */
-.nav-side {
-  position: fixed;
-  top: 50%;
-  right: 16px;
-  z-index: 1010;
-  width: 32px;
-  height: 350px;
-  margin-top: -125px; }
-  .nav-side ul {
-    list-style: none;
-    width: 350px;
-    position: absolute;
-    top: 0;
-    left: 100%;
-    -webkit-transform: rotateZ(90deg);
-    -moz-transform: rotateZ(90deg);
-    -ms-transform: rotateZ(90deg);
-    -o-transform: rotateZ(90deg);
-    transform: rotateZ(90deg);
-    -webkit-transform-origin: top left;
-    -moz-transform-origin: top left;
-    -ms-transform-origin: top left;
-    -o-transform-origin: top left;
-    transform-origin: top left;
-    font-size: 1em; }
-    .nav-side ul li {
-      display: inline-block;
-      padding-right: 10px; }
-      .nav-side ul li .line {
-        width: 40px;
-        height: 2px;
-        background-color: #333;
-        margin-bottom: 3px; }
-      .nav-side ul li.re-rotate {
-        -webkit-transform: rotate(-90deg);
-        -moz-transform: rotate(-90deg);
-        -ms-transform: rotate(-90deg);
-        -o-transform: rotate(-90deg);
-        transform: rotate(-90deg);
-        padding-left: 3px; }
-  .nav-side.dark ul {
-    color: #333; }
-    .nav-side.dark ul li a {
-      color: #333; }
-      .nav-side.dark ul li a:hover {
-        color: #333; }
-    .nav-side.dark ul li .line {
-      background-color: #333; }
-  .nav-side.light ul {
-    color: #fff; }
-    .nav-side.light ul li a {
-      color: #fff; }
-      .nav-side.light ul li a:hover {
-        color: #fff; }
-    .nav-side.light ul li .line {
-      background-color: #fff; }
-
-/*
-MAIN CONTENT
- */
-.mask {
-  overflow: hidden; }
-  .mask img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; }
-
-button {
-  text-align: left; }
-  button.outline {
-    border: 2px solid #fff;
-    padding: 15px;
-    position: relative;
-    background-color: transparent; }
-    button.outline .icon {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      width: 100%;
-      padding: 15px;
-      font-size: 1.25em;
-      color: #fff; }
-    button.outline .title {
-      position: absolute;
-      bottom: 0px;
-      left: 0px;
-      width: 100%;
-      padding: 15px; }
-      button.outline .title h4 {
-        font-size: 1em;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: #fff; }
-    button.outline:hover {
-      background-color: #fff; }
-      button.outline:hover .icon {
-        color: #333; }
-      button.outline:hover .title h4 {
-        color: #333; }
-
-/*
-STYLE
- */
-header.header {
-  position: static; }
-
 section.section-header .container-fluid {
   padding-left: 0;
   padding-right: 0; }
@@ -1123,120 +1004,6 @@ Author: hung.luong@matocreative.vn
 /*
 EMBED STYLE
  */
-/*
-===================================
-MAIN SETTINGS FOR ALL PAGES
-
-Author: hung.luong@matocreative.vn
-
-===================================
- */
-.nav-side {
-  position: fixed;
-  top: 50%;
-  right: 16px;
-  z-index: 1010;
-  width: 32px;
-  height: 350px;
-  margin-top: -125px; }
-  .nav-side ul {
-    list-style: none;
-    width: 350px;
-    position: absolute;
-    top: 0;
-    left: 100%;
-    -webkit-transform: rotateZ(90deg);
-    -moz-transform: rotateZ(90deg);
-    -ms-transform: rotateZ(90deg);
-    -o-transform: rotateZ(90deg);
-    transform: rotateZ(90deg);
-    -webkit-transform-origin: top left;
-    -moz-transform-origin: top left;
-    -ms-transform-origin: top left;
-    -o-transform-origin: top left;
-    transform-origin: top left;
-    font-size: 1em; }
-    .nav-side ul li {
-      display: inline-block;
-      padding-right: 10px; }
-      .nav-side ul li .line {
-        width: 40px;
-        height: 2px;
-        background-color: #333;
-        margin-bottom: 3px; }
-      .nav-side ul li.re-rotate {
-        -webkit-transform: rotate(-90deg);
-        -moz-transform: rotate(-90deg);
-        -ms-transform: rotate(-90deg);
-        -o-transform: rotate(-90deg);
-        transform: rotate(-90deg);
-        padding-left: 3px; }
-  .nav-side.dark ul {
-    color: #333; }
-    .nav-side.dark ul li a {
-      color: #333; }
-      .nav-side.dark ul li a:hover {
-        color: #333; }
-    .nav-side.dark ul li .line {
-      background-color: #333; }
-  .nav-side.light ul {
-    color: #fff; }
-    .nav-side.light ul li a {
-      color: #fff; }
-      .nav-side.light ul li a:hover {
-        color: #fff; }
-    .nav-side.light ul li .line {
-      background-color: #fff; }
-
-/*
-MAIN CONTENT
- */
-.mask {
-  overflow: hidden; }
-  .mask img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; }
-
-button {
-  text-align: left; }
-  button.outline {
-    border: 2px solid #fff;
-    padding: 15px;
-    position: relative;
-    background-color: transparent; }
-    button.outline .icon {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      width: 100%;
-      padding: 15px;
-      font-size: 1.25em;
-      color: #fff; }
-    button.outline .title {
-      position: absolute;
-      bottom: 0px;
-      left: 0px;
-      width: 100%;
-      padding: 15px; }
-      button.outline .title h4 {
-        font-size: 1em;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: #fff; }
-    button.outline:hover {
-      background-color: #fff; }
-      button.outline:hover .icon {
-        color: #333; }
-      button.outline:hover .title h4 {
-        color: #333; }
-
-/*
-STYLE
- */
-header.header {
-  position: static; }
-
 section.section-header .container-fluid {
   padding-left: 0;
   padding-right: 0; }

@@ -5,7 +5,7 @@
         </a>
     </div>
 
-    <div class="center col-sm-7 col-xs-10">
+    <div class="center col-sm-8 col-xs-10">
         <a href="" class="btn-nav-expand" role="button" id="btn-nav-expand">
             <span class="nav-icon"></span>
         </a>
