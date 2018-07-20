@@ -16,6 +16,9 @@
     <link href="{{ asset("public/frontend/lib/fontAwesome/css/font-awesome.min.css") }}" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <!-- STYLE -->
+    <link href="{{ asset("public/frontend/scss/style.css") }}" rel="stylesheet">
+
 
     <script src="{{ asset ("public/frontend/lib/jquery/jquery.min.js") }}"></script>
     <script src="{{ asset ("public/frontend/lib/bootstrap/js/bootstrap.min.js") }}"></script>

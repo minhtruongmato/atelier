@@ -1,23 +1,21 @@
 /*
 Error: Undefined variable: "$gray-dark".
-        on line 73 of main.scss
-        from line 14 of homepage.scss
+        on line 100 of header.scss
 
-68:                     color: #ccc;
-69:                 }
-70:             }
-71: 
-72:             &#slider{
-73:                 .slide{
-74: 
-75:                     .carousel-inner{
-76:                         .item{
-77:                             .mask{
-78:                                 width: 100%;
+95:         }
+96: 
+97:         nav{
+98:             ul{
+99:                 li{
+100:                     color: $gray-dark;
+101: 
+102:                     a{
+103:                         color: $gray-dark;
+104: 
+105:                         &:hover{
 
 Backtrace:
-main.scss:73
-homepage.scss:14
+header.scss:100
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/script/tree/node.rb:50:in `perform'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -60,13 +58,22 @@ homepage.scss:14
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:135:in `with_frame'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:79:in `with_base'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:329:in `block (2 levels) in visit_import'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:329:in `map'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:329:in `block in visit_import'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:88:in `block in with_import'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:444:in `map'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:79:in `block in with_base'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:135:in `with_frame'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:88:in `with_import'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:326:in `visit_import'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:79:in `with_base'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:444:in `map'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:36:in `visit'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:79:in `block in with_base'
@@ -104,4 +111,4 @@ homepage.scss:14
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$gray-dark\".\A         on line 73 of main.scss\A         from line 14 of homepage.scss\A \A 68:                     color: #ccc;\A 69:                 }\A 70:             }\A 71: \A 72:             &#slider{\A 73:                 .slide{\A 74: \A 75:                     .carousel-inner{\A 76:                         .item{\A 77:                             .mask{\A 78:                                 width: 100%;"; }
+  content: "Error: Undefined variable: \"$gray-dark\".\A         on line 100 of header.scss\A \A 95:         }\A 96: \A 97:         nav{\A 98:             ul{\A 99:                 li{\A 100:                     color: $gray-dark;\A 101: \A 102:                     a{\A 103:                         color: $gray-dark;\A 104: \A 105:                         &:hover{"; }
