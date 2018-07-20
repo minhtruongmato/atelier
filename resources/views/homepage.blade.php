@@ -1,6 +1,5 @@
 @extends('layouts.frontend-template')
 @section('content')
-    <link href="{{ asset("public/frontend/scss/homepage.css")}}" rel="stylesheet" type="text/css" />
     <link href="{{ asset("public/frontend/lib/fullpage/css/jquery.fullpage.min.css")}}" rel="stylesheet" type="text/css" />
 
     <div id="homepage">
