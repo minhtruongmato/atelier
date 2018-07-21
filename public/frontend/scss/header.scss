@@ -159,6 +159,16 @@ header.header{
     }
 }
 
+@media (max-width: 1600px) and (min-width: 992px){
+    header.header{
+        .left{
+            .logo{
+                margin-left: 0;
+            }
+        }
+    }
+}
+
 @media (max-width: 768px) {
     header.header{
         background-color: transparent;

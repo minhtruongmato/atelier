@@ -2,6 +2,9 @@
 @section('content')
     <link href="{{ asset("public/frontend/lib/fullpage/css/jquery.fullpage.min.css")}}" rel="stylesheet" type="text/css" />
 
+    <!-- OWL CAROUSEL -->
+    <link href="{{ asset("public/frontend/lib/owl-carousel/css/owl.carousel.min.css")}}" rel="stylesheet" type="text/css" />
+
     <div id="homepage">
         <div id="fullpage">
             <div class="section" id="slider">
@@ -9,19 +12,33 @@
 
                     <ul class="slide-control">
                         <li data-target="#top-slider" data-slide-to="0">
-                            <div class="icon">
-                                <i class="fa fa-plus" aria-hidden="false"></i>
-                            </div>
-                            <div class="title">
-                                <h4>the future of loft living</h4>
+                            <div class="inner">
+                                <div class="icon">
+                                    <i class="fa fa-2x fa-plus" aria-hidden="false"></i>
+                                </div>
+                                <div class="title">
+                                    <h4>the future of loft living</h4>
+                                </div>
                             </div>
                         </li>
                         <li data-target="#top-slider" data-slide-to="1">
-                            <div class="icon">
-                                <i class="fa fa-plus" aria-hidden="false"></i>
+                            <div class="inner">
+                                <div class="icon">
+                                    <i class="fa fa-2x fa-plus" aria-hidden="false"></i>
+                                </div>
+                                <div class="title">
+                                    <h4>the future of loft living</h4>
+                                </div>
                             </div>
-                            <div class="title">
-                                <h4>the future of loft living</h4>
+                        </li>
+                        <li data-target="#top-slider" data-slide-to="1">
+                            <div class="inner">
+                                <div class="icon">
+                                    <i class="fa fa-2x fa-plus" aria-hidden="false"></i>
+                                </div>
+                                <div class="title">
+                                    <h4>the future of loft living</h4>
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -57,6 +74,8 @@
                     </div>
                 </div>
             </div>
+
+
             <div class="section" id="about">
                 <div class="title-side">
                     <h1>About Us</h1>
@@ -72,18 +91,18 @@
                                 <p>Vivamus gravida arcu tortor, a auctor velit mattis non. Vivamus tristique faucibus pellentesque. Nulla at porta lorem. Aliquam elit diam, facilisis at elementum viverra, auctor a risus. Suspendisse nisi quam, mollis at turpis eu, dignissim condimentum massa. Donec vulputate ipsum eu velit vulputate, a viverra nibh sagittis. Sed quam est, semper laoreet viverra ut, facilisis vel nibh. In hac habitasse platea dictumst. Duis viverra arcu sit amet efficitur convallis. Nunc vestibulum faucibus erat, ut molestie lacus rhoncus ut. Ut mattis nisl nec metus placerat, ac consequat orci elementum. Nunc ut tortor auctor, molestie mauris vel, tristique erat.</p>
                                 <ol>
                                     <li>
-                                        <a href="{{ url('') }}">Tổng quan</a>
+                                        <a href="{{ url('') }}" target="_self">Tổng quan</a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('') }}">Tầm nhìn & Sứ mệnh</a>
+                                        <a href="{{ url('') }}" target="_self">Tầm nhìn & Sứ mệnh</a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('') }}">Khách hàng của chúng tôi</a>
+                                        <a href="{{ url('') }}" target="_self">Khách hàng của chúng tôi</a>
                                     </li>
                                 </ol>
                             </div>
                             <div class="foot">
-                                <a href="{{ url('') }}" class="btn btn-primary" role="button">
+                                <a href="{{ url('') }}" class="btn btn-primary" role="button" target="_self">
                                     Khám phá ngay
                                 </a>
                             </div>
@@ -133,10 +152,9 @@
 
                                             <h1 class="heading light">Bed Room</h1>
 
-                                            <a href="" class="btn btn-default" role="button">Xem chi tiết</a>
+                                            <a href="" class="btn btn-default" role="button" target="_self">Xem chi tiết</a>
                                         </div>
                                     </div>
-                                    ...
                                 </div>
 
                             </div>
@@ -196,7 +214,7 @@
                         <?php for ($i = 0; $i < 8; $i++) { ?>
                         <div class="item col-sm-2 col-xs-4">
                             <div class="inner">
-                                <a href="{{ url('') }}">
+                                <a href="{{ url('') }}" target="_self">
                                     <div class="icon">
                                         <i class="fa fa-plus fa-2x" aria-hidden="false"></i>
                                     </div>
@@ -210,7 +228,7 @@
 
                         <div class="item col-sm-2 col-xs-4">
                             <div class="inner">
-                                <a href="{{ url('') }}">
+                                <a href="{{ url('') }}" target="_self">
                                     <div class="icon">
                                         <i class="fa fa-plus fa-2x" aria-hidden="false"></i>
                                     </div>
@@ -224,6 +242,8 @@
                 </div>
             </div>
 
+            <!-- TEMPORARY DELETE -->
+            <!--
             <div class="section" id="creative">
                 <div class="title-side">
                     <h1>Creative</h1>
@@ -253,6 +273,7 @@
                     </div>
                 </div>
             </div>
+            -->
 
             <div class="section" id="news">
                 <div class="title-side">
@@ -269,37 +290,34 @@
                                     <h1 class="heading light">Tin tức</h1>
                                 </div>
                             </div>
+
+                            <a href="{{ url('') }}" class="btn btn-primary" role="button" target="_self">
+                                Xem tất cả tin tức
+                            </a>
+
                         </div>
 
                         <div class="right col-sm-8 col-xs-12">
                             <div class="row">
 
-                                <?php for ($i = 0; $i < 2; $i++) { ?>
-                                <div class="item col-sm-6 col-xs-12 wow fadeInUp">
-                                    <div class="inner">
-                                        <div class="mask">
-                                            <img src="{{ asset('public/frontend/img/demo-news-2.jpg') }}" alt="image news">
+                                <div class="owl-carousel">
+                                    <?php for ($i = 0; $i < 5; $i++) { ?>
+                                    <div class="item wow fadeInUp">
+                                        <div class="inner">
+                                            <div class="mask">
+                                                <img src="{{ asset('public/frontend/img/demo-news-2.jpg') }}" alt="image news">
+                                            </div>
+
+                                            <h2 class="post-heading dark">Global Travel And Vacations Luxury Travel On A Tight Budget</h2>
+                                            <p class="description hidden-xs">Nunc accumsan purus vel ex laoreet vulputate. In ac ex sed lectus sodales pellentesque vel at ante. Nam in eros eget dui elementum tincidunt. Phasellus at diam ac nisl aliquet congue. Suspendisse sollicitudin sagittis felis, at consectetur justo suscipit vel. Quisque ac velit eu metus cursus accumsan eget ac lacus. Integer lacinia ex mi, et interdum nunc consequat quis. Fusce consectetur dui at felis tincidunt, quis sollicitudin libero euismod. Ut bibendum lobortis odio.</p>
+                                            <a href="{{ url('') }}" class="btn btn-outline" role="button" target="_self">
+                                                Xem chi tiết
+                                            </a>
                                         </div>
-
-                                        <h2 class="post-heading dark">Global Travel And Vacations Luxury Travel On A Tight Budget</h2>
-                                        <p class="description hidden-xs">Nunc accumsan purus vel ex laoreet vulputate. In ac ex sed lectus sodales pellentesque vel at ante. Nam in eros eget dui elementum tincidunt. Phasellus at diam ac nisl aliquet congue. Suspendisse sollicitudin sagittis felis, at consectetur justo suscipit vel. Quisque ac velit eu metus cursus accumsan eget ac lacus. Integer lacinia ex mi, et interdum nunc consequat quis. Fusce consectetur dui at felis tincidunt, quis sollicitudin libero euismod. Ut bibendum lobortis odio.</p>
-                                        <a href="{{ url('') }}" class="btn btn-outline" role="button">
-                                            Xem chi tiết
-                                        </a>
                                     </div>
+                                    <?php } ?>
                                 </div>
-                                <?php } ?>
                             </div>
-                        </div>
-
-                        <div class="slide-control col-xs-12">
-                            <ul class="list-inline">
-                                <li>
-                                    <a href="{{ url('') }}" class="btn btn-primary" role="button">
-                                        Xem tất cả tin tức
-                                    </a>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -355,24 +373,29 @@
     </div>
 
     <script src="{{ asset ("public/frontend/lib/fullpage/js/jquery.fullpage.min.js") }}"></script>
+    <script src="{{ asset ("public/frontend/lib/owl-carousel/js/owl.carousel.min.js") }}"></script>
     <script>
         $('#fullpage').fullpage({
             scrollBar: true
         });
 
-        // var windowHeight = $(window).height();
-        // var top = $(window).scrollTop();
-        //
-        //
-        // $(window).scroll(function () {
-        //     'use strict';
-        //     console.log(top);
-        // //     if ($(window).scrollTop() > 100) {
-        // //
-        //         // $('header').removeClass('dark');
-        //         // $('header').addClass('light');
-        // //     }
-        // });
+        $(document).ready(function(){
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                responsiveClass: true,
+                responsive:{
+                   0: {
+                       items: 1,
+                       nav: true
+                    },
+
+                    768: {
+                       items: 2,
+                       nav: true
+                    }
+                }
+            });
+        });
     </script>
 
     <!-- Animate CSS -->
