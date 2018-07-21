@@ -70,7 +70,7 @@ header.header{
                                 width: 50%;
 
                                 left: 0;
-                                top: 43%;
+                                top: 50%;
 
                                 text-align: left;
 
@@ -139,58 +139,68 @@ header.header{
                         padding-bottom: 100px;
                         padding-left: 100px;
 
+                        margin-left: -15px;
+
                         list-style: none;
 
                         li{
-                            width: 180px;
-                            height: 220px;
+                            width: 30%;
+                            height: 25vh;
+
+                            padding: 0 15px;
 
                             border-radius: 0px;
-                            border: 2px solid #fff;
-
-                            position: relative;
 
                             display: inline-block;
-                            margin-right: 15px;
 
                             color: #fff;
 
-                            .icon{
-                                width: 100%;
-                                padding: 15px;
+                            .inner{
+                                height: 100%;
 
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                            }
+                                border: 2px solid #fff;
 
-                            .title{
-                                width: 100%;
-                                padding: 15px;
+                                position: relative;
 
-                                position: absolute;
-                                bottom: 0;
-                                left: 0;
+                                .icon{
+                                    width: 100%;
+                                    padding: 15px;
 
-                                h4{
-                                    font-size: 1em;
-                                    text-transform: uppercase;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                }
 
-                                    overflow: hidden;
-                                    text-overflow: ellipsis;
-                                    display: -webkit-box;
-                                    line-height: 1.2;
-                                    height: 2.4em;
-                                    -webkit-line-clamp: 2;
-                                    -webkit-box-orient: vertical;
+                                .title{
+                                    width: 100%;
+                                    padding: 15px;
+
+                                    position: absolute;
+                                    bottom: 0;
+                                    left: 0;
+
+                                    h4{
+                                        font-size: 1em;
+                                        text-transform: uppercase;
+
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                        display: -webkit-box;
+                                        line-height: 1.2;
+                                        height: 2.4em;
+                                        -webkit-line-clamp: 2;
+                                        -webkit-box-orient: vertical;
+                                    }
                                 }
                             }
 
-                            &:hover, &.active{
-                                background-color: #fff;
-                                color: $gray-dark;
+                            &:hover{
+                                .inner{
+                                    background-color: #fff;
+                                    color: $gray-dark;
 
-                                cursor: pointer;
+                                    cursor: pointer;
+                                }
                             }
 
                             &.active{
@@ -483,6 +493,7 @@ header.header{
                 }
             }
 
+            /* TEMPORARY DELETE
             &#creative{
                 .container{
                     .row{
@@ -516,6 +527,7 @@ header.header{
                     }
                 }
             }
+            */
 
             &#news{
 
@@ -524,9 +536,11 @@ header.header{
                     .row{
                         .left{
                             #cover{
+                                padding-bottom: 30px;
+
                                 .mask{
                                     width: 100%;
-                                    height: 450px;
+                                    height: 45vh;
 
                                     position: relative;
 
@@ -542,7 +556,10 @@ header.header{
                         .right{
                             .row{
                                 .item{
-                                    height: 450px;
+                                    height: 45vh;
+
+                                    padding-left: 15px;
+                                    padding-right: 15px;
 
                                     .inner{
                                         height: 100%;
@@ -586,12 +603,26 @@ header.header{
                                         }
                                     }
                                 }
+
+                                .owl-carousel{
+                                    .owl-nav{
+                                        padding-top: 30px;
+                                        button{
+                                            padding: 5px 15px !important;
+                                            background-color: #ccc;
+
+                                            margin-right: 15px;
+
+                                            font-size: 1.5em;
+
+                                            &:first-of-type{
+                                                margin-left: 15px;
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
-                    }
-
-                    .slide-control{
-                        margin-top: 50px;
                     }
                 }
             }
@@ -665,6 +696,231 @@ header.header{
     }
 }
 
+footer.footer{
+    display: none;
+}
+
+// SMALL DESKTOPs
+
+@media (max-width: 1600px) and (min-width: 992px) {
+    #homepage {
+        #fullpage {
+            .section{
+                .title-side{
+                    left: -15px;
+
+                    h1{
+                        font-size: 7em;
+
+                        color: #eaeaea;
+                    }
+                }
+
+                &#slider{
+                    .slide{
+                        .carousel-inner{
+                            .item{
+                                .carousel-caption{
+                                    width: 75%;
+                                    top: 45%;
+                                    padding-left: 30px;
+                                }
+                            }
+                        }
+
+                        .slide-control{
+                            width: 75%;
+                            padding-left: 30px;
+
+                            li{
+                                width: 25%;
+                                height: 150px;
+                            }
+                        }
+                    }
+                }
+
+                &#about{
+                    .container{
+                        .row{
+                            .right{
+                                .mask{
+                                    width: 100%;
+                                    height: 400px;
+
+                                    &#image-top{
+                                        top: 0px;
+                                        left: 30px;
+
+                                        z-index: 2;
+                                    }
+
+                                    &#image-bottom{
+                                        top: 150px;
+                                        left: 0px;
+
+                                        z-index: 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &#product{
+                    .container-fluid{
+                        .row{
+                            .right{
+                                .slide-control{
+                                    li{
+                                        width: 48%;
+                                        height: 25vh;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &#trends{
+                    .container{
+                        .heading{
+                            padding-top: 30px;
+                            margin-bottom: 15px;
+                        }
+
+                        .row{
+                            padding-top: 15px;
+
+                            .item{
+                                height: 25vh;
+                            }
+                        }
+                    }
+                }
+
+                /*
+                &#creative{
+                    .container{
+                        .row{
+                            .right{
+                                .body{
+                                    p{
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                        display: -webkit-box;
+                                        line-height: 1.2;
+                                        height: 7em;
+                                        -webkit-line-clamp: 6;
+                                        -webkit-box-orient: vertical;
+                                    }
+
+                                    ol{
+                                        li{
+                                            font-size: 1.125em;
+
+                                            a{
+                                                color: $gray;
+
+                                                &:hover{
+                                                    color: $gray-dark;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                */
+
+                &#news{
+                    .container{
+                        .row{
+                            .left{
+                                  #cover{
+                                      .mask{
+                                          height: 50vh;
+                                      }
+                                  }
+                            }
+
+                            .right{
+                                .row{
+                                    .item{
+                                        height: 50vh;
+
+                                        .inner{
+                                            .mask{
+                                                height: 100px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &#contact{
+                    .container{
+
+                        h2{
+                            font-size: 1.5em;
+                            font-weight: 700;
+
+                            text-transform: uppercase;
+                        }
+
+                        b{
+                            font-size: 1em;
+                            font-weight: 500;
+
+                            text-transform: uppercase;
+                        }
+
+                        p{
+                            font-size: 1em;
+                            font-weight: 400;
+
+                            color: $gray-light;
+                        }
+
+                        .row{
+                            .map{
+                                iframe{
+                                    height: 190px !important;
+                                }
+
+                            }
+
+                            .left{
+
+                            }
+
+                            .right{
+                                .row{
+                                    .form-group{
+                                        .form-control{
+
+                                        }
+
+                                        textarea{
+                                            resize: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// SMALL DEVICEs (MOBILE)
 @media (max-width: 768px){
     #homepage {
         #fullpage {
@@ -696,8 +952,8 @@ header.header{
                             padding-left: 30px;
 
                             li{
-                                width: 25%;
-                                height: 150px;
+                                width: 32%;
+                                height: 130px;
                             }
                         }
                     }
@@ -734,40 +990,6 @@ header.header{
                     }
                 }
 
-                &#creative{
-                    .container{
-                        .row{
-                            .right{
-                                .body{
-                                    p{
-                                        overflow: hidden;
-                                        text-overflow: ellipsis;
-                                        display: -webkit-box;
-                                        line-height: 1.2;
-                                        height: 7em;
-                                        -webkit-line-clamp: 6;
-                                        -webkit-box-orient: vertical;
-                                    }
-
-                                    ol{
-                                        li{
-                                            font-size: 1.125em;
-
-                                            a{
-                                                color: $gray;
-
-                                                &:hover{
-                                                    color: $gray-dark;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
                 &#news{
                     .container{
                         .row{
@@ -776,6 +998,8 @@ header.header{
                                     .item{
                                         height: auto;
                                         margin-bottom: 15px;
+                                        padding-left: 15px;
+                                        padding-right: 15px;
 
                                         .inner{
                                             padding-bottom: 15px;

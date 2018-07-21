@@ -352,6 +352,9 @@ header.header {
     header.header.light nav ul li .line {
       background-color: #fff; }
 
+@media (max-width: 1600px) and (min-width: 992px) {
+  header.header .left .logo {
+    margin-left: 0; } }
 @media (max-width: 768px) {
   header.header {
     background-color: transparent; }
@@ -473,7 +476,42 @@ Author: hung.luong@matocreative.vn
 #homepage #fullpage .section {
   width: 100%;
   height: 100vh;
-  position: relative; }
+  position: relative;
+            /* TEMPORARY DELETE
+            &#creative{
+                .container{
+                    .row{
+                        .right{
+                            .head{
+                                h1{
+                                    color: $gray;
+                                }
+                            }
+
+                            .body{
+                                p{
+                                    color: $gray-light;
+                                }
+
+                                ol{
+                                    li{
+                                        font-size: 1.125em;
+
+                                        a{
+                                            color: $gray;
+
+                                            &:hover{
+                                                color: $gray-dark;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            */ }
   #homepage #fullpage .section .title-side {
     width: 100vh;
     height: 100px;
@@ -503,7 +541,7 @@ Author: hung.luong@matocreative.vn
   #homepage #fullpage .section#slider .slide .carousel-inner .item .carousel-caption {
     width: 50%;
     left: 0;
-    top: 43%;
+    top: 50%;
     text-align: left;
     padding-top: 100px;
     padding-bottom: 100px;
@@ -548,39 +586,42 @@ Author: hung.luong@matocreative.vn
     padding-top: 100px;
     padding-bottom: 100px;
     padding-left: 100px;
+    margin-left: -15px;
     list-style: none; }
     #homepage #fullpage .section#slider .slide .slide-control li {
-      width: 180px;
-      height: 220px;
+      width: 30%;
+      height: 25vh;
+      padding: 0 15px;
       border-radius: 0px;
-      border: 2px solid #fff;
-      position: relative;
       display: inline-block;
-      margin-right: 15px;
       color: #fff; }
-      #homepage #fullpage .section#slider .slide .slide-control li .icon {
-        width: 100%;
-        padding: 15px;
-        position: absolute;
-        top: 0;
-        left: 0; }
-      #homepage #fullpage .section#slider .slide .slide-control li .title {
-        width: 100%;
-        padding: 15px;
-        position: absolute;
-        bottom: 0;
-        left: 0; }
-        #homepage #fullpage .section#slider .slide .slide-control li .title h4 {
-          font-size: 1em;
-          text-transform: uppercase;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          display: -webkit-box;
-          line-height: 1.2;
-          height: 2.4em;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical; }
-      #homepage #fullpage .section#slider .slide .slide-control li:hover, #homepage #fullpage .section#slider .slide .slide-control li.active {
+      #homepage #fullpage .section#slider .slide .slide-control li .inner {
+        height: 100%;
+        border: 2px solid #fff;
+        position: relative; }
+        #homepage #fullpage .section#slider .slide .slide-control li .inner .icon {
+          width: 100%;
+          padding: 15px;
+          position: absolute;
+          top: 0;
+          left: 0; }
+        #homepage #fullpage .section#slider .slide .slide-control li .inner .title {
+          width: 100%;
+          padding: 15px;
+          position: absolute;
+          bottom: 0;
+          left: 0; }
+          #homepage #fullpage .section#slider .slide .slide-control li .inner .title h4 {
+            font-size: 1em;
+            text-transform: uppercase;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            line-height: 1.2;
+            height: 2.4em;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical; }
+      #homepage #fullpage .section#slider .slide .slide-control li:hover .inner {
         background-color: #fff;
         color: #333;
         cursor: pointer; }
@@ -725,28 +766,22 @@ Author: hung.luong@matocreative.vn
           background-color: #fff; }
           #homepage #fullpage .section#trends .container .row .item:hover .inner a {
             color: #333; }
-  #homepage #fullpage .section#creative .container .row .right .head h1 {
-    color: #666; }
-  #homepage #fullpage .section#creative .container .row .right .body p {
-    color: #999; }
-  #homepage #fullpage .section#creative .container .row .right .body ol li {
-    font-size: 1.125em; }
-    #homepage #fullpage .section#creative .container .row .right .body ol li a {
-      color: #666; }
-      #homepage #fullpage .section#creative .container .row .right .body ol li a:hover {
-        color: #333; }
   #homepage #fullpage .section#news {
     background-color: #fafafa; }
-    #homepage #fullpage .section#news .container .row .left #cover .mask {
-      width: 100%;
-      height: 450px;
-      position: relative; }
-      #homepage #fullpage .section#news .container .row .left #cover .mask h1 {
-        position: absolute;
-        bottom: 30px;
-        left: 30px; }
+    #homepage #fullpage .section#news .container .row .left #cover {
+      padding-bottom: 30px; }
+      #homepage #fullpage .section#news .container .row .left #cover .mask {
+        width: 100%;
+        height: 45vh;
+        position: relative; }
+        #homepage #fullpage .section#news .container .row .left #cover .mask h1 {
+          position: absolute;
+          bottom: 30px;
+          left: 30px; }
     #homepage #fullpage .section#news .container .row .right .row .item {
-      height: 450px; }
+      height: 45vh;
+      padding-left: 15px;
+      padding-right: 15px; }
       #homepage #fullpage .section#news .container .row .right .row .item .inner {
         height: 100%;
         background-color: #fff;
@@ -778,8 +813,15 @@ Author: hung.luong@matocreative.vn
         -ms-transition: all ease-in-out 500ms;
         -o-transition: all ease-in-out 500ms;
         transition: all ease-in-out 500ms; }
-    #homepage #fullpage .section#news .container .slide-control {
-      margin-top: 50px; }
+    #homepage #fullpage .section#news .container .row .right .row .owl-carousel .owl-nav {
+      padding-top: 30px; }
+      #homepage #fullpage .section#news .container .row .right .row .owl-carousel .owl-nav button {
+        padding: 5px 15px !important;
+        background-color: #ccc;
+        margin-right: 15px;
+        font-size: 1.5em; }
+        #homepage #fullpage .section#news .container .row .right .row .owl-carousel .owl-nav button:first-of-type {
+          margin-left: 15px; }
   #homepage #fullpage .section#contact {
     background-image: url("../img/pattern.png");
     background-size: cover;
@@ -809,6 +851,104 @@ Author: hung.luong@matocreative.vn
     #homepage #fullpage .section#contact .container .row .right .row .form-group textarea {
       resize: none; }
 
+footer.footer {
+  display: none; }
+
+@media (max-width: 1600px) and (min-width: 992px) {
+  #homepage #fullpage .section {
+                /*
+                &#creative{
+                    .container{
+                        .row{
+                            .right{
+                                .body{
+                                    p{
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                        display: -webkit-box;
+                                        line-height: 1.2;
+                                        height: 7em;
+                                        -webkit-line-clamp: 6;
+                                        -webkit-box-orient: vertical;
+                                    }
+
+                                    ol{
+                                        li{
+                                            font-size: 1.125em;
+
+                                            a{
+                                                color: $gray;
+
+                                                &:hover{
+                                                    color: $gray-dark;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                */ }
+    #homepage #fullpage .section .title-side {
+      left: -15px; }
+      #homepage #fullpage .section .title-side h1 {
+        font-size: 7em;
+        color: #eaeaea; }
+    #homepage #fullpage .section#slider .slide .carousel-inner .item .carousel-caption {
+      width: 75%;
+      top: 45%;
+      padding-left: 30px; }
+    #homepage #fullpage .section#slider .slide .slide-control {
+      width: 75%;
+      padding-left: 30px; }
+      #homepage #fullpage .section#slider .slide .slide-control li {
+        width: 25%;
+        height: 150px; }
+    #homepage #fullpage .section#about .container .row .right .mask {
+      width: 100%;
+      height: 400px; }
+      #homepage #fullpage .section#about .container .row .right .mask#image-top {
+        top: 0px;
+        left: 30px;
+        z-index: 2; }
+      #homepage #fullpage .section#about .container .row .right .mask#image-bottom {
+        top: 150px;
+        left: 0px;
+        z-index: 1; }
+    #homepage #fullpage .section#product .container-fluid .row .right .slide-control li {
+      width: 48%;
+      height: 25vh; }
+    #homepage #fullpage .section#trends .container .heading {
+      padding-top: 30px;
+      margin-bottom: 15px; }
+    #homepage #fullpage .section#trends .container .row {
+      padding-top: 15px; }
+      #homepage #fullpage .section#trends .container .row .item {
+        height: 25vh; }
+    #homepage #fullpage .section#news .container .row .left #cover .mask {
+      height: 50vh; }
+    #homepage #fullpage .section#news .container .row .right .row .item {
+      height: 50vh; }
+      #homepage #fullpage .section#news .container .row .right .row .item .inner .mask {
+        height: 100px; }
+    #homepage #fullpage .section#contact .container h2 {
+      font-size: 1.5em;
+      font-weight: 700;
+      text-transform: uppercase; }
+    #homepage #fullpage .section#contact .container b {
+      font-size: 1em;
+      font-weight: 500;
+      text-transform: uppercase; }
+    #homepage #fullpage .section#contact .container p {
+      font-size: 1em;
+      font-weight: 400;
+      color: #999; }
+    #homepage #fullpage .section#contact .container .row .map iframe {
+      height: 190px !important; }
+    #homepage #fullpage .section#contact .container .row .right .row .form-group textarea {
+      resize: none; } }
 @media (max-width: 768px) {
   #homepage #fullpage .section .title-side {
     left: -15px; }
@@ -823,8 +963,8 @@ Author: hung.luong@matocreative.vn
     width: 100%;
     padding-left: 30px; }
     #homepage #fullpage .section#slider .slide .slide-control li {
-      width: 25%;
-      height: 150px; }
+      width: 32%;
+      height: 130px; }
   #homepage #fullpage .section#product .container-fluid .row .right .slide-control li {
     width: 48%;
     height: 25vh; }
@@ -832,23 +972,11 @@ Author: hung.luong@matocreative.vn
     padding-top: 50px; }
     #homepage #fullpage .section#trends .container .row .item {
       height: 25vh; }
-  #homepage #fullpage .section#creative .container .row .right .body p {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    line-height: 1.2;
-    height: 7em;
-    -webkit-line-clamp: 6;
-    -webkit-box-orient: vertical; }
-  #homepage #fullpage .section#creative .container .row .right .body ol li {
-    font-size: 1.125em; }
-    #homepage #fullpage .section#creative .container .row .right .body ol li a {
-      color: #666; }
-      #homepage #fullpage .section#creative .container .row .right .body ol li a:hover {
-        color: #333; }
   #homepage #fullpage .section#news .container .row .right .row .item {
     height: auto;
-    margin-bottom: 15px; }
+    margin-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px; }
     #homepage #fullpage .section#news .container .row .right .row .item .inner {
       padding-bottom: 15px; }
       #homepage #fullpage .section#news .container .row .right .row .item .inner .mask {
