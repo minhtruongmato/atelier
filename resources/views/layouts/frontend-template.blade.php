@@ -19,6 +19,9 @@
     <!-- STYLE -->
     <link href="{{ asset("public/frontend/scss/style.css") }}" rel="stylesheet">
 
+    <!--Favicon-->
+    <link rel="shortcut icon" type="image/png" href="{{ asset('public/frontend/img/favicon.png') }}"/>
+
 
     <script src="{{ asset ("public/frontend/lib/jquery/jquery.min.js") }}"></script>
     <script src="{{ asset ("public/frontend/lib/bootstrap/js/bootstrap.min.js") }}"></script>

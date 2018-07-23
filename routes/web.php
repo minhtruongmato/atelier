@@ -48,7 +48,7 @@ Route::get('/gioi-thieu', function () {
 /**
  * Trends routes
  */
-Route::get('/xu-huong', function () {
+Route::get('/xu-huong/{detail?}', function () {
     return view('list-trends');
 });
 

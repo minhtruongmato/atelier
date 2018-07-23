@@ -122,6 +122,7 @@ Route::prefix('v1')->group(function() {
 
         //trend routes
         Route::get('trend-category', 'TrendApiController@fetchAllTrendCategory')->name('trend-category.fetchAllTrendCategory');
+        Route::get('trend-category-for-homepage', 'TrendApiController@fetchAllTrendCategoryForHomePage')->name('trend-category-for-homepage.fetchAllTrendCategoryForHomePage');
         Route::get('trend', 'TrendApiController@fetchAllTrend')->name('trend.fetchAllTrend');
     });
 });

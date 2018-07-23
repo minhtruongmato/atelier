@@ -7,47 +7,14 @@ Author: hung.luong@matocreative.vn
 ===================================
  */
 
-
-section{
-    &.section-header{
-        margin-top: 200px;
+#trends{
+    .section-header{
+        margin-top: 0px;
 
         .container-fluid{
-            padding-left: 0;
-            padding-right: 0;
-
-            .container{
-                h1{
-                    padding-left: 15px;
-                    padding-right: 15px;
-                }
-            }
 
             .introduce{
-                padding-top: 100px;
                 padding-bottom: 200px;
-
-                background-color: #eaeaea;
-
-                .container{
-                    padding-left: 30px;
-                    padding-right: 30px;
-
-                    .row{
-                        .left{
-                            h4{
-                                font-weight: 500;
-                                text-transform: none;
-
-                                margin-top: 0;
-                            }
-                        }
-
-                        .right{
-
-                        }
-                    }
-                }
             }
 
             .cover{
@@ -64,11 +31,57 @@ section{
             }
         }
     }
+}
+
+section{
+    &.section-header{
+        margin-top: 200px;
+
+
+    }
 
     &#list-trends{
         .container{
             padding-left: 50px;
             padding-right: 50px;
+
+            .masonry-brick{
+                width: 33%;
+                height: 400px;
+                float: left;
+
+                margin-bottom: 30px;
+
+                &.masonry-brick-2{
+                    height: 450px;
+                }
+
+                .inner{
+                    height: 100%;
+
+                    padding-left: 15px;
+                    padding-right: 15px;
+
+                    .mask{
+                        width: 100%;
+                        height: 100%;
+
+                        position: relative;
+
+                        .content{
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+
+                            width: 75%;
+
+                            padding: 15px 30px;
+
+                            background-color: #fff;
+                        }
+                    }
+                }
+            }
 
             .grid{
                 .grid-sizer{
@@ -124,59 +137,23 @@ section{
 }
 
 @media (max-width: 768px){
-    section{
-        &#list-trends{
-            .container{
+    section {
+        &.section-header {
+            margin-top: 200px;
+
+        }
+
+        &#list-trends {
+            .container {
                 padding-left: 0px;
                 padding-right: 0px;
 
-                .grid{
-                    .grid-sizer{
-                        width: 50%;
-                    }
+                .masonry-brick {
+                    width: 100%;
+                    height: 300px;
 
-                    .grid-item{
-                        width: 50%;
-                        height: 200px;
-
-                        margin-bottom: 30px;
-
-                        &.title{
-                            padding-top: 50px;
-                            padding-bottom: 50px;
-
-                            height: 200px;
-                        }
-
-                        &.grid-item-height-2{
-                            height: 250px;
-                        }
-
-                        .inner{
-                            padding-left: 15px;
-                            padding-right: 15px;
-
-                            height: 100%;
-
-                            .mask{
-                                width: 100%;
-                                height: 100%;
-
-                                position: relative;
-
-                                .content{
-                                    position: absolute;
-                                    bottom: 0;
-                                    left: 0;
-
-                                    width: 75%;
-
-                                    padding: 15px;
-
-                                    background-color: #fff;
-                                }
-                            }
-                        }
+                    &.masonry-brick-2 {
+                        height: 350px;
                     }
                 }
             }
