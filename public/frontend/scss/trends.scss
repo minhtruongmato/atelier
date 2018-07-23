@@ -8,12 +8,10 @@ Author: hung.luong@matocreative.vn
  */
 
 
-header.header {
-
-}
-
 section{
     &.section-header{
+        margin-top: 200px;
+
         .container-fluid{
             padding-left: 0;
             padding-right: 0;

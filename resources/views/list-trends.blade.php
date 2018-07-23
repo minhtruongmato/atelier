@@ -1,6 +1,5 @@
 @extends('layouts.frontend-template')
 @section('content')
-    <link href="{{ asset("public/frontend/scss/trends.css")}}" rel="stylesheet" type="text/css" />
 
     <section class="section-header">
         <div class="container-fluid">

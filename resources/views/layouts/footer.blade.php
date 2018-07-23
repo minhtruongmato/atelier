@@ -28,6 +28,11 @@
                         </a>
                     </li>
                     <li>
+                        <a href="{{ url('gioi-thieu') }}" target="_self">
+                            Về chúng tôi
+                        </a>
+                    </li>
+                    <li>
                         <a href="{{ url('san-pham') }}" target="_self">
                             Sản phẩm
                         </a>
@@ -37,11 +42,13 @@
                             Xu hướng
                         </a>
                     </li>
+                    <!--
                     <li>
                         <a href="{{ url('') }}" target="_self">
                             Góc sáng tạo
                         </a>
                     </li>
+                    -->
                     <li>
                         <a href="{{ url('tin-tuc') }}" target="_self">
                             Tin tức

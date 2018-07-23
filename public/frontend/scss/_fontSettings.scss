@@ -69,6 +69,11 @@ h2{
         &.light{
             color: #fff;
         }
+
+        &.bigger{
+            font-size: 1.5em;
+            font-weight: 400;
+        }
     }
 }
 
@@ -108,7 +113,7 @@ h4{
 
 p{
     &.paragraph{
-        font-size: 1em;
+        font-size: 1.125em;
 
         &.dark{
             color: $gray-dark;

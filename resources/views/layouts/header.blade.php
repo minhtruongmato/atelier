@@ -12,7 +12,7 @@
         <nav class="nav-main" id="nav-main">
             <ul>
                 <li>
-                    <a href="{{ url('') }}" target="_self">
+                    <a href="{{ url('gioi-thieu') }}" target="_self">
                         Về chúng tôi
                     </a>
                 </li>
