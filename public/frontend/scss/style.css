@@ -124,6 +124,9 @@ h2.post-heading {
     color: #999; }
   h2.post-heading.light {
     color: #fff; }
+  h2.post-heading.bigger {
+    font-size: 1.5em;
+    font-weight: 400; }
 
 h4.sub-heading {
   font-size: 1.25em;
@@ -143,7 +146,7 @@ h4.post-subheading {
     color: #fff; }
 
 p.paragraph {
-  font-size: 1em; }
+  font-size: 1.125em; }
   p.paragraph.dark {
     color: #333; }
   p.paragraph.light {
@@ -265,6 +268,24 @@ button {
         color: #333; }
       button.outline:hover .title h4 {
         color: #333; }
+
+section.section-header .container-fluid {
+  padding-left: 0;
+  padding-right: 0; }
+  section.section-header .container-fluid .container h1 {
+    padding-left: 15px;
+    padding-right: 15px; }
+  section.section-header .container-fluid .introduce {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: #eaeaea; }
+    section.section-header .container-fluid .introduce .container {
+      padding-left: 30px;
+      padding-right: 30px; }
+      section.section-header .container-fluid .introduce .container .row .left h4 {
+        font-weight: 500;
+        text-transform: none;
+        margin-top: 0; }
 
 /*
 ===================================
@@ -1028,37 +1049,104 @@ footer.footer {
       resize: none; } }
 /*
 ===================================
+ABOUT STYLE
+
+Author: hung.luong@matocreative.vn
+
+===================================
+ */
+#about .cover {
+  width: 100%;
+  height: 60vh; }
+  #about .cover .mask {
+    width: 100%;
+    height: 100%;
+    position: relative; }
+    #about .cover .mask .container {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      z-index: 2;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      transform: translateX(-50%);
+      padding-bottom: 30px; }
+    #about .cover .mask .overlay {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1; }
+#about .section-header {
+  margin-top: 0; }
+  #about .section-header .introduce {
+    padding-bottom: 100px; }
+#about .section-body .container .row .left .wrapper {
+  padding-top: 30px;
+  padding-bottom: 30px; }
+  #about .section-body .container .row .left .wrapper .body article p {
+    max-width: 100% !important; }
+  #about .section-body .container .row .left .wrapper .body article img {
+    max-width: 100% !important;
+    margin-top: 30px;
+    margin-bottom: 15px; }
+#about .section-body .container .row .right {
+  padding-top: 30px; }
+  #about .section-body .container .row .right.active {
+    position: sticky;
+    top: 30px; }
+  #about .section-body .container .row .right .panel .list-group .list-group-item a {
+    color: #999; }
+    #about .section-body .container .row .right .panel .list-group .list-group-item a:hover {
+      color: #333; }
+
+@media (max-width: 992px) {
+  #about .section-body .row {
+    display: flex;
+    flex-direction: column; }
+    #about .section-body .row .left {
+      order: 2; }
+    #about .section-body .row .right {
+      order: 1; } }
+/*
+===================================
 TRENDS STYLE
 
 Author: hung.luong@matocreative.vn
 
 ===================================
  */
-section.section-header .container-fluid {
-  padding-left: 0;
-  padding-right: 0; }
-  section.section-header .container-fluid .container h1 {
-    padding-left: 15px;
-    padding-right: 15px; }
-  section.section-header .container-fluid .introduce {
-    padding-top: 100px;
-    padding-bottom: 200px;
-    background-color: #eaeaea; }
-    section.section-header .container-fluid .introduce .container {
-      padding-left: 30px;
-      padding-right: 30px; }
-      section.section-header .container-fluid .introduce .container .row .left h4 {
-        font-weight: 500;
-        text-transform: none;
-        margin-top: 0; }
-  section.section-header .container-fluid .cover .mask {
-    width: 100%;
-    height: 400px;
-    -webkit-transform: translateY(-150px);
-    -moz-transform: translateY(-150px);
-    -ms-transform: translateY(-150px);
-    -o-transform: translateY(-150px);
-    transform: translateY(-150px); }
+section.section-header {
+  margin-top: 200px; }
+  section.section-header .container-fluid {
+    padding-left: 0;
+    padding-right: 0; }
+    section.section-header .container-fluid .container h1 {
+      padding-left: 15px;
+      padding-right: 15px; }
+    section.section-header .container-fluid .introduce {
+      padding-top: 100px;
+      padding-bottom: 200px;
+      background-color: #eaeaea; }
+      section.section-header .container-fluid .introduce .container {
+        padding-left: 30px;
+        padding-right: 30px; }
+        section.section-header .container-fluid .introduce .container .row .left h4 {
+          font-weight: 500;
+          text-transform: none;
+          margin-top: 0; }
+    section.section-header .container-fluid .cover .mask {
+      width: 100%;
+      height: 400px;
+      -webkit-transform: translateY(-150px);
+      -moz-transform: translateY(-150px);
+      -ms-transform: translateY(-150px);
+      -o-transform: translateY(-150px);
+      transform: translateY(-150px); }
 section#list-trends .container {
   padding-left: 50px;
   padding-right: 50px; }

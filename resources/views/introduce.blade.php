@@ -1,80 +1,174 @@
 @extends('layouts.frontend-template')
 @section('content')
-    <link href="{{ asset("public/frontend/css/intro.css")}}" rel="stylesheet" type="text/css" />
-    <section class="main_content" ng-controller="IntroduceController">
-        <!-- InstanceBeginEditable name="content" -->
-        <section class="container-fluid" id="about">
-            <div class="row" ng-repeat="introduce in introduce">
 
-                <div class="right col-md-6 col-sm-6 col-xs-12 col-md-offset-6 col-sm-offset-6" ng-if="introduce.slug == 've-chung-toi' ">
-                    <div class="left hidden-xs"></div>
-                    <div class="title_big">
+    <style>
+        header.header{
+            position: static;
+        }
+
+        footer.footer{
+            display: block !important;
+        }
+    </style>
+
+    <section id="about">
+        <section class="cover">
+            <div class="mask">
+                <img src="https://images.unsplash.com/photo-1532275131641-b10b20ba84af?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cc74bf344f9b65c3e30b2c86f7368139&auto=format&fit=crop&w=1350&q=80" alt="about cover">
+
+                <div class="overlay"></div>
+                <div class="container">
+                    <h1 class="heading light">
                         Về chúng tôi
-                    </div>
-
-                    <p ng-bind-html="$sce.trustAsHtml(introduce.content)"></p>
-                    <div class="row">
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <i class="fa fa-3x fa-phone" aria-hidden="false"></i>
-                            <br>
-                            <h4>Hỗ trợ qua điện thoại</h4>
-                            <p>Suspendisse potenti. Cras molestie mi sed iaculis varius. Maecenas fermentum semper sagittis. Sed eu mattis tellus. Mauris dolor ligula, pellentesque id vestibulum nec, consectetur sed sem. Aenean at ante enim. Quisque dapibus ligula ut erat laoreet aliquet. Pellentesque dictum magna ante, venenatis scelerisque risus pretium eget. Nullam et orci vitae felis rutrum tempor. Vestibulum id maximus lacus.</p>
-                        </div>
-
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <i class="fa fa-3x fa-truck" aria-hidden="false"></i>
-                            <br>
-                            <h4>Miễn phí giao hàng</h4>
-                            <p>Suspendisse potenti. Cras molestie mi sed iaculis varius. Maecenas fermentum semper sagittis. Sed eu mattis tellus. Mauris dolor ligula, pellentesque id vestibulum nec, consectetur sed sem. Aenean at ante enim. Quisque dapibus ligula ut erat laoreet aliquet. Pellentesque dictum magna ante, venenatis scelerisque risus pretium eget. Nullam et orci vitae felis rutrum tempor. Vestibulum id maximus lacus.</p>
-                        </div>
-
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <i class="fa fa-3x fa-user-o" aria-hidden="false"></i>
-                            <br>
-                            <h4>Hỗ trợ người mua hàng</h4>
-                            <p>Suspendisse potenti. Cras molestie mi sed iaculis varius. Maecenas fermentum semper sagittis. Sed eu mattis tellus. Mauris dolor ligula, pellentesque id vestibulum nec, consectetur sed sem. Aenean at ante enim. Quisque dapibus ligula ut erat laoreet aliquet. Pellentesque dictum magna ante, venenatis scelerisque risus pretium eget. Nullam et orci vitae felis rutrum tempor. Vestibulum id maximus lacus.</p>
-                        </div>
-                    </div>
+                    </h1>
                 </div>
             </div>
         </section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-9 col-sm-9 col-xs-12">
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane" id="<% item.slug %>" ng-repeat="item in introduce" active-on-first-item>
-                            {{--<img src="{{ asset('storage/app') }}/<% item.image %>" class="cover" alt="<% item.title %>">--}}
-                            <h3><% item.title %></h3>
-                            <p ng-bind-html="$sce.trustAsHtml(item.content)"></p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="nav_side col-md-3 col-sm-3 col-xs-12">
-                    <h3>Giới thiệu</h3>
-                    <ul class="nav nav-pills nav-stacked" role="tablist">
-                        <li role="presentation" class="active"><a href="#ve-chung-toi" aria-controls="ve-chung-toi" role="tab" data-toggle="tab">Về chúng tôi</a></li>
-                        <li role="presentation"><a href="#tam-nhin-chien-luoc" aria-controls="tam-nhin-chien-luoc" role="tab" data-toggle="tab">Tầm nhìn chiến lược</a></li>
-                        <li role="presentation"><a href="#su-menh" aria-controls="su-menh" role="tab" data-toggle="tab">Sứ mệnh</a></li>
-                        <li role="presentation"><a href="#chung-nhan" aria-controls="chung-nhan" role="tab" data-toggle="tab">Chứng nhận</a></li>
-                        <li role="presentation"><a href="#dieu-khoan" aria-controls="dieu-khoan" role="tab" data-toggle="tab">Điều khoản</a></li>
-                        <li role="presentation"><a href="{{ url('/thu-vien-anh') }}" role="tab" target="_self">Thư viện hình ảnh</a></li>
-                    </ul>
+        <section class="section-header">
+            <div class="container-fluid">
+                <div class="container header">
+
                 </div>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="item col-md-4 col-sm-6 col-xs-12">
-                            <div class="mask">
-                                <a class="preview" href="{{ asset ("public/frontend/img/blog_02.jpg") }}">
-                                    <img src="{{ asset ("public/frontend/img/blog_02.jpg") }}" alt="anh minh hoa">
-                                </a>
+                <div class="introduce">
+                    <div class="container">
+                        <div class="row">
+                            <div class="left col-sm-6 col-xs-12">
+                                <h4 class="sub-heading">
+                                    Proin pharetra purus consequat sapien pretium, fermentum congue purus blandit. Aliquam porttitor nunc sit amet blandit laoreet. Nunc congue at neque a tincidunt.
+                                </h4>
+                            </div>
+
+                            <div class="right col-sm-6 col-xs-12">
+                                <p class="paragraph">Nunc accumsan purus vel ex laoreet vulputate. In ac ex sed lectus sodales pellentesque vel at ante. Nam in eros eget dui elementum tincidunt. Phasellus at diam ac nisl aliquet congue. Suspendisse sollicitudin sagittis felis, at consectetur justo suscipit vel. Quisque ac velit eu metus cursus accumsan eget ac lacus. Integer lacinia ex mi, et interdum nunc consequat quis. Fusce consectetur dui at felis tincidunt, quis sollicitudin libero euismod. Ut bibendum lobortis odio.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- InstanceEndEditable -->
+        </section>
+
+        <section class="section-body">
+            <div class="container">
+                <div class="row">
+                    <div class="left col-md-8 col-xs-12">
+                        <div class="wrapper" id="overview">
+                            <div class="head">
+                                <h2 class="post-heading dark bigger">
+                                    Tổng quan
+                                </h2>
+                            </div>
+                            <div class="body">
+                                <article>
+                                    <p class="paragraph">Integer fermentum quam dapibus est placerat, venenatis condimentum libero tristique. Curabitur vel dapibus quam. Morbi id enim facilisis, ultrices neque non, auctor ligula. Sed dignissim nunc non tellus suscipit, et molestie mi posuere. Aliquam tempus accumsan neque, et tempor massa commodo volutpat. Ut vitae erat ac metus maximus interdum ut vitae arcu. Donec sagittis, tortor vel mollis ullamcorper, diam metus malesuada libero, et viverra lacus sapien eu ipsum. Maecenas aliquet cursus ex at hendrerit. Duis eu pretium sem. Sed aliquam, metus eget cursus molestie, tellus ex ullamcorper leo, eu faucibus velit justo quis sapien. Phasellus pulvinar mi at neque suscipit, sit amet vulputate nisl luctus. Aenean eget massa gravida, tincidunt velit ac, sagittis nisl.</p>
+
+                                    <img src="https://images.unsplash.com/photo-1532275131641-b10b20ba84af?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cc74bf344f9b65c3e30b2c86f7368139&auto=format&fit=crop&w=1350&q=80" alt="about cover">
+                                    <small>Image caption</small>
+
+                                    <p class="paragraph">In varius id ipsum eget malesuada. Sed euismod et nulla vel suscipit. Fusce in consectetur nisi, et porttitor nunc. Donec sit amet congue quam, ac elementum libero. Maecenas eu libero justo. Pellentesque fermentum condimentum tellus at aliquet. Maecenas eu nisl imperdiet eros mattis scelerisque vel et sem. Pellentesque pulvinar urna lorem, ut accumsan odio faucibus vel. Nam a purus ut massa semper condimentum.</p>
+                                </article>
+                            </div>
+                        </div>
+
+                        <div class="wrapper" id="visionAndMission">
+                            <div class="head">
+                                <h2 class="post-heading dark bigger">
+                                    Tầm nhìn & Sứ mệnh
+                                </h2>
+                            </div>
+                            <div class="body">
+                                <article>
+                                    <p class="paragraph">Integer fermentum quam dapibus est placerat, venenatis condimentum libero tristique. Curabitur vel dapibus quam. Morbi id enim facilisis, ultrices neque non, auctor ligula. Sed dignissim nunc non tellus suscipit, et molestie mi posuere. Aliquam tempus accumsan neque, et tempor massa commodo volutpat. Ut vitae erat ac metus maximus interdum ut vitae arcu. Donec sagittis, tortor vel mollis ullamcorper, diam metus malesuada libero, et viverra lacus sapien eu ipsum. Maecenas aliquet cursus ex at hendrerit. Duis eu pretium sem. Sed aliquam, metus eget cursus molestie, tellus ex ullamcorper leo, eu faucibus velit justo quis sapien. Phasellus pulvinar mi at neque suscipit, sit amet vulputate nisl luctus. Aenean eget massa gravida, tincidunt velit ac, sagittis nisl.</p>
+                                    <p class="paragraph">In varius id ipsum eget malesuada. Sed euismod et nulla vel suscipit. Fusce in consectetur nisi, et porttitor nunc. Donec sit amet congue quam, ac elementum libero. Maecenas eu libero justo. Pellentesque fermentum condimentum tellus at aliquet. Maecenas eu nisl imperdiet eros mattis scelerisque vel et sem. Pellentesque pulvinar urna lorem, ut accumsan odio faucibus vel. Nam a purus ut massa semper condimentum.</p>
+                                </article>
+                            </div>
+                        </div>
+
+                        <div class="wrapper" id="ourCustomer">
+                            <div class="head">
+                                <h2 class="post-heading dark bigger">
+                                    Khách hàng của chúng tôi
+                                </h2>
+                            </div>
+                            <div class="body">
+                                <article>
+                                    <p class="paragraph">Integer fermentum quam dapibus est placerat, venenatis condimentum libero tristique. Curabitur vel dapibus quam. Morbi id enim facilisis, ultrices neque non, auctor ligula. Sed dignissim nunc non tellus suscipit, et molestie mi posuere. Aliquam tempus accumsan neque, et tempor massa commodo volutpat. Ut vitae erat ac metus maximus interdum ut vitae arcu. Donec sagittis, tortor vel mollis ullamcorper, diam metus malesuada libero, et viverra lacus sapien eu ipsum. Maecenas aliquet cursus ex at hendrerit. Duis eu pretium sem. Sed aliquam, metus eget cursus molestie, tellus ex ullamcorper leo, eu faucibus velit justo quis sapien. Phasellus pulvinar mi at neque suscipit, sit amet vulputate nisl luctus. Aenean eget massa gravida, tincidunt velit ac, sagittis nisl.</p>
+                                    <p class="paragraph">In varius id ipsum eget malesuada. Sed euismod et nulla vel suscipit. Fusce in consectetur nisi, et porttitor nunc. Donec sit amet congue quam, ac elementum libero. Maecenas eu libero justo. Pellentesque fermentum condimentum tellus at aliquet. Maecenas eu nisl imperdiet eros mattis scelerisque vel et sem. Pellentesque pulvinar urna lorem, ut accumsan odio faucibus vel. Nam a purus ut massa semper condimentum.</p>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="right col-md-4 col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Về chúng tôi
+                            </div>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <a href="#overview" target="_self">
+                                        Tổng quan
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="#visionAndMission" target="_self">
+                                        Tầm nhìn & Sứ mệnh
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="#ourCustomer" target="_self">
+                                        Khách hàng của chúng tôi
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </section>
+
     <script src="{{ asset ("public/frontend/app/controllers/introduce.js") }}"></script>
+    <script>
+        $(window).scroll(function(){
+
+            console.log($(window).scrollTop());
+
+            var windowWidth = $(window).width();
+
+            if(windowWidth > 992){
+                if($(window).scrollTop() > 130){
+                    $('.section-body .right').addClass('active')
+                }
+                if($(window).scrollTop() < 130){
+                    $('.section-body .right').removeClass('active')
+                }
+            }
+        })
+
+        $(document).ready(function(){
+            // Add smooth scrolling to all links
+            $(".panel a").on('click', function(event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function(){
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+    </script>
 @endsection
