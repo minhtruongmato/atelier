@@ -1120,36 +1120,46 @@ Author: hung.luong@matocreative.vn
 
 ===================================
  */
+#trends .section-header {
+  margin-top: 0px; }
+  #trends .section-header .container-fluid .introduce {
+    padding-bottom: 200px; }
+  #trends .section-header .container-fluid .cover .mask {
+    width: 100%;
+    height: 400px;
+    -webkit-transform: translateY(-150px);
+    -moz-transform: translateY(-150px);
+    -ms-transform: translateY(-150px);
+    -o-transform: translateY(-150px);
+    transform: translateY(-150px); }
+
 section.section-header {
   margin-top: 200px; }
-  section.section-header .container-fluid {
-    padding-left: 0;
-    padding-right: 0; }
-    section.section-header .container-fluid .container h1 {
-      padding-left: 15px;
-      padding-right: 15px; }
-    section.section-header .container-fluid .introduce {
-      padding-top: 100px;
-      padding-bottom: 200px;
-      background-color: #eaeaea; }
-      section.section-header .container-fluid .introduce .container {
-        padding-left: 30px;
-        padding-right: 30px; }
-        section.section-header .container-fluid .introduce .container .row .left h4 {
-          font-weight: 500;
-          text-transform: none;
-          margin-top: 0; }
-    section.section-header .container-fluid .cover .mask {
-      width: 100%;
-      height: 400px;
-      -webkit-transform: translateY(-150px);
-      -moz-transform: translateY(-150px);
-      -ms-transform: translateY(-150px);
-      -o-transform: translateY(-150px);
-      transform: translateY(-150px); }
 section#list-trends .container {
   padding-left: 50px;
   padding-right: 50px; }
+  section#list-trends .container .masonry-brick {
+    width: 33%;
+    height: 400px;
+    float: left;
+    margin-bottom: 30px; }
+    section#list-trends .container .masonry-brick.masonry-brick-2 {
+      height: 450px; }
+    section#list-trends .container .masonry-brick .inner {
+      height: 100%;
+      padding-left: 15px;
+      padding-right: 15px; }
+      section#list-trends .container .masonry-brick .inner .mask {
+        width: 100%;
+        height: 100%;
+        position: relative; }
+        section#list-trends .container .masonry-brick .inner .mask .content {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 75%;
+          padding: 15px 30px;
+          background-color: #fff; }
   section#list-trends .container .grid .grid-sizer {
     width: 33%; }
   section#list-trends .container .grid .grid-item {
@@ -1179,36 +1189,16 @@ section#list-trends .container {
           background-color: #fff; }
 
 @media (max-width: 768px) {
+  section.section-header {
+    margin-top: 200px; }
   section#list-trends .container {
     padding-left: 0px;
     padding-right: 0px; }
-    section#list-trends .container .grid .grid-sizer {
-      width: 50%; }
-    section#list-trends .container .grid .grid-item {
-      width: 50%;
-      height: 200px;
-      margin-bottom: 30px; }
-      section#list-trends .container .grid .grid-item.title {
-        padding-top: 50px;
-        padding-bottom: 50px;
-        height: 200px; }
-      section#list-trends .container .grid .grid-item.grid-item-height-2 {
-        height: 250px; }
-      section#list-trends .container .grid .grid-item .inner {
-        padding-left: 15px;
-        padding-right: 15px;
-        height: 100%; }
-        section#list-trends .container .grid .grid-item .inner .mask {
-          width: 100%;
-          height: 100%;
-          position: relative; }
-          section#list-trends .container .grid .grid-item .inner .mask .content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 75%;
-            padding: 15px;
-            background-color: #fff; } }
+    section#list-trends .container .masonry-brick {
+      width: 100%;
+      height: 300px; }
+      section#list-trends .container .masonry-brick.masonry-brick-2 {
+        height: 350px; } }
 /*
 ===================================
 BLOGS STYLE
