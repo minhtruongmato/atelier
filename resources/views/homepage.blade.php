@@ -1,7 +1,10 @@
 @extends('layouts.frontend-template')
 @section('content')
+    <!-- FULLPAGE -->
     <link href="{{ asset("public/frontend/lib/fullpage/css/jquery.fullpage.min.css")}}" rel="stylesheet" type="text/css" />
 
+    <!-- OWL CAROUSEL -->
+    <link href="{{ asset("public/frontend/lib/owl-carousel/css/owl.carousel.min.css")}}" rel="stylesheet" type="text/css" />
 
     <div id="homepage" ng-controller="HomepageController">
 

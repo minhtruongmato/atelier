@@ -1091,6 +1091,7 @@ Author: hung.luong@matocreative.vn
   #about .section-body .container .row .left .wrapper .body article p {
     max-width: 100% !important; }
   #about .section-body .container .row .left .wrapper .body article img {
+    display: block;
     max-width: 100% !important;
     margin-top: 30px;
     margin-bottom: 15px; }
@@ -1159,7 +1160,9 @@ Author: hung.luong@matocreative.vn
   padding-bottom: 100px; }
   #detail-product .container article img {
     display: block;
-    max-width: 100% !important; }
+    max-width: 100% !important;
+    margin-top: 30px;
+    margin-bottom: 15px; }
 
 /*
 ===================================
@@ -1232,54 +1235,79 @@ Author: hung.luong@matocreative.vn
 /*
 EMBED STYLE
  */
-section.section-header .container-fluid {
-  padding-left: 0;
-  padding-right: 0; }
-  section.section-header .container-fluid .container h1 {
-    padding-left: 15px;
-    padding-right: 15px; }
-section.list-blogs .container-fluid {
+#news section.section-header {
+  margin-top: 0; }
+  #news section.section-header .container-fluid {
+    padding-left: 0;
+    padding-right: 0; }
+    #news section.section-header .container-fluid .container h1 {
+      padding-left: 15px;
+      padding-right: 15px; }
+#news section.list-blogs .container-fluid {
   padding-left: 0;
   padding-right: 0;
   padding-top: 50px;
   padding-bottom: 100px;
   background-color: #e7e7e7; }
-  section.list-blogs .container-fluid .container {
+  #news section.list-blogs .container-fluid .container {
     padding-left: 30px;
     padding-right: 30px; }
-    section.list-blogs .container-fluid .container .row .item {
+    #news section.list-blogs .container-fluid .container .row .item {
       height: 450px;
       margin-bottom: 30px; }
-      section.list-blogs .container-fluid .container .row .item .inner {
+      #news section.list-blogs .container-fluid .container .row .item .inner {
         height: 100%;
         background-color: #fff;
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+        transform: translateY(0);
         -webkit-transition: all ease-in-out 500ms;
         -moz-transition: all ease-in-out 500ms;
         -ms-transition: all ease-in-out 500ms;
         -o-transition: all ease-in-out 500ms;
         transition: all ease-in-out 500ms; }
-        section.list-blogs .container-fluid .container .row .item .inner .mask {
+        #news section.list-blogs .container-fluid .container .row .item .inner .mask {
           width: 100%;
           height: 200px; }
-        section.list-blogs .container-fluid .container .row .item .inner h2.post-heading {
+        #news section.list-blogs .container-fluid .container .row .item .inner h2.post-heading {
           margin-bottom: 30px;
           padding-left: 15px;
           padding-right: 15px; }
-        section.list-blogs .container-fluid .container .row .item .inner p.description {
+        #news section.list-blogs .container-fluid .container .row .item .inner p.description {
           color: #999;
           margin-bottom: 30px;
           padding-left: 15px;
           padding-right: 15px; }
-        section.list-blogs .container-fluid .container .row .item .inner a.btn-outline {
+        #news section.list-blogs .container-fluid .container .row .item .inner a.btn-outline {
           margin-left: 15px; }
-      section.list-blogs .container-fluid .container .row .item:hover .inner {
+      #news section.list-blogs .container-fluid .container .row .item:hover .inner {
         -webkit-box-shadow: 0 4px 15px #000;
         -moz-box-shadow: 0 4px 15px #000;
         box-shadow: 0 4px 15px #000;
+        -webkit-transform: translateY(-5px);
+        -moz-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+        -o-transform: translateY(-5px);
+        transform: translateY(-5px);
         -webkit-transition: all ease-in-out 500ms;
         -moz-transition: all ease-in-out 500ms;
         -ms-transition: all ease-in-out 500ms;
         -o-transition: all ease-in-out 500ms;
         transition: all ease-in-out 500ms; }
+
+#detail-news .section-header {
+  margin-top: 0px; }
+  #detail-news .section-header .container-fluid .introduce {
+    padding-bottom: 100px; }
+#detail-news .container article {
+  padding-top: 100px;
+  padding-bottom: 100px; }
+  #detail-news .container article img {
+    display: block;
+    max-width: 100% !important;
+    margin-top: 30px;
+    margin-bottom: 15px; }
 
 /*# sourceMappingURL=style.css.map */
