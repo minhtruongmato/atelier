@@ -1,102 +1,50 @@
 @extends('layouts.frontend-template')
 @section('content')
-    <link href="{{ asset("public/frontend/css/blog.css")}}" rel="stylesheet" type="text/css" />
-    <section class="main_content" ng-controller="DetailBlogController">
-        <!-- InstanceBeginEditable name="content" -->
-        <div class="container">
-            <div class="row">
-                <div class="content col-md-9 col-sm-9 col-xs-12">
-                    <article>
-                        <h2><% selected.title %></h2>
-                        <input type="hidden" value="<% selected.id %>" ng-model="id">
-                        <blockquote>
-                            <p ng-bind-html="$sce.trustAsHtml(selected.description)"></p>
-                            {{--<footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>--}}
-                        </blockquote>
 
-                        <p ng-bind-html="$sce.trustAsHtml(selected.content)"></p>
+    <style>
+        header.header{
+            position: static;
+        }
 
-                    </article>
+        footer.footer{
+            display: block !important;
+        }
+    </style>
 
-                    <div class="comments">
-                        <form role="form" name="comment" ng-submit="save(selected.id)">
-                            <div class="comments_post">
-                                <h3>Bình luận</h3>
-
-                                <div class="form-group">
-                                    <label for="inputName">Họ tên</label>
-                                    <input type="text" class="form-control" id="inputAuthor" placeholder="VD: Nguyễn Văn An" name="author" ng-model="author" ng-required="true">
-                                    <span class="help-block" ng-show="comment.author.$error.required">Họ tên không được trống</span>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputEmail">Email</label>
-                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email" ng-model="email" ng-required="true">
-                                    <span class="help-block" ng-show="comment.email.$error.required">Email không được trống</span>
-                                    <span class="help-block" ng-show="comment.email.$error.email">Định dạng email không đúng</span>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputMessage">Nội dung</label>
-                                    <textarea class="form-control" id="inputMessage" placeholder="Viết cho chúng tôi cảm nhận của bạn" rows="4" name="content" ng-model="content" ng-required="true"></textarea>
-                                    <span class="help-block" ng-show="comment.content.$error.required">Nội dung không được trống</span>
-                                </div>
-                                <div class="form-group">
-                                    <button class="btn btn-primary" type="submit" id="sendComment" ng-disabled="comment.$invalid">Gửi đánh giá</button>
-                                </div>
+    <section id="detail-news">
+        <section class="section-header">
+            <div class="container-fluid">
+                <div class="container header">
+                    <h1 class="heading dark">
+                        Bai viet
+                    </h1>
+                </div>
+                <div class="introduce">
+                    <div class="container">
+                        <div class="row">
+                            <div class="left col-sm-6 col-xs-12">
+                                <h4 class="sub-heading">
+                                    Proin pharetra purus consequat sapien pretium, fermentum congue purus blandit. Aliquam porttitor nunc sit amet blandit laoreet. Nunc congue at neque a tincidunt.
+                                </h4>
                             </div>
-                        </form>
 
-                        <div class="comments_posts_list">
-                            <table class="table list-comment">
-                                    <div class="media first-comment" ng-repeat="comments in blogComments">
-                                        <div class="media-left">
-                                            <img class="media-object" src="{{ asset('public/frontend/img/users_ava.png') }}" alt="users_ava">
-                                        </div>
-                                        <div class="media-body">
-                                            <h4 class="media-heading"><% comments.author %></h4>
-                                            <p ng-bind-html="$sce.trustAsHtml(comments.content)"></p>
-                                        </div>
-                                    </div>
-                            </table>
-
+                            <div class="right col-sm-6 col-xs-12">
+                                <p class="paragraph">Nunc accumsan purus vel ex laoreet vulputate. In ac ex sed lectus sodales pellentesque vel at ante. Nam in eros eget dui elementum tincidunt. Phasellus at diam ac nisl aliquet congue. Suspendisse sollicitudin sagittis felis, at consectetur justo suscipit vel. Quisque ac velit eu metus cursus accumsan eget ac lacus. Integer lacinia ex mi, et interdum nunc consequat quis. Fusce consectetur dui at felis tincidunt, quis sollicitudin libero euismod. Ut bibendum lobortis odio.</p>
+                            </div>
                         </div>
-                        <div class="btn btn-primary see-more" ng-click="seeMore(selected.id)">Xem thêm ...</div>
-                    </div>
-
-                </div>
-
-                <div class="nav_side col-md-3 col-sm-3 col-xs-12">
-                    <div class="panel panel-default">
-                        <!-- Default panel contents -->
-                        <div class="panel-heading">Bài viết <% title %></div>
-                            <ul class="list-group">
-                                <li class="list-group-item" ng-repeat="advise in advises" ng-hide="<% advise.slug == slug %>" ng-if="type == 0">
-                                    <a href="{{ url('/tu-van') }}/<% advise.slug %>" target="_self"><% advise.title %></a>
-                                </li>
-                                <li class="list-group-item" ng-repeat="new in news" ng-hide="<% new.slug == slug %>" ng-if="type == 1">
-                                    <a href="{{ url('/tin-tuc') }}/<% new.slug %>" target="_self"><% new.title %></a>
-                                </li>
-                            </ul>
                     </div>
                 </div>
-
             </div>
+        </section>
+
+        <div class="container">
+            <article>
+                <p class="paragraph">Curabitur malesuada volutpat purus, ut ultricies sem. Donec euismod est at magna maximus, eget venenatis libero dictum. Cras quis fringilla turpis. Curabitur semper non justo eget ultricies. Cras tempus et sapien suscipit pellentesque. Quisque consectetur tempus lorem ac lacinia. Morbi nulla ligula, pulvinar at scelerisque quis, luctus quis diam. Vestibulum cursus facilisis velit at pellentesque. Sed in lacinia metus. Aliquam vel venenatis augue.</p>
+
+                <img src="" alt="post image">
+            </article>
         </div>
-        <!-- InstanceEndEditable -->
     </section>
+
     <script src="{{ asset ("public/frontend/app/controllers/detail-blog.js") }}"></script>
-    <script>
-        $(window).scroll(function () {
-            'use strict';
-            if ($(window).scrollTop() > 150) {
-                $('.main_content').css( 'margin-top' , '280px');
-            }
-            if ($(window).scrollTop() < 150) {
-                $('.main_content').css( 'margin-top' , '50px');
-            }
-        });
-        // $('#sendComment').click(function(){
-        //     alert(1);
-        //     return false;
-        // })
-    </script>
 @endsection
