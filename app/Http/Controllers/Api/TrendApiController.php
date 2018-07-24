@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use App\TrendCategory;
@@ -50,5 +51,18 @@ class TrendApiController extends Controller
             return response()->json('No item found', 404);
         }
         return response()->json($result, 200);
+    }
+
+    public function fetchTrend(){
+        $slug = Input::get('slug');
+        $result = DB::table('trend')
+            ->select('*')
+            ->where('slug', '=', $slug)
+            ->where('is_deleted', '=', 0)
+            ->get();
+        if(!$result){
+            return response()->json('No item found', 404);
+        }
+        return response()->json($result[0], 200);
     }
 }

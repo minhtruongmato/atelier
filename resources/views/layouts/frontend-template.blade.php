@@ -56,11 +56,6 @@
     <script src="{{ asset('bower_components') }}/imagesloaded/imagesloaded.js"></script>
     <!-- /optional -->
 
-
-    <script>
-        angular.module('atelierApp', ['wu.masonry']).
-    </script>
-
     <script src="{{ asset('bower_components') }}/angular-masonry/angular-masonry.js"></script>
 
     <script src="{{ asset ("public/frontend/app/app.js") }}"></script>
