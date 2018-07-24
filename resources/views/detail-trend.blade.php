@@ -23,10 +23,11 @@
         </section>
 
         <div class="container">
+            <div ng-repeat="image in trendImages">
+                <img ng-src="{{ asset('storage/app/trends') }}<% '/' + trendDetail.slug + '/' + image %>" />
+            </div>
             <article>
-                <p class="paragraph">Curabitur malesuada volutpat purus, ut ultricies sem. Donec euismod est at magna maximus, eget venenatis libero dictum. Cras quis fringilla turpis. Curabitur semper non justo eget ultricies. Cras tempus et sapien suscipit pellentesque. Quisque consectetur tempus lorem ac lacinia. Morbi nulla ligula, pulvinar at scelerisque quis, luctus quis diam. Vestibulum cursus facilisis velit at pellentesque. Sed in lacinia metus. Aliquam vel venenatis augue.</p>
-
-                <img src="" alt="post image">
+                <p class="paragraph" ng-bind-html="$sce.trustAsHtml(trendDetail.content)"></p>
             </article>
         </div>
     </section>

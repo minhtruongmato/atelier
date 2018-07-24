@@ -60,6 +60,8 @@ class TrendApiController extends Controller
             ->where('slug', '=', $slug)
             ->where('is_deleted', '=', 0)
             ->get();
+//        echo '<pre>';
+//        print_r($result);die;
         if(!$result){
             return response()->json('No item found', 404);
         }

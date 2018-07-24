@@ -1,7 +1,9 @@
 (function(){
-    app.controller('TrendController', function($scope, $http, $location, API_URL, listAdvisesFactory, listNewsFactory){
+    app.controller('TrendController', function($scope, $http, $location, API_URL, $sce){
+        $scope.$sce = $sce;
         $scope.trends = [];
         $scope.trendDetail = [];
+        $scope.trendImages = [];
         $urlSplit = $location.path().split("/");
         slug = $urlSplit[3];
         if(!$urlSplit[3]){
@@ -39,7 +41,7 @@
         }).then(function(success){
 
             $scope.trendDetail = success.data;
-            console.log($scope.trendDetail);
+            $scope.trendImages = JSON.parse($scope.trendDetail.image);
         }, function(error){
 
         });
