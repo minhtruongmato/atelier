@@ -41,9 +41,11 @@
 
         <div class="container">
             <article>
-                <p class="paragraph" ng-bind-html="$sce.trustAsHtml(selected.content)">
+                <div>
+                    <p class="paragraph" ng-bind-html="$sce.trustAsHtml(selected.content)">
+                </div>
 
-                <img src="{{ asset('storage/app/blogs') }}<% '/' + selected.image %>" alt="image news"/>
+                <img ng-src="{{ asset('storage/app') }}<% '/' + selected.image %>" alt="image news"/>
             </article>
         </div>
     </section>

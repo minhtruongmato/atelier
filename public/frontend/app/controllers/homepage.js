@@ -1,5 +1,5 @@
 (function(){
-    app.controller('HomepageController', function($scope, $http, API_URL, $uibModal, $mdDialog, menuProductFactory, productsFactory, listNewsFactory, listAdvisesFactory, $sce){
+    app.controller('HomepageController', function($scope, $http, API_URL, $uibModal, $mdDialog, menuProductFactory, productsFactory, listNewsFactory, listAdvisesFactory, blogFactory, $sce){
         $scope.libraries = [];
         $scope.categoryTrendForHomePage = [];
 
@@ -9,6 +9,7 @@
         $scope.menuProduct = [];
         $scope.latestAdvises = [];
         $scope.news = [];
+        $scope.blog = [];
         $scope.$sce = $sce;
         var alert;
         // Fetch all products
@@ -85,7 +86,6 @@
             url: API_URL + 'trend-category-for-homepage'
         }).then(function(success){
             $scope.categoryTrendForHomePage = success.data;
-            console.log($scope.categoryTrendForHomePage);
         }, function(error){
 
         });
@@ -108,6 +108,15 @@
 
         });
 
+        // Build blog
+        blogFactory.blog()
+        .then(function(success){
+            $scope.blog = success.data;
+            console.log($scope.blog);
+        }, function(error){
+
+        });
+
         
 
         $scope.open = function(item){
@@ -124,22 +133,6 @@
                 size: 'lg'
             }).result.then(function(){}, function(res){});
         };
-
-        // Fetch news
-        listNewsFactory.news()
-        .then(function (success) {
-            $scope.news = success.data;
-        }, function (error) {
-
-        });
-
-        // Fetch news
-        listAdvisesFactory.advises()
-        .then(function (success) {
-            $scope.advises = success.data;
-        }, function (error) {
-
-        });
 
     });
 })();

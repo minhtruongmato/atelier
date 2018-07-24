@@ -80,6 +80,17 @@ var app = angular.module('atelierApp', ['ng', 'ngRoute', 'ngResource', 'ngMateri
             }
         }
     })
+    .factory('blogFactory', function($http, API_URL){
+        return{
+            blog: function(){
+                // Fetch blog
+                return $http({
+                    method: 'GET',
+                    url: API_URL + 'fetch_all_blog',
+                });
+            }
+        }
+    })
 
     /* Directives */
     .directive('activeOnFirstItem', function(){

@@ -289,21 +289,19 @@
                             <div class="row">
 
                                 <div class="owl-carousel">
-                                    <?php for ($i = 0; $i < 5; $i++) { ?>
-                                    <div class="item wow fadeInUp">
+                                    <div class="item wow fadeInUp" ng-repeat="item in blog">
                                         <div class="inner">
                                             <div class="mask">
                                                 <img src="{{ asset('public/frontend/img/demo-news-2.jpg') }}" alt="image news">
                                             </div>
 
-                                            <h2 class="post-heading dark">Global Travel And Vacations Luxury Travel On A Tight Budget</h2>
-                                            <p class="description hidden-xs">Nunc accumsan purus vel ex laoreet vulputate. In ac ex sed lectus sodales pellentesque vel at ante. Nam in eros eget dui elementum tincidunt. Phasellus at diam ac nisl aliquet congue. Suspendisse sollicitudin sagittis felis, at consectetur justo suscipit vel. Quisque ac velit eu metus cursus accumsan eget ac lacus. Integer lacinia ex mi, et interdum nunc consequat quis. Fusce consectetur dui at felis tincidunt, quis sollicitudin libero euismod. Ut bibendum lobortis odio.</p>
+                                            <h2 class="post-heading dark"><% blog.title %></h2>
+                                            <p class="description hidden-xs"><% blog.description %></p>
                                             <a href="{{ url('') }}" class="btn btn-outline" role="button" target="_self">
                                                 Xem chi tiết
                                             </a>
                                         </div>
                                     </div>
-                                    <?php } ?>
                                 </div>
                             </div>
                         </div>

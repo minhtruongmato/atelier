@@ -15,9 +15,6 @@
             }
         }).then(function(success){
             $scope.selected = success.data;
-            console.log($scope.selected);
-            
-
         }, function(error){
 
         }); 
