@@ -19,15 +19,38 @@
                         <% trendDetail.title %>
                     </h1>
                 </div>
+                <div class="introduce">
+                    <div class="container">
+                        <div class="row">
+                            <div class="left col-sm-6 col-xs-12">
+                                <h4 class="sub-heading">
+                                    <% trendDetail.description %>
+                                </h4>
+                            </div>
+
+                            <div class="right col-sm-6 col-xs-12">
+                                <p class="paragraph" ng-bind-html="$sce.trustAsHtml(trendDetail.content)">
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <div class="container">
-            <div ng-repeat="image in trendImages">
-                <img ng-src="{{ asset('storage/app/trends') }}<% '/' + trendDetail.slug + '/' + image %>" />
-            </div>
             <article>
+                <!--
                 <p class="paragraph" ng-bind-html="$sce.trustAsHtml(trendDetail.content)"></p>
+                -->
+
+                <div masonry load-images="true">
+                    <div class="masonry-brick" ng-repeat="image in trendImages">
+                        <img ng-src="{{ asset('storage/app/trends') }}<% '/' + trendDetail.slug + '/' + image %>" />
+                    </div>
+                </div>
+
             </article>
         </div>
     </section>

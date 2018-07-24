@@ -88,9 +88,9 @@ EMBED STYLE
 
                             &:hover{
                                 .inner{
-                                    -webkit-box-shadow:  0 4px 15px #000;
-                                    -moz-box-shadow:  0 4px 15px #000;
-                                    box-shadow:  0 4px 15px #000;
+                                    -webkit-box-shadow:  0 4px 15px $gray;
+                                    -moz-box-shadow:  0 4px 15px $gray;
+                                    box-shadow:  0 4px 15px $gray;
 
                                     -webkit-transform: translateY(-5px);
                                     -moz-transform: translateY(-5px);

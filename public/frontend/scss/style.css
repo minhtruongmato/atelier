@@ -1213,6 +1213,17 @@ section#list-trends .container {
           padding: 15px 30px;
           background-color: #fff; }
 
+#detail-trend .section-header {
+  margin-top: 0px; }
+#detail-trend .container article {
+  padding-top: 100px;
+  padding-bottom: 100px; }
+  #detail-trend .container article .masonry-brick {
+    width: 33%;
+    padding: 10px; }
+    #detail-trend .container article .masonry-brick img {
+      width: 100%; }
+
 @media (max-width: 768px) {
   section.section-header {
     margin-top: 200px; }
@@ -1283,9 +1294,9 @@ EMBED STYLE
         #news section.list-blogs .container-fluid .container .row .item .inner a.btn-outline {
           margin-left: 15px; }
       #news section.list-blogs .container-fluid .container .row .item:hover .inner {
-        -webkit-box-shadow: 0 4px 15px #000;
-        -moz-box-shadow: 0 4px 15px #000;
-        box-shadow: 0 4px 15px #000;
+        -webkit-box-shadow: 0 4px 15px #666;
+        -moz-box-shadow: 0 4px 15px #666;
+        box-shadow: 0 4px 15px #666;
         -webkit-transform: translateY(-5px);
         -moz-transform: translateY(-5px);
         -ms-transform: translateY(-5px);
