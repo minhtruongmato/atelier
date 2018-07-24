@@ -11,7 +11,7 @@
         }
     </style>
 
-    <section id="about">
+    <section id="about" ng-controller="IntroduceController">
         <section class="cover">
             <div class="mask">
                 <img src="https://images.unsplash.com/photo-1532275131641-b10b20ba84af?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cc74bf344f9b65c3e30b2c86f7368139&auto=format&fit=crop&w=1350&q=80" alt="about cover">
@@ -52,48 +52,17 @@
             <div class="container">
                 <div class="row">
                     <div class="left col-md-8 col-xs-12">
-                        <div class="wrapper" id="overview">
+                        <div class="wrapper" id="<% introduce.slug %>" ng-repeat="introduce in introduces">
                             <div class="head">
                                 <h2 class="post-heading dark bigger">
-                                    Tổng quan
+                                    <% introduce.title %>
                                 </h2>
                             </div>
                             <div class="body">
                                 <article>
-                                    <p class="paragraph">Integer fermentum quam dapibus est placerat, venenatis condimentum libero tristique. Curabitur vel dapibus quam. Morbi id enim facilisis, ultrices neque non, auctor ligula. Sed dignissim nunc non tellus suscipit, et molestie mi posuere. Aliquam tempus accumsan neque, et tempor massa commodo volutpat. Ut vitae erat ac metus maximus interdum ut vitae arcu. Donec sagittis, tortor vel mollis ullamcorper, diam metus malesuada libero, et viverra lacus sapien eu ipsum. Maecenas aliquet cursus ex at hendrerit. Duis eu pretium sem. Sed aliquam, metus eget cursus molestie, tellus ex ullamcorper leo, eu faucibus velit justo quis sapien. Phasellus pulvinar mi at neque suscipit, sit amet vulputate nisl luctus. Aenean eget massa gravida, tincidunt velit ac, sagittis nisl.</p>
+                                    <img ng-src="{{ asset('storage/app') }}<% '/' + introduce.image %>" alt="about cover">
 
-                                    <img src="https://images.unsplash.com/photo-1532275131641-b10b20ba84af?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cc74bf344f9b65c3e30b2c86f7368139&auto=format&fit=crop&w=1350&q=80" alt="about cover">
-                                    <small>Image caption</small>
-
-                                    <p class="paragraph">In varius id ipsum eget malesuada. Sed euismod et nulla vel suscipit. Fusce in consectetur nisi, et porttitor nunc. Donec sit amet congue quam, ac elementum libero. Maecenas eu libero justo. Pellentesque fermentum condimentum tellus at aliquet. Maecenas eu nisl imperdiet eros mattis scelerisque vel et sem. Pellentesque pulvinar urna lorem, ut accumsan odio faucibus vel. Nam a purus ut massa semper condimentum.</p>
-                                </article>
-                            </div>
-                        </div>
-
-                        <div class="wrapper" id="visionAndMission">
-                            <div class="head">
-                                <h2 class="post-heading dark bigger">
-                                    Tầm nhìn & Sứ mệnh
-                                </h2>
-                            </div>
-                            <div class="body">
-                                <article>
-                                    <p class="paragraph">Integer fermentum quam dapibus est placerat, venenatis condimentum libero tristique. Curabitur vel dapibus quam. Morbi id enim facilisis, ultrices neque non, auctor ligula. Sed dignissim nunc non tellus suscipit, et molestie mi posuere. Aliquam tempus accumsan neque, et tempor massa commodo volutpat. Ut vitae erat ac metus maximus interdum ut vitae arcu. Donec sagittis, tortor vel mollis ullamcorper, diam metus malesuada libero, et viverra lacus sapien eu ipsum. Maecenas aliquet cursus ex at hendrerit. Duis eu pretium sem. Sed aliquam, metus eget cursus molestie, tellus ex ullamcorper leo, eu faucibus velit justo quis sapien. Phasellus pulvinar mi at neque suscipit, sit amet vulputate nisl luctus. Aenean eget massa gravida, tincidunt velit ac, sagittis nisl.</p>
-                                    <p class="paragraph">In varius id ipsum eget malesuada. Sed euismod et nulla vel suscipit. Fusce in consectetur nisi, et porttitor nunc. Donec sit amet congue quam, ac elementum libero. Maecenas eu libero justo. Pellentesque fermentum condimentum tellus at aliquet. Maecenas eu nisl imperdiet eros mattis scelerisque vel et sem. Pellentesque pulvinar urna lorem, ut accumsan odio faucibus vel. Nam a purus ut massa semper condimentum.</p>
-                                </article>
-                            </div>
-                        </div>
-
-                        <div class="wrapper" id="ourCustomer">
-                            <div class="head">
-                                <h2 class="post-heading dark bigger">
-                                    Khách hàng của chúng tôi
-                                </h2>
-                            </div>
-                            <div class="body">
-                                <article>
-                                    <p class="paragraph">Integer fermentum quam dapibus est placerat, venenatis condimentum libero tristique. Curabitur vel dapibus quam. Morbi id enim facilisis, ultrices neque non, auctor ligula. Sed dignissim nunc non tellus suscipit, et molestie mi posuere. Aliquam tempus accumsan neque, et tempor massa commodo volutpat. Ut vitae erat ac metus maximus interdum ut vitae arcu. Donec sagittis, tortor vel mollis ullamcorper, diam metus malesuada libero, et viverra lacus sapien eu ipsum. Maecenas aliquet cursus ex at hendrerit. Duis eu pretium sem. Sed aliquam, metus eget cursus molestie, tellus ex ullamcorper leo, eu faucibus velit justo quis sapien. Phasellus pulvinar mi at neque suscipit, sit amet vulputate nisl luctus. Aenean eget massa gravida, tincidunt velit ac, sagittis nisl.</p>
-                                    <p class="paragraph">In varius id ipsum eget malesuada. Sed euismod et nulla vel suscipit. Fusce in consectetur nisi, et porttitor nunc. Donec sit amet congue quam, ac elementum libero. Maecenas eu libero justo. Pellentesque fermentum condimentum tellus at aliquet. Maecenas eu nisl imperdiet eros mattis scelerisque vel et sem. Pellentesque pulvinar urna lorem, ut accumsan odio faucibus vel. Nam a purus ut massa semper condimentum.</p>
+                                    <p ng-bind-html="$sce.trustAsHtml(introduce.content)"></p>
                                 </article>
                             </div>
                         </div>
@@ -105,19 +74,9 @@
                                 Về chúng tôi
                             </div>
                             <ul class="list-group">
-                                <li class="list-group-item">
-                                    <a href="#overview" target="_self">
-                                        Tổng quan
-                                    </a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a href="#visionAndMission" target="_self">
-                                        Tầm nhìn & Sứ mệnh
-                                    </a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a href="#ourCustomer" target="_self">
-                                        Khách hàng của chúng tôi
+                                <li class="list-group-item"  ng-repeat="introduce in introduces">
+                                    <a href="#<% introduce.slug %>" target="_self">
+                                        <% introduce.title %>
                                     </a>
                                 </li>
                             </ul>
@@ -132,7 +91,6 @@
     <script>
         $(window).scroll(function(){
 
-            console.log($(window).scrollTop());
 
             var windowWidth = $(window).width();
 
