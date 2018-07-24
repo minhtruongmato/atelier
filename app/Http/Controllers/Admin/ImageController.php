@@ -52,11 +52,11 @@ class ImageController extends Controller
             return redirect()->intended('admin/library');
         }
         if($request->hasFile('image')){
-            $image = $files->getClientOriginalName();
+            $image = $files->hashName();
         }
         $data = ['library_id' => $id, 'image' => $image, 'description' => $request->description];
         if(DB::table('image')->insert($data)){
-            $files->move($path,$image);
+            $files->store('library/' . $slug);
         }
         return redirect()->route('image.index', ['id' => $id]);
         

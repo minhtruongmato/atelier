@@ -2,10 +2,9 @@
 @section('content')
     <link href="{{ asset("public/frontend/lib/fullpage/css/jquery.fullpage.min.css")}}" rel="stylesheet" type="text/css" />
 
-    <!-- OWL CAROUSEL -->
-    <link href="{{ asset("public/frontend/lib/owl-carousel/css/owl.carousel.min.css")}}" rel="stylesheet" type="text/css" />
 
-    <div id="homepage">
+    <div id="homepage" ng-controller="HomepageController">
+
         <div id="fullpage">
             <div class="section" id="slider">
                 <div id="top-slider" class="carousel slide" data-ride="carousel">
@@ -131,58 +130,41 @@
 
                                 <!-- Wrapper for slides -->
                                 <div class="carousel-inner" role="listbox">
-                                    <div class="item active">
+
+                                    <div class="item"  ng-class="{active : $index === 0}" ng-repeat="library in libraries">
                                         <div class="mask">
-                                            <img src="{{ asset('public/frontend/img/demo-product-1.jpg') }}" alt="image about 1">
+                                            <img src="{{ asset('storage/app/library') }}<% '/' + library.slug + '/' + library.image %>" alt="image about 1">
                                         </div>
                                         <div class="carousel-caption">
                                             <h4 class="sub-heading light">Product</h4>
 
-                                            <h1 class="heading light">Bathroom</h1>
+                                            <h1 class="heading light"><% library.title %></h1>
 
-                                            <a href="" class="btn btn-default" role="button">View detail</a>
+
+                                            <a href="{{ url('/thu-vien-anh') }}<% '/' + library.slug  %>" class="btn btn-default" role="button" target="_self" >View detail</a>
                                         </div>
                                     </div>
-                                    <div class="item">
-                                        <div class="mask">
-                                            <img src="{{ asset('public/frontend/img/demo-product-2.jpg') }}" alt="image about 2">
-                                        </div>
-                                        <div class="carousel-caption">
-                                            <h4 class="sub-heading light">Product</h4>
 
-                                            <h1 class="heading light">Bed Room</h1>
+                                  
 
-                                            <a href="" class="btn btn-default" role="button" target="_self">Xem chi tiết</a>
-                                        </div>
-                                    </div>
                                 </div>
 
                             </div>
                         </div>
                         <div class="right col-sm-6 col-xs-12">
                             <ul class="slide-control">
-                                <li data-target="#slider-product" data-slide-to="0">
+
+                                <li data-target="#slider-product" data-slide-to="<% $index %>" ng-repeat="library in libraries">
                                     <div class="inner">
                                         <div class="icon">
                                             <i class="fa fa-plus fa-2x" aria-hidden="false"></i>
                                         </div>
                                         <div class="title">
-                                            <h4>the future of loft living</h4>
+                                            <h4><% library.title %></h4>
                                         </div>
                                     </div>
                                 </li>
-                                <?php for ($i = 0; $i < 4; $i++) { ?>
-                                <li data-target="#slider-product" data-slide-to="1">
-                                    <div class="inner">
-                                        <div class="icon">
-                                            <i class="fa fa-plus fa-2x" aria-hidden="false"></i>
-                                        </div>
-                                        <div class="title">
-                                            <h4>the future of loft living</h4>
-                                        </div>
-                                    </div>
-                                </li>
-                                <?php } ?>
+
                                 <li>
                                     <div class="inner">
                                         <div class="icon">
@@ -211,24 +193,27 @@
                     </div>
 
                     <div class="row">
-                        <?php for ($i = 0; $i < 8; $i++) { ?>
-                        <div class="item col-sm-2 col-xs-4">
+
+                        <div class="item col-sm-2 col-xs-4" ng-repeat="categoryTrend in categoryTrendForHomePage">
                             <div class="inner">
-                                <a href="{{ url('') }}" target="_self">
+
+                                <a href="{{ url('xu-huong') }}<% '/' + categoryTrend.slug %>"  target="_self">
+
                                     <div class="icon">
                                         <i class="fa fa-plus fa-2x" aria-hidden="false"></i>
                                     </div>
                                     <div class="title">
-                                        <h4>the future of loft living</h4>
+                                        <h4><% categoryTrend.title %></h4>
                                     </div>
                                 </a>
                             </div>
                         </div>
-                        <?php } ?>
 
                         <div class="item col-sm-2 col-xs-4">
                             <div class="inner">
-                                <a href="{{ url('') }}" target="_self">
+
+                                <a href="{{ url('xu-huong') }}" target="_self">
+
                                     <div class="icon">
                                         <i class="fa fa-plus fa-2x" aria-hidden="false"></i>
                                     </div>

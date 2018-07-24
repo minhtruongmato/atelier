@@ -32,7 +32,7 @@ Route::prefix('v1')->group(function() {
         /**
          * Library API
          */
-        Route::resource('library', 'LibraryApiController');
+        // Route::resource('library', 'LibraryApiController');
         Route::get('library', 'LibraryApiController@fetchAllLibrary')->name('library.fetchAllLibrary');
         Route::get('library_detail', 'LibraryApiController@detail')->name('library.detail');
 
