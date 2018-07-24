@@ -51,7 +51,7 @@
         <section class="section-body">
             <div class="container">
                 <div class="row">
-                    <div class="left col-md-8 col-xs-12">
+                    <div class="left col-md-8 col-xs-12" id="about-content">
                         <div class="wrapper" id="<% introduce.slug %>" ng-repeat="introduce in introduces">
                             <div class="head">
                                 <h2 class="post-heading dark bigger">
@@ -75,7 +75,7 @@
                             </div>
                             <ul class="list-group">
                                 <li class="list-group-item"  ng-repeat="introduce in introduces">
-                                    <a href="#<% introduce.slug %>" target="_self">
+                                    <a href="#<% introduce.slug %>">
                                         <% introduce.title %>
                                     </a>
                                 </li>
@@ -103,30 +103,5 @@
                 }
             }
         })
-
-        $(document).ready(function(){
-            // Add smooth scrolling to all links
-            $(".panel a").on('click', function(event) {
-
-                // Make sure this.hash has a value before overriding default behavior
-                if (this.hash !== "") {
-                    // Prevent default anchor click behavior
-                    event.preventDefault();
-
-                    // Store hash
-                    var hash = this.hash;
-
-                    // Using jQuery's animate() method to add smooth page scroll
-                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top
-                    }, 800, function(){
-
-                        // Add hash (#) to URL when done scrolling (default click behavior)
-                        window.location.hash = hash;
-                    });
-                } // End if
-            });
-        });
     </script>
 @endsection
