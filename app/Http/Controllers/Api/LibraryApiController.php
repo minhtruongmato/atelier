@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Response;
 use App\Library;
+use App\Image;
 
 class LibraryApiController extends Controller
 {
@@ -16,16 +17,10 @@ class LibraryApiController extends Controller
     }
 
     public function fetchAllLibrary(){
-        $result = DB::table('library')
-            ->select('*')
-            ->where('is_deleted', '=', 0)
-            ->get();
+        $result = Library::where('is_deleted', 0)->orderBy('id', 'desc')->take(10)->get()->toArray();
 	    foreach ($result as $key => $value) {
-	    	$image = DB::table('image')
-	        ->select('*')
-	        ->where('library_id', '=', $value->id)
-	        ->first();
-	        $result[$key]->image = $image->image;
+            $image = Image::where('library_id', $value['id'])->orderBy('id', 'desc')->first();
+	        $result[$key]['image'] = $image['image'];
 	    }
         if(!$result){
             return response()->json('No item found', 404);

@@ -43,6 +43,7 @@
             </div>
         </section>
 
+
         <section id="list-trends">
             <div class="container">
             <div masonry load-images="true">
@@ -53,6 +54,7 @@
                             <div class="mask">
                                 <img ng-src="{{ asset('storage/app/trends') }}<% '/' + trend.slug + '/' + trend.image %>" alt="A masonry brick">
 
+
                                 <div class="content">
                                     <h4 class="post-subheading dark"><% trend.cate_title %></h4>
                                     <h2 class="post-heading dark"><% trend.title %></h2>
@@ -62,6 +64,7 @@
                     </a>
                 </div>
             </div>
+
 
             <!--
             <div class="grid-item wow fadeInUp <% $index%2==0 ? 'grid-item-height-2' : '' %>" ng-repeat="trend in trends" id="<% $index %>">
@@ -141,6 +144,7 @@
     <!-- optional -->
     <script src="{{ asset('bower_components') }}/imagesloaded/imagesloaded.js"></script>
     <!-- /optional -->
+
 
     <script>
         angular.module('atelierApp', ['wu.masonry']).

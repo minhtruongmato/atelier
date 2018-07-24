@@ -136,7 +136,7 @@ class LibraryController extends Controller
 
 	        if($validator->passes()){
 	             $destinationPath = $upload;
-	             $filename = $file->getClientOriginalName();
+	             $filename = $file->hashName();
 	             $upload_success = $file->move($destinationPath, $filename);
 	             $uploadcount ++;
 	             $list_image[] = $filename;
@@ -164,7 +164,7 @@ class LibraryController extends Controller
 	        $validator = Validator::make(array('file'=> $file), $rules);
 
 	        if($validator->passes()){
-	             $filename = $file->getClientOriginalName();
+	             $filename = $file->hashName();
 	             $uploadcount ++;
 	             $list_image[] = $filename;
 	         }
