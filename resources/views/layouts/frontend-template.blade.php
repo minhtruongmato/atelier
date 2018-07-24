@@ -41,6 +41,23 @@
     <link rel="stylesheet" href="{{ asset ("public/frontend/rating/jk-rating-stars.min.css") }}" />
     <script src="{{ asset ("public/frontend/rating/jk-rating-stars.min.js") }}"></script>
 
+    <!-- Angular Mansonry -->
+
+    <script src="{{ asset('bower_components') }}/jquery-bridget/jquery-bridget.js"></script>
+    <script src="{{ asset('bower_components') }}/ev-emitter/ev-emitter.js"></script>
+    <script src="{{ asset('bower_components') }}/desandro-matches-selector/matches-selector.js"></script>
+    <script src="{{ asset('bower_components') }}/fizzy-ui-utils/utils.js"></script>
+    <script src="{{ asset('bower_components') }}/get-size/get-size.js"></script>
+    <script src="{{ asset('bower_components') }}/outlayer/item.js"></script>
+    <script src="{{ asset('bower_components') }}/outlayer/outlayer.js"></script>
+    <script src="{{ asset('bower_components') }}/masonry/masonry.js"></script>
+
+    <!-- optional -->
+    <script src="{{ asset('bower_components') }}/imagesloaded/imagesloaded.js"></script>
+    <!-- /optional -->
+
+    <script src="{{ asset('bower_components') }}/angular-masonry/angular-masonry.js"></script>
+
     <script src="{{ asset ("public/frontend/app/app.js") }}"></script>
     <script src="{{ asset ("public/frontend/app/controllers/main.js") }}"></script>
     <script src="{{ asset ("public/frontend/app/controllers/subscribe.js") }}"></script>

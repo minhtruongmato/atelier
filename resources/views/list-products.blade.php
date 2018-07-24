@@ -45,11 +45,13 @@
                         <a href="" target="_self">
                             <div class="inner">
                                 <div class="mask">
+
                                     <a href="{{ url('/san-pham/chi-tiet') }}<% '/' + product.slug  %>"  target="_self">
                                         <img ng-src="{{ asset('storage/app/library') }}<% '/' + product.slug + '/' + product.image %>" alt="A masonry brick">
                                     </a>
                                     <div class="content">
                                         <h2 class="post-heading dark"><a href="{{ url('/san-pham/chi-tiet') }}<% '/' + product.slug  %>"  target="_self"><% product.title %></a></h2>
+
                                     </div>
                                 </div>
                             </div>
@@ -60,25 +62,6 @@
         </section>
     </section>
 
-    <!-- Angular Mansonry -->
-
-    <script src="{{ asset('bower_components') }}/ev-emitter/ev-emitter.js"></script>
-    <script src="{{ asset('bower_components') }}/desandro-matches-selector/matches-selector.js"></script>
-    <script src="{{ asset('bower_components') }}/fizzy-ui-utils/utils.js"></script>
-    <script src="{{ asset('bower_components') }}/get-size/get-size.js"></script>
-    <script src="{{ asset('bower_components') }}/outlayer/item.js"></script>
-    <script src="{{ asset('bower_components') }}/outlayer/outlayer.js"></script>
-    <script src="{{ asset('bower_components') }}/masonry/masonry.js"></script>
-
-    <!-- optional -->
-    <script src="{{ asset('bower_components') }}/imagesloaded/imagesloaded.js"></script>
-    <!-- /optional -->
-
-    <script>
-        angular.module('atelierApp', ['wu.masonry']).
-    </script>
-
-    <script src="{{ asset('bower_components') }}/angular-masonry/angular-masonry.js"></script>
 
     <script src="{{ asset ("public/frontend/app/controllers/library.js") }}"></script>
 

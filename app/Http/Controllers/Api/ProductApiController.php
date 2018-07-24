@@ -65,7 +65,6 @@ class ProductApiController extends Controller
         $result[0]->template_title = json_decode($result[0]->template_title);
         $result[0]->template_content = json_decode($result[0]->template_content);
         $result[0]->template = array_combine($result[0]->template_title, $result[0]->template_content);
-        print_r($result);die;
         if(!$result){
             return response()->json('No item found', 404);
         }

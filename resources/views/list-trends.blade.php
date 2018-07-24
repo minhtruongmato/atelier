@@ -49,7 +49,7 @@
                 <div masonry load-images="true">
 
                     <div class="masonry-brick <% $index%2==0 ? 'masonry-brick-height-2' : '' %>" ng-repeat="trend in trends">
-                        <a href="" target="_self">
+                        <a href="{{ url('xu-huong') }}<% '/' + trend.slug %>" target="_self">
                             <div class="inner">
                                 <div class="mask">
                                     <img ng-src="{{ asset('storage/app/trends') }}<% '/' + trend.slug + '/' + trend.image %>" alt="A masonry brick">
@@ -130,26 +130,6 @@
 
     </section>
 
-    <!-- Angular Mansonry -->
-
-    <script src="{{ asset('bower_components') }}/ev-emitter/ev-emitter.js"></script>
-    <script src="{{ asset('bower_components') }}/desandro-matches-selector/matches-selector.js"></script>
-    <script src="{{ asset('bower_components') }}/fizzy-ui-utils/utils.js"></script>
-    <script src="{{ asset('bower_components') }}/get-size/get-size.js"></script>
-    <script src="{{ asset('bower_components') }}/outlayer/item.js"></script>
-    <script src="{{ asset('bower_components') }}/outlayer/outlayer.js"></script>
-    <script src="{{ asset('bower_components') }}/masonry/masonry.js"></script>
-
-    <!-- optional -->
-    <script src="{{ asset('bower_components') }}/imagesloaded/imagesloaded.js"></script>
-    <!-- /optional -->
-
-
-    <script>
-        angular.module('atelierApp', ['wu.masonry']).
-    </script>
-
-    <script src="{{ asset('bower_components') }}/angular-masonry/angular-masonry.js"></script>
 
     <script src="{{ asset ("public/frontend/app/controllers/trend.js") }}"></script>
 

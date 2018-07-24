@@ -7,15 +7,19 @@
                 <table class="table">
                     <tr>
                         <td><i class="fa fa-map-marker" aria-hidden="true"></i></td>
-                        <td>Vivamus non finibus tortor. Nulla porttitor pharetra dolor vel molestie.</td>
+                        <td>31 Ngõ Giếng, Đông Các, Ô Chợ Dừa, Đống Đa, HN</td>
                     </tr>
                     <tr>
                         <td><i class="fa fa-phone" aria-hidden="true"></i></td>
-                        <td>024 1234 5678</td>
+                        <td>
+                            <a href="tel:(+84) 024 6656 8899">(+84) 024 6656 8899</a>
+                        </td>
                     </tr>
                     <tr>
                         <td><i class="fa fa-envelope-o" aria-hidden="true"></i></td>
-                        <td>contact@atelier.vn</td>
+                        <td>
+                            <a href="mailto:contact@atelier31.vn">contact@atelier31.vn</a>
+                        </td>
                     </tr>
                 </table>
             </div>
@@ -62,18 +66,22 @@
                 </ul>
             </div>
             <div class="col-md-4 col-sm-6 col-xs-12" ng-controller="SubscribeController">
-                <h3>Đăng ký nhận thông báo</h3>
+                <h3>Theo dõi chúng tôi tại</h3>
+
+                <!--
                 <p>Integer faucibus consequat quam, et efficitur odio ac augue laoreet, vel feugiat sapien ornare.</p>
 
                 <form>
                     <div class="input-group">
                         <input type="email" class="form-control" placeholder="Email của khách hàng" ng-model="user.email" id="subs_email">
                         <span class="input-group-btn">
-                  <input type="submit" ng-click="send(user)" class="btn btn-primary" value="Đăng ký" />
-                </span>
+                            <input type="submit" ng-click="send(user)" class="btn btn-primary" value="Đăng ký" style="padding: 8px 20px;"/>
+                        </span>
 
-                    </div><!-- /input-group -->
+                    </div>
                 </form>
+                <br>
+                -->
                 <ul class="list-inline list-unstyled">
                     <li>
                         <a href="javascript:void(0);" target="_blank">
