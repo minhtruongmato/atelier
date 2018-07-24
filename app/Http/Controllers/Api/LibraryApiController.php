@@ -19,7 +19,7 @@ class LibraryApiController extends Controller
     public function fetchAllLibrary(){
         $result = Library::where('is_deleted', 0)->orderBy('id', 'desc')->take(10)->get()->toArray();
 	    foreach ($result as $key => $value) {
-            $image = Image::where('library_id', $value['id'])->orderBy('id', 'desc')->first();
+            $image = Image::where('library_id', $value['id'])->orderBy('sort', 'asc')->first();
 	        $result[$key]['image'] = $image['image'];
 	    }
         if(!$result){
@@ -37,7 +37,8 @@ class LibraryApiController extends Controller
 
         $images = DB::table('image')
             ->select('*')
-            ->where('library_id', '=', $library->id)
+            ->where('library_id', $library->id)
+            ->orderBy('sort', 'asc')
             ->get();
         $library->image = $images;
         if(!$library){

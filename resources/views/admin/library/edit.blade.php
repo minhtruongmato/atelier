@@ -26,6 +26,13 @@
                                     <textarea id="description" type="text" class="form-control" name="description" value="">{{$library->description}}</textarea>
                                 </div>
                             </div>
+                            <div class="form-group{{ $errors->has('content') ? ' has-error' : '' }}">
+                                <label for="content" class="col-md-2 control-label">Nội dung</label>
+
+                                <div class="col-md-8">
+                                    <textarea id="content" rows="10" class="form-control tinymce" name="content">{{ $library->content }}</textarea>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
