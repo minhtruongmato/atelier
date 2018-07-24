@@ -3,7 +3,7 @@
         <section class="container">
             <div class="col-md-4 col-sm-6 col-xs-12">
                 <h3>Liên hệ với chúng tôi</h3>
-                <p>Vivamus non finibus tortor. Nulla porttitor pharetra dolor vel molestie. Nullam sagittis, augue a malesuada consequat, nunc felis gravida turpis, id porta augue risus vitae enim.</p>
+                <p>Artelier 31 ước mong được tiên phong trên thị trường với khái niệm dịch vụ thiết kế và thi công nội thất tiêu chuẩn 5 sao đích thực. Nơi gia chủ có thể hoàn toàn yên tâm giao phó một mặt bằng để nhận lại một không gian sống hoàn hảo theo đúng thời gian, chất lượng và giá thành cam kết.</p>
                 <table class="table">
                     <tr>
                         <td><i class="fa fa-map-marker" aria-hidden="true"></i></td>

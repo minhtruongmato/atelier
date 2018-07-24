@@ -90,21 +90,21 @@
                                 <h1 class="heading">Về chúng tôi</h1>
                             </div>
                             <div class="body">
-                                <p>Vivamus gravida arcu tortor, a auctor velit mattis non. Vivamus tristique faucibus pellentesque. Nulla at porta lorem. Aliquam elit diam, facilisis at elementum viverra, auctor a risus. Suspendisse nisi quam, mollis at turpis eu, dignissim condimentum massa. Donec vulputate ipsum eu velit vulputate, a viverra nibh sagittis. Sed quam est, semper laoreet viverra ut, facilisis vel nibh. In hac habitasse platea dictumst. Duis viverra arcu sit amet efficitur convallis. Nunc vestibulum faucibus erat, ut molestie lacus rhoncus ut. Ut mattis nisl nec metus placerat, ac consequat orci elementum. Nunc ut tortor auctor, molestie mauris vel, tristique erat.</p>
+                                <p class="paragraph">Artelier 31 ra đời là sự kết tinh giữa Bedekor VN (TP HCM) và Công ty cổ phần Homecons (Hanoi).</p>
                                 <ol>
                                     <li>
-                                        <a href="{{ url('') }}" target="_self">Tổng quan</a>
+                                        <a href="{{ url('gioi-thieu#tong-quan') }}" target="_self">Tổng quan</a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('') }}" target="_self">Tầm nhìn & Sứ mệnh</a>
+                                        <a href="{{ url('gioi-thieu#tam-nhin-chien-luoc-su-menh') }}" target="_self">Tầm nhìn & Sứ mệnh</a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('') }}" target="_self">Khách hàng của chúng tôi</a>
+                                        <a href="{{ url('gioi-thieu#khach-hang-cua-chung-toi') }}" target="_self">Khách hàng của chúng tôi</a>
                                     </li>
                                 </ol>
                             </div>
                             <div class="foot">
-                                <a href="{{ url('') }}" class="btn btn-primary" role="button" target="_self">
+                                <a href="{{ url('gioi-thieu') }}" class="btn btn-primary" role="button" target="_self">
                                     Khám phá ngay
                                 </a>
                             </div>
@@ -279,7 +279,7 @@
                                 </div>
                             </div>
 
-                            <a href="{{ url('') }}" class="btn btn-primary" role="button" target="_self">
+                            <a href="{{ url('tin-tuc') }}" class="btn btn-primary" role="button" target="_self">
                                 Xem tất cả tin tức
                             </a>
 
