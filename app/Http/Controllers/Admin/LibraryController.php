@@ -28,7 +28,7 @@ class LibraryController extends Controller
 		$library = DB::table('library')->where('is_deleted', 0)->get();
 		if($library){
 			foreach ($library as $key => $value) {
-				$list_image = DB::table('image')->where('library_id', $value->id)->orderBy('id','asc')->first();
+				$list_image = DB::table('image')->where('library_id', $value->id)->orderBy('sort','asc')->first();
 				if($list_image){
 					$library[$key]->image = $list_image->image;
 				}else{
