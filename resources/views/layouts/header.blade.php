@@ -5,15 +5,15 @@
         </a>
     </div>
 
-    <div class="center col-sm-7 col-xs-10">
+    <div class="center col-sm-8 col-xs-10">
         <a href="" class="btn-nav-expand" role="button" id="btn-nav-expand">
             <span class="nav-icon"></span>
         </a>
         <nav class="nav-main" id="nav-main">
             <ul>
                 <li>
-                    <a href="{{ url('') }}" target="_self">
-                        Trang chủ
+                    <a href="{{ url('gioi-thieu') }}" target="_self">
+                        Về chúng tôi
                     </a>
                 </li>
                 <li>
@@ -26,11 +26,13 @@
                         Xu hướng
                     </a>
                 </li>
+                <!--
                 <li>
                     <a href="{{ url('') }}" target="_self">
                         Góc sáng tạo
                     </a>
                 </li>
+                -->
                 <li>
                     <a href="{{ url('tin-tuc') }}" target="_self">
                         Tin tức
@@ -55,6 +57,7 @@
                         <i class="fa fa-search" aria-hidden="false"></i> Tìm kiếm
                     </a>
                 </li>
+                <!--
                 <li>
                     <a href="{{ url('') }}" target="_self">
                         <i class="fa fa-user" aria-hidden="false"></i> Đăng nhập
@@ -65,6 +68,7 @@
                         <i class="fa fa-shopping-cart" aria-hidden="false"></i> Giỏ hàng
                     </a>
                 </li>
+                -->
             </ul>
 
             <ul class="visible-xs">
@@ -95,7 +99,7 @@
         </nav>
     </div>
 
-    <div class="right col-sm-3 hidden-xs">
+    <div class="right col-sm-2 hidden-xs">
         <nav class="nav-user">
             <ul>
                 <li>
@@ -103,6 +107,7 @@
                         <i class="fa fa-search" aria-hidden="false"></i> Tìm kiếm
                     </a>
                 </li>
+                <!--
                 <li>
                     <a href="{{ url('') }}" target="_self">
                         <i class="fa fa-user" aria-hidden="false"></i> Đăng nhập
@@ -113,6 +118,7 @@
                         <i class="fa fa-shopping-cart" aria-hidden="false"></i> Giỏ hàng
                     </a>
                 </li>
+                -->
             </ul>
         </nav>
     </div>

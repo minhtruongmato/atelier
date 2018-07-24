@@ -1,7 +1,6 @@
 (function(){
     app.controller('TrendController', function($scope, $http, $location, API_URL, listAdvisesFactory, listNewsFactory){
         $scope.trends = [];
-
         $urlSplit = $location.path().split("/");
         slug = $urlSplit[3];
         if(!$urlSplit[3]){
