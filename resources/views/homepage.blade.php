@@ -144,7 +144,7 @@
                                             <h1 class="heading light"><% library.title %></h1>
 
 
-                                            <a href="{{ url('/thu-vien-anh') }}<% '/' + library.slug  %>" class="btn btn-default" role="button" target="_self" >View detail</a>
+                                            <a href="{{ url('/san-pham/chi-tiet') }}<% '/' + library.slug  %>" class="btn btn-default" role="button" target="_self" >View detail</a>
                                         </div>
                                     </div>
 

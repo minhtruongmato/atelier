@@ -2,7 +2,7 @@
     app.controller('DetailLibraryController', function($scope, $http, $location, API_URL, $sce){
         $scope.$sce = $sce;
         $urlSplit = $location.path().split("/");
-        var slug = $urlSplit[3];
+        var slug = $urlSplit[4];
             $scope.slug = slug;
 
         $http({
@@ -13,6 +13,7 @@
             }
         }).then(function(success){
             $scope.detail = success.data;
+            console.log($scope.detail);
         }, function(error){
 
         });

@@ -56,7 +56,7 @@ class LibraryController extends Controller
 
 		$upload = base_path() . '/' . 'storage/app/library/'.$uniqueSlug;
 		$image = $this->list_image($upload);
-		$data = ['title' => $request->input('title'), 'slug' => $uniqueSlug, 'description'=> $request->input('description'), 'created_at' => date('Y:m:d H:i:s')];
+		$data = ['title' => $request->input('title'), 'slug' => $uniqueSlug, 'description'=> $request->input('description'), 'content' => $request->input('content'),'created_at' => date('Y:m:d H:i:s')];
 		$data2 = [];
 		if(DB::table('library')->insert($data)){
 			$library_id = DB::getPdo()->lastInsertId();
@@ -89,7 +89,7 @@ class LibraryController extends Controller
     	$uniqueSlug = $this->buildUniqueSlug('library', $request->id, $request->slug);
     	$path = base_path() . '/storage/app/library/';
     	
-    	$data = ['title' => $input['title'], 'slug' => $uniqueSlug, 'description' => $input['description'], 'updated_at' => date('Y:m:d H:i:s')];
+    	$data = ['title' => $input['title'], 'slug' => $uniqueSlug, 'description' => $input['description'], 'content' => $request->input('content'), 'updated_at' => date('Y:m:d H:i:s')];
     	if(DB::table('library')->where('id', $id)->update($data)){
     		if($library->slug != $request->slug){
 	    		rename($path . $library->slug, $path . '/' . $uniqueSlug);

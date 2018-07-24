@@ -8,6 +8,7 @@
             url: API_URL + 'library'
         }).then(function(success){
             $scope.library = success.data;
+            console.log($scope.library);
         }, function(error){
 
         });

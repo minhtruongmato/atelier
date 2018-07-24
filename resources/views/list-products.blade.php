@@ -11,7 +11,7 @@
         }
     </style>
 
-    <section id="product" ng-controller="ProductController">
+    <section id="product" ng-controller="LibraryController">
         <section class="section-header">
             <div class="container-fluid">
                 <div class="container header">
@@ -41,15 +41,15 @@
             <div class="container">
                 <div masonry load-images="true">
 
-                    <div class="masonry-brick <% $index%2==0 ? 'masonry-brick-height-2' : '' %>" ng-repeat="product in products">
+                    <div class="masonry-brick <% $index%2==0 ? 'masonry-brick-height-2' : '' %>" ng-repeat="product in library">
                         <a href="" target="_self">
                             <div class="inner">
                                 <div class="mask">
-                                    <img ng-src="{{ asset('storage/app/trends') }}<% '/' + trend.slug + '/' + trend.image %>" alt="A masonry brick">
-
+                                    <a href="{{ url('/san-pham/chi-tiet') }}<% '/' + product.slug  %>"  target="_self">
+                                        <img ng-src="{{ asset('storage/app/library') }}<% '/' + product.slug + '/' + product.image %>" alt="A masonry brick">
+                                    </a>
                                     <div class="content">
-                                        <h4 class="post-subheading dark"><% trend.cate_title %></h4>
-                                        <h2 class="post-heading dark"><% trend.title %></h2>
+                                        <h2 class="post-heading dark"><a href="{{ url('/san-pham/chi-tiet') }}<% '/' + product.slug  %>"  target="_self"><% product.title %></a></h2>
                                     </div>
                                 </div>
                             </div>
@@ -80,6 +80,6 @@
 
     <script src="{{ asset('bower_components') }}/angular-masonry/angular-masonry.js"></script>
 
-    <script src="{{ asset ("public/frontend/app/controllers/product.js") }}"></script>
+    <script src="{{ asset ("public/frontend/app/controllers/library.js") }}"></script>
 
 @endsection
