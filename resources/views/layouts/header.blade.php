@@ -47,7 +47,7 @@
                     <div class="line"></div>
                 </li>
                 <li class="hidden-xs">
-                    Hotline: <b>024 1234 5678</b>
+                    Hotline: <a href="tel:(+84) 024 6656 8899"><b>(+84) 024 6656 8899</b></a>
                 </li>
             </ul>
 
@@ -73,12 +73,12 @@
 
             <ul class="visible-xs">
                 <li>
-                    <a href="#" target="_self">
+                    <a href="http://facebook.com" target="_blank">
                         <i class="fa fa-facebook-f" aria-hidden="false"></i> Facebook
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:void(0);" target="_self">
+                    <a href="http://pinterest.com" target="_blank">
                         <i class="fa fa-pinterest-p" aria-hidden="false"></i> Pinterest
                     </a>
                 </li>
@@ -87,13 +87,13 @@
             <div class="info hidden">
 
                 <b>Trụ sở chính</b>
-                <p>905 Kub Turnpike Suite 638</p>
+                <p>31 Ngõ Giếng, Đông Các, Ô Chợ Dừa, Đống Đa, HN</p>
 
                 <b>TEL</b>
-                <p>024 1234 5678</p>
+                <p><a href="tel:(+84) 024 6656 8899">(+84) 024 6656 8899</a></p>
 
                 <b>Email</b>
-                <p>contact@atelier.vn</p>
+                <p><a href="mailto:contact@atelier31.vn">contact@atelier31.vn</a></p>
             </div>
 
         </nav>
@@ -133,12 +133,12 @@
             <div class="line"></div>
         </li>
         <li class="re-rotate">
-            <a href="#" target="_self">
+            <a href="http://facebook.com" target="_blank">
                 <i class="fa fa-2x fa-facebook-f" aria-hidden="false"></i>
             </a>
         </li>
         <li class="re-rotate">
-            <a href="javascript:void(0);" target="_self">
+            <a href="http://pinterest.com" target="_blank">
                 <i class="fa fa-2x fa-pinterest-p" aria-hidden="false"></i>
             </a>
         </li>
