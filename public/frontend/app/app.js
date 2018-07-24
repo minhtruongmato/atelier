@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('atelierApp', ['ng', 'ngRoute', 'ngResource', 'ngMaterial', 'ui.bootstrap', 'ngCookies', 'jkAngularRatingStars'], function($interpolateProvider, $locationProvider){
+var app = angular.module('atelierApp', ['ng', 'ngRoute', 'ngResource', 'ngMaterial', 'ui.bootstrap', 'ngCookies', 'jkAngularRatingStars', 'wu.masonry'], function($interpolateProvider, $locationProvider){
     $interpolateProvider.startSymbol('<%');
     $interpolateProvider.endSymbol('%>');
 

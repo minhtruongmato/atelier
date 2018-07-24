@@ -324,14 +324,16 @@
                         <div class="left col-sm-4 hidden-xs">
                             <h2>Ghé thăm chúng tôi</h2>
                             <b>Trụ sở chính</b>
-                            <p>905 Kub Turnpike Suite 638</p>
+                            <p>31 Ngõ Giếng, Đông Các, Ô Chợ Dừa, Đống Đa, HN</p>
 
                             <h2>Liên lạc với chúng tôi ngay</h2>
                             <b>TEL</b>
-                            <p>024 1234 5678</p>
-
+                            <br>
+                            <a href="tel:(+84) 024 6656 8899">(+84) 024 6656 8899</a>
+                            <br>
                             <b>Email</b>
-                            <p>contact@atelier.vn</p>
+                            <br>
+                            <a href="mailto:contact@atelier31.vn">contact@atelier31.vn</a>
                         </div>
 
                         <div class="right col-sm-8 col-xs-12">

@@ -45,11 +45,11 @@
                         <a href="" target="_self">
                             <div class="inner">
                                 <div class="mask">
-                                    <img ng-src="{{ asset('storage/app/trends') }}<% '/' + trend.slug + '/' + trend.image %>" alt="A masonry brick">
+                                    <img ng-src="{{ asset('storage/app/trends') }}<% '/' + product.slug + '/' + product.image %>" alt="A masonry brick">
 
                                     <div class="content">
-                                        <h4 class="post-subheading dark"><% trend.cate_title %></h4>
-                                        <h2 class="post-heading dark"><% trend.title %></h2>
+                                        <h4 class="post-subheading dark"><% product.cate_title %></h4>
+                                        <h2 class="post-heading dark"><% product.title %></h2>
                                     </div>
                                 </div>
                             </div>
@@ -59,26 +59,6 @@
             </div>
         </section>
     </section>
-
-    <!-- Angular Mansonry -->
-
-    <script src="{{ asset('bower_components') }}/ev-emitter/ev-emitter.js"></script>
-    <script src="{{ asset('bower_components') }}/desandro-matches-selector/matches-selector.js"></script>
-    <script src="{{ asset('bower_components') }}/fizzy-ui-utils/utils.js"></script>
-    <script src="{{ asset('bower_components') }}/get-size/get-size.js"></script>
-    <script src="{{ asset('bower_components') }}/outlayer/item.js"></script>
-    <script src="{{ asset('bower_components') }}/outlayer/outlayer.js"></script>
-    <script src="{{ asset('bower_components') }}/masonry/masonry.js"></script>
-
-    <!-- optional -->
-    <script src="{{ asset('bower_components') }}/imagesloaded/imagesloaded.js"></script>
-    <!-- /optional -->
-
-    <script>
-        angular.module('atelierApp', ['wu.masonry']).
-    </script>
-
-    <script src="{{ asset('bower_components') }}/angular-masonry/angular-masonry.js"></script>
 
     <script src="{{ asset ("public/frontend/app/controllers/product.js") }}"></script>
 

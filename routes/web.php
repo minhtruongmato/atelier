@@ -48,8 +48,12 @@ Route::get('/gioi-thieu', function () {
 /**
  * Trends routes
  */
-Route::get('/xu-huong/{detail?}', function () {
+Route::get('/xu-huong', function () {
     return view('list-trends');
+});
+
+Route::get('/xu-huong/{slug}', function () {
+    return view('detail-trend');
 });
 
 /**
