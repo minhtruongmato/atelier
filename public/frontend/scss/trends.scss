@@ -52,7 +52,7 @@ section{
 
                 margin-bottom: 30px;
 
-                &.masonry-brick-2{
+                &.masonry-brick-height-2{
                     height: 450px;
                 }
 
@@ -78,56 +78,6 @@ section{
                             padding: 15px 30px;
 
                             background-color: #fff;
-                        }
-                    }
-                }
-            }
-
-            .grid{
-                .grid-sizer{
-                    width: 33%;
-                }
-
-                .grid-item{
-                    width: 33%;
-                    height: 400px;
-
-                    margin-bottom: 30px;
-
-                    &.title{
-                        padding-top: 50px;
-                        padding-bottom: 50px;
-
-                        height: 200px;
-                    }
-
-                    &.grid-item-height-2{
-                        height: 450px;
-                    }
-
-                    .inner{
-                        padding-left: 15px;
-                        padding-right: 15px;
-
-                        height: 100%;
-
-                        .mask{
-                            width: 100%;
-                            height: 100%;
-
-                            position: relative;
-
-                            .content{
-                                position: absolute;
-                                bottom: 0;
-                                left: 0;
-
-                                width: 75%;
-
-                                padding: 15px 30px;
-
-                                background-color: #fff;
-                            }
                         }
                     }
                 }
