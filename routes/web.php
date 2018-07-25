@@ -260,7 +260,7 @@ Route::prefix('admin')->group(function() {
         // Route::resource('origin', 'OriginController');
         // Route::post('origin/update/{id}', 'OriginController@update')->name('origin.update');
         
-        //Product Comment router
+        //Product Comment route
         Route::get('comment/product/{id}', 'CommentController@fetchProductComment')->name('comment.fetchProductComment');
         Route::post('comment_product/delete/{id}/{product_id}', 'CommentController@deleteProductComment')->name('comment.deleteProductComment');
         Route::get('comment/blog/{id}', 'CommentController@fetchBlogComment')->name('comment.fetchBlogComment');
@@ -276,15 +276,21 @@ Route::prefix('admin')->group(function() {
         Route::post('template/search', 'TemplateController@search')->name('template.search');
         Route::post('template/update/{id}', 'TemplateController@update')->name('template.update');
 
-        //Trend Category router
+        //Trend Category route
         Route::resource('trend-category', 'TrendCategoryController');
         Route::post('trend-category/search', 'TrendCategoryController@search')->name('trend-category.search');
         Route::post('trend-category/update/{id}', 'TrendCategoryController@update')->name('trend-category.update');
 
-        //Trend router
+        //Trend route
         Route::resource('trend', 'TrendController');
         Route::post('trend/search', 'TrendController@search')->name('trend.search');
         Route::post('trend/update/{id}', 'TrendController@update')->name('trend.update');
         Route::post('trend/deleteImage', 'TrendController@delete_image');
+
+        //Banner route
+        Route::post('banner/deactive', 'BannerController@deactive')->name('banner.deactive');
+        Route::post('banner/active', 'BannerController@active')->name('banner.active');
+        Route::resource('banner', 'BannerController');
+        Route::post('banner/update/{id}', 'BannerController@update')->name('banner.update');
     });
 });

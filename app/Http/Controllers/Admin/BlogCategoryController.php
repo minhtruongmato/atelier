@@ -177,7 +177,7 @@ class BlogCategoryController extends Controller
 
     private function validateInput($request) {
         $this->validate($request, [
-            'title' => 'required|max:60',
+            'title' => 'required',
         ]);
     }
 }

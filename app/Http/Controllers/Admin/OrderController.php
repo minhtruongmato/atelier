@@ -293,7 +293,7 @@ class OrderController extends Controller
 
     private function validateInput($request) {
         $this->validate($request, [
-            'title' => 'required|max:60',
+            'title' => 'required',
 //            'price' => 'required|max:60',
 //            'middlename' => 'required|max:60',
 //            'address' => 'required|max:120',
