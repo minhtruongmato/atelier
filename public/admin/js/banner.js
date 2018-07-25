@@ -49,7 +49,9 @@ $('.show-btn-active').on('click', '.btn-active-banner', function(){
             		check.parent('.show-btn-active').html(html);
             		$('.use-active-' + id).html('<span class="glyphicon glyphicon-ok"></span>');
             		alert(res.message);
-            	}
+            	}else{
+                    alert(res.message);
+                }
             },
         });
     }

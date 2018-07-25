@@ -168,20 +168,22 @@ class BannerController extends Controller
     public function active(Request $request)
     {
         $id =  $request->id;
-        $count = Banner::where(['is_deleted' => 0, 'id' => $id])->count();
+        $count = Banner::where(['is_deleted' => 0, 'is_active' => 1])->count();
         $isExist = false;
         if($count >= 3){
             $isExist = false;
             $message = 'Tối đa chỉ được sử dụng 3 banner. Vui lòng tắt bớt banner sau đó thực hiện lại thao tác!';
-        }
-        $id =  $request->id;
-        $detail = Banner::where(['is_deleted' => 0, 'id' => $id])->first();
-        if($detail){
-            if(Banner::where('id', $id)->update(['is_active' => 1])){
-                $isExist = true;
-                $message = 'Bật banner thành công!';
+        }else{
+            $id =  $request->id;
+            $detail = Banner::where(['is_deleted' => 0, 'id' => $id])->first();
+            if($detail){
+                if(Banner::where('id', $id)->update(['is_active' => 1])){
+                    $isExist = true;
+                    $message = 'Bật banner thành công!';
+                }
             }
         }
+        
         return response()->json(['isExist' => $isExist, 'message' => $message, 'status' => '200']); 
     }
 
