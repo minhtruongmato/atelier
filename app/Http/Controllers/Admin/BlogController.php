@@ -108,7 +108,7 @@ class BlogController extends Controller
         $detail = Blog::where(['is_deleted' => 0, 'id' => $id])->first();
         $uniqueSlug = $this->buildUniqueSlug('blog', $id, $request->slug);
 
-        $keys = ['title', 'description', 'is_active'];
+        $keys = ['title', 'description', 'content', 'is_active'];
         $input = $this->createQueryInput($keys, $request);
         $input['slug'] = $uniqueSlug;
 
