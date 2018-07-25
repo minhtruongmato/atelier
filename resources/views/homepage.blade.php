@@ -288,24 +288,23 @@
                         <div class="right col-sm-8 col-xs-12">
                             <div class="row">
 
-                                <!--
-                                <data-owl-carousel class="owl-carousel" data-options="{navigation: true, pagination: false, rewindNav : false}">
+                                <data-owl-carousel class="owl-carousel" data-options="owlOptions">
                                     <div owl-carousel-item="" class="item wow fadeInUp" ng-repeat="item in blog">
                                         <div class="inner">
                                             <div class="mask">
                                                 <img src="{{ asset('public/frontend/img/demo-news-2.jpg') }}" alt="image news">
                                             </div>
 
-                                            <h2 class="post-heading dark"><% blog.title %></h2>
-                                            <p class="description hidden-xs"><% blog.description %></p>
-                                            <a href="{{ url('tin-tuc/chi-tiet') }}<% '/' + blog.slug %>" class="btn btn-outline" role="button" target="_self">
+                                            <h2 class="post-heading dark"><% item.title %></h2>
+                                            <p class="description hidden-xs"><% item.description %></p>
+                                            <a href="{{ url('tin-tuc/chi-tiet') }}<% '/' + item.slug %>" class="btn btn-outline" role="button" target="_self">
                                                 Xem chi tiết
                                             </a>
                                         </div>
                                     </div>
                                 </data-owl-carousel>
-                                -->
 
+                                <!--
                                 <div class="item col-sm-6 col-xs-12 wow fadeInUp" ng-repeat="item in blog">
                                     <div class="inner">
                                         <div class="mask">
@@ -319,6 +318,7 @@
                                         </a>
                                     </div>
                                 </div>
+                                -->
                             </div>
                         </div>
                     </div>
@@ -383,24 +383,6 @@
     <script>
         $('#fullpage').fullpage({
             scrollBar: true
-        });
-
-        $(document).ready(function(){
-            $(".owl-carousel").owlCarousel({
-                loop: true,
-                responsiveClass: true,
-                responsive:{
-                   0: {
-                       items: 1,
-                       nav: true
-                    },
-
-                    768: {
-                       items: 2,
-                       nav: true
-                    }
-                }
-            });
         });
     </script>
 

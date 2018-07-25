@@ -86,8 +86,8 @@ var app = angular.module('atelierApp', ['ng', 'ngRoute', 'ngResource', 'ngMateri
                 // Fetch blog
                 return $http({
                     method: 'GET',
-                    //url: API_URL + 'fetch_all_blog',
-                    url: API_URL + 'fetch_two_blog',
+                    url: API_URL + 'fetch_all_blog',
+                    //url: API_URL + 'fetch_two_blog',
                 });
             }
         }
