@@ -126,12 +126,14 @@ EMBED STYLE
             padding-top: 100px;
             padding-bottom: 100px;
 
-            img{
-                display: block;
-                max-width: 100% !important;
+            .masonry-brick{
+                width: 33%;
 
-                margin-top: 30px;
-                margin-bottom: 15px;
+                padding: 10px;
+
+                img{
+                    width: 100%;
+                }
             }
         }
     }

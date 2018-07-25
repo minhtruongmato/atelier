@@ -35,12 +35,12 @@
                         <div class="row">
                             <div class="left col-sm-6 col-xs-12">
                                 <h4 class="sub-heading">
-                                    Proin pharetra purus consequat sapien pretium, fermentum congue purus blandit. Aliquam porttitor nunc sit amet blandit laoreet. Nunc congue at neque a tincidunt.
+                                    Đội ngũ sáng lập Aterlier 31 là những Kiến trúc sư, Kỹ sư, Giám đốc quản lý dự án và Chuyên gia Giám sát thi công với nhiều năm kinh nghiệm và luôn tràn đầy nhiệt huyết, sáng tạo. Với chúng tôi, Hoàn thành và Hoàn hảo luôn là hai khái niệm gắn liền.
                                 </h4>
                             </div>
 
                             <div class="right col-sm-6 col-xs-12">
-                                <p class="paragraph">Nunc accumsan purus vel ex laoreet vulputate. In ac ex sed lectus sodales pellentesque vel at ante. Nam in eros eget dui elementum tincidunt. Phasellus at diam ac nisl aliquet congue. Suspendisse sollicitudin sagittis felis, at consectetur justo suscipit vel. Quisque ac velit eu metus cursus accumsan eget ac lacus. Integer lacinia ex mi, et interdum nunc consequat quis. Fusce consectetur dui at felis tincidunt, quis sollicitudin libero euismod. Ut bibendum lobortis odio.</p>
+                                <p class="paragraph">Là sự kết hợp vững chãi của đơn vị sản xuất sản phẩm décor nội thất và trang bị showroom chất lượng uy tín bậc nhất tại TP HCM và đơn vị thi công hoàn thiện với các chuẩn mực khắt khe bậc nhất Hà thành Homecons, Aterlier 31 là lựa chọn của rất nhiều chủ đầu tư là tổ chức lớn và cá nhân, với các công trình điển hình nằm tại các dự án sang trọng bậc nhất hai miền như Vinhomes Golden River BaSon, Vinhomes Central Park, Khu biệt thự Thảo Điền, Vinhomes Riversides Sài Đồng, Vinhomes The Harmony, Vinhomes Green Bay, Penstudio Tây Hồ, T&T Riverview...các trung tâm thương mại lớn lớn như Vincom, Lotte, Takashimaya...</p>
                             </div>
                         </div>
                     </div>

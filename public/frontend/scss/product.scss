@@ -20,7 +20,7 @@ Author: hung.luong@matocreative.vn
     }
 
     #list-product{
-        .container-fluid{
+        .container{
             padding-left: 0;
             padding-right: 0;
 
@@ -82,12 +82,14 @@ Author: hung.luong@matocreative.vn
             padding-top: 100px;
             padding-bottom: 100px;
 
-            img{
-                display: block;
-                max-width: 100% !important;
+            .masonry-brick{
+                width: 33%;
 
-                margin-top: 30px;
-                margin-bottom: 15px;
+                padding: 10px;
+
+                img{
+                    width: 100%;
+                }
             }
         }
     }

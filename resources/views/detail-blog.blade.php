@@ -19,6 +19,7 @@
                         <% selected.title %>
                     </h1>
                 </div>
+                <!--
                 <div class="introduce">
                     <div class="container">
                         <div class="row">
@@ -34,16 +35,17 @@
                         </div>
                     </div>
                 </div>
+                -->
             </div>
         </section>
 
         <div class="container">
             <article>
-                <div masonry load-images="true">
-                    <div class="masonry-brick">
-                        <img src="{{ asset('storage/app') }}<% '/' + selected.image %>" />
-                    </div>
+                <div>
+                    <p class="paragraph" ng-bind-html="$sce.trustAsHtml(selected.content)">
                 </div>
+
+                <img ng-src="{{ asset('storage/app') }}<% '/' + selected.image %>" alt="image news"/>
             </article>
         </div>
     </section>

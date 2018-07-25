@@ -90,21 +90,21 @@
                                 <h1 class="heading">Về chúng tôi</h1>
                             </div>
                             <div class="body">
-                                <p>Vivamus gravida arcu tortor, a auctor velit mattis non. Vivamus tristique faucibus pellentesque. Nulla at porta lorem. Aliquam elit diam, facilisis at elementum viverra, auctor a risus. Suspendisse nisi quam, mollis at turpis eu, dignissim condimentum massa. Donec vulputate ipsum eu velit vulputate, a viverra nibh sagittis. Sed quam est, semper laoreet viverra ut, facilisis vel nibh. In hac habitasse platea dictumst. Duis viverra arcu sit amet efficitur convallis. Nunc vestibulum faucibus erat, ut molestie lacus rhoncus ut. Ut mattis nisl nec metus placerat, ac consequat orci elementum. Nunc ut tortor auctor, molestie mauris vel, tristique erat.</p>
+                                <p class="paragraph">Artelier 31 ra đời là sự kết tinh giữa Bedekor VN (TP HCM) và Công ty cổ phần Homecons (Hanoi).</p>
                                 <ol>
                                     <li>
-                                        <a href="{{ url('') }}" target="_self">Tổng quan</a>
+                                        <a href="{{ url('gioi-thieu#tong-quan') }}" target="_self">Tổng quan</a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('') }}" target="_self">Tầm nhìn & Sứ mệnh</a>
+                                        <a href="{{ url('gioi-thieu#tam-nhin-chien-luoc-su-menh') }}" target="_self">Tầm nhìn & Sứ mệnh</a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('') }}" target="_self">Khách hàng của chúng tôi</a>
+                                        <a href="{{ url('gioi-thieu#khach-hang-cua-chung-toi') }}" target="_self">Khách hàng của chúng tôi</a>
                                     </li>
                                 </ol>
                             </div>
                             <div class="foot">
-                                <a href="{{ url('') }}" class="btn btn-primary" role="button" target="_self">
+                                <a href="{{ url('gioi-thieu') }}" class="btn btn-primary" role="button" target="_self">
                                     Khám phá ngay
                                 </a>
                             </div>
@@ -279,7 +279,7 @@
                                 </div>
                             </div>
 
-                            <a href="{{ url('') }}" class="btn btn-primary" role="button" target="_self">
+                            <a href="{{ url('tin-tuc') }}" class="btn btn-primary" role="button" target="_self">
                                 Xem tất cả tin tức
                             </a>
 
@@ -288,27 +288,43 @@
                         <div class="right col-sm-8 col-xs-12">
                             <div class="row">
 
-                                <div class="owl-carousel">
-                                    <?php for ($i = 0; $i < 5; $i++) { ?>
-                                    <div class="item wow fadeInUp">
+                                <!--
+                                <data-owl-carousel class="owl-carousel" data-options="{navigation: true, pagination: false, rewindNav : false}">
+                                    <div owl-carousel-item="" class="item wow fadeInUp" ng-repeat="item in blog">
                                         <div class="inner">
                                             <div class="mask">
                                                 <img src="{{ asset('public/frontend/img/demo-news-2.jpg') }}" alt="image news">
                                             </div>
 
-                                            <h2 class="post-heading dark">Global Travel And Vacations Luxury Travel On A Tight Budget</h2>
-                                            <p class="description hidden-xs">Nunc accumsan purus vel ex laoreet vulputate. In ac ex sed lectus sodales pellentesque vel at ante. Nam in eros eget dui elementum tincidunt. Phasellus at diam ac nisl aliquet congue. Suspendisse sollicitudin sagittis felis, at consectetur justo suscipit vel. Quisque ac velit eu metus cursus accumsan eget ac lacus. Integer lacinia ex mi, et interdum nunc consequat quis. Fusce consectetur dui at felis tincidunt, quis sollicitudin libero euismod. Ut bibendum lobortis odio.</p>
-                                            <a href="{{ url('') }}" class="btn btn-outline" role="button" target="_self">
+                                            <h2 class="post-heading dark"><% blog.title %></h2>
+                                            <p class="description hidden-xs"><% blog.description %></p>
+                                            <a href="{{ url('tin-tuc/chi-tiet') }}<% '/' + blog.slug %>" class="btn btn-outline" role="button" target="_self">
                                                 Xem chi tiết
                                             </a>
                                         </div>
                                     </div>
-                                    <?php } ?>
+                                </data-owl-carousel>
+                                -->
+
+                                <div class="item col-sm-6 col-xs-12 wow fadeInUp" ng-repeat="item in blog">
+                                    <div class="inner">
+                                        <div class="mask">
+                                            <img src="{{ asset('public/frontend/img/demo-news-2.jpg') }}" alt="image news">
+                                        </div>
+
+                                        <h2 class="post-heading dark"><% item.title %></h2>
+                                        <p class="description hidden-xs"><% item.description %></p>
+                                        <a href="{{ url('tin-tuc/chi-tiet') }}<% '/' + item.slug %>" class="btn btn-outline" role="button" target="_self">
+                                            Xem chi tiết
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
             </div>
 
             <div class="section" id="contact">

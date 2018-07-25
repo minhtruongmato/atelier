@@ -39,7 +39,7 @@
                                 </a>
                                 <p class="description"><% blog.description %></p>
                                 <a href="{{ url('tin-tuc/chi-tiet/') }}/<% blog.slug %>" class="btn btn-outline" role="button"  target="_self">
-                                    See Detail
+                                    Xem chi tiết
                                 </a>
                             </div>
                         </div>

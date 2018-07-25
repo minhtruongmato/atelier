@@ -24,6 +24,15 @@ class BlogApiController extends Controller
         return response()->json($result, 200);
     }
 
+    public function fetchTwoBlog()
+    {
+        $result = Blog::where(['is_deleted' => 0, 'is_active' => 1])->orderBy('id','desc')->take(2)->get();
+        if(!$result){
+            return response()->json('No item found', 404);
+        }
+        return response()->json($result, 200);
+    }
+
     public function detail()
     {
         $slug = Input::get('slug');

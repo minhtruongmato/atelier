@@ -11,7 +11,7 @@
         }
     </style>
 
-    <section id="product" ng-controller="DetailLibraryController">
+    <section id="detail-product" ng-controller="DetailLibraryController">
         <section class="section-header">
             <div class="container-fluid">
                 <div class="container header">
@@ -37,16 +37,18 @@
             </div>
         </section>
 
-        <section id="list-product">
-            <div class="container">
+
+        <div class="container">
+            <article>
                 <div masonry load-images="true">
                     <div class="masonry-brick" ng-repeat="product in detail.image">
                         <img ng-src="{{ asset('storage/app/library') }}<% '/' + detail.slug + '/' + product.image %>" alt="A masonry brick">
                     </div>
                 </div>
-                
-            </div>
-        </section>
+            </article>
+        </div>
+
+
     </section>
 
     <script src="{{ asset ("public/frontend/app/controllers/detail-library.js") }}"></script>
