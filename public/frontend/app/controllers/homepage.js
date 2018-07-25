@@ -1,5 +1,5 @@
-(function(){
-    app.controller('HomepageController', function($scope, $http, API_URL, $uibModal, $mdDialog, menuProductFactory, productsFactory, listNewsFactory, listAdvisesFactory, blogFactory, $sce){
+(function() {
+    app.controller('HomepageController', function ($scope, $http, API_URL, $uibModal, $mdDialog, menuProductFactory, productsFactory, listNewsFactory, listAdvisesFactory, blogFactory, $sce) {
         $scope.libraries = [];
         $scope.categoryTrendForHomePage = [];
         
@@ -10,19 +10,31 @@
         $scope.news = [];
         $scope.blog = [];
     
-        $scope.items1 = [1,2,3,4,5];
-        $scope.items2 = [1,2,3,4,5,6,7,8,9,10];
+        $scope.owlOptions = {
+            nav: true,
+            pagination: false,
+            rewindNav : true,
+            responsiveClass: true,
+            responsive: {
+                0:{
+                    items: 1
+                },
+                768:{
+                    items: 2
+                }
+            }
+        }
         
         $scope.$sce = $sce;
         var alert;
         // Fetch all products
         productsFactory.products()
-            .then(function(success){
+            .then(function (success) {
                 $scope.products = success.data;
-            }, function(error){
-
+            }, function (error) {
+            
             });
-
+        
         // Fetch discount products
         // $http({
         //     method: 'GET',
@@ -66,109 +78,111 @@
         //                     }
         //                 });     
         //             }, function(error){
-                        
+        
         //             });
         // }, function(error){
-
+        
         // });
-
+        
         // Fetch library
         $http({
             method: 'GET',
             url: API_URL + 'library'
-        }).then(function(success){
+        }).then(function (success) {
             $scope.libraries = success.data;
-        }, function(error){
-
+        }, function (error) {
+        
         });
-
-
+        
+        
         // Fetch trend
         $http({
             method: 'GET',
             url: API_URL + 'trend-category-for-homepage'
-        }).then(function(success){
+        }).then(function (success) {
             $scope.categoryTrendForHomePage = success.data;
-        }, function(error){
-
+        }, function (error) {
+        
         });
-
+        
         // Fetch introduce
         $http({
             method: 'GET',
             url: API_URL + 'introduce'
-        }).then(function(success){
+        }).then(function (success) {
             $scope.introduce = success.data;
-        }, function(error){
-
+        }, function (error) {
+        
         });
-
+        
         // Build menu product
         menuProductFactory.menuProduct()
-        .then(function(success){
-            $scope.menuProduct = success.data;
-        }, function(error){
-
-        });
-
+            .then(function (success) {
+                $scope.menuProduct = success.data;
+            }, function (error) {
+            
+            });
+        
         // Build blog
         blogFactory.blog()
-        .then(function(success){
-            $scope.blog = success.data;
-            console.log($scope.blog);
-        }, function(error){
-
-        });
-
+            .then(function (success) {
+                $scope.blog = success.data;
+                console.log($scope.blog);
+            }, function (error) {
+            
+            });
         
-
-        $scope.open = function(item){
+        
+        $scope.open = function (item) {
             $scope.selected = item;
             $uibModal.open({
                 animation: true,
                 templateUrl: 'san-pham/detail-product-modal',
                 controller: 'ModalController',
                 resolve: {
-                    items: function(){
+                    items: function () {
                         return $scope.selected;
                     }
                 },
                 size: 'lg'
-            }).result.then(function(){}, function(res){});
+            }).result.then(function () {
+            }, function (res) {
+            });
         };
-
+        
+    })
+        
+    .directive("owlCarousel", function () {
+        return {
+            restrict: 'E',
+            transclude: false,
+            link: function (scope) {
+                scope.initCarousel = function (element) {
+                    // provide any default options you want
+                    var defaultOptions = {
+                    };
+                    var customOptions = scope.$eval($(element).attr('data-options'));
+                    // combine the two options objects
+                    for (var key in customOptions) {
+                        defaultOptions[key] = customOptions[key];
+                    }
+                    // init carousel
+                    $(element).owlCarousel(defaultOptions);
+                };
+            }
+        };
     })
     
-        .directive("owlCarousel", function() {
-            return {
-                restrict: 'E',
-                transclude: false,
-                link: function (scope) {
-                    scope.initCarousel = function(element) {
-                        // provide any default options you want
-                        var defaultOptions = {
-                        };
-                        var customOptions = scope.$eval($(element).attr('data-options'));
-                        // combine the two options objects
-                        for(var key in customOptions) {
-                            defaultOptions[key] = customOptions[key];
-                        }
-                        // init carousel
-                        $(element).owlCarousel(defaultOptions);
-                    };
+    .directive('owlCarouselItem', [function () {
+        return {
+            restrict: 'A',
+            transclude: false,
+            link: function (scope, element) {
+                // wait for the last item in the ng-repeat then call init
+                if (scope.$last) {
+                    scope.initCarousel(element.parent());
                 }
-            };
-        })
-        .directive('owlCarouselItem', [function() {
-            return {
-                restrict: 'A',
-                transclude: false,
-                link: function(scope, element) {
-                    // wait for the last item in the ng-repeat then call init
-                    if(scope.$last) {
-                        scope.initCarousel(element.parent());
-                    }
-                }
-            };
-        }]);
+            }
+        };
+    }]);
 })();
