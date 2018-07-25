@@ -140,14 +140,14 @@ class IntroduceController extends Controller
 
         if($action != 'edit'){
             $rules = [
-                    'title' => 'required|max:60',
-                    'slug' => 'required|max:60',
+                    'title' => 'required',
+                    'slug' => 'required',
                     'image' => 'required',
                 ];
         }else{
             $rules = [
-                    'title' => 'required|max:60',
-                    'slug' => 'required|max:60',
+                    'title' => 'required',
+                    'slug' => 'required',
                 ];
         }
         $this->validate($request, $rules);

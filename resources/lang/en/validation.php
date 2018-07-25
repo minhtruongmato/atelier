@@ -112,6 +112,12 @@ return [
         ],
         'image' => [
             'required' => 'Vui lòng chọn ảnh',
+        ],
+        'title' => [
+            'required' => 'Tiêu đề không được trống',
+        ],
+        'description' => [
+            'required' => 'Giới thiệu không được trống',
         ]
     ],
 
@@ -131,6 +137,8 @@ return [
         'slug' => 'Slug',
         'trademark_id' => 'Tên thương hiệu',
         'type' => 'Loại sản phẩm',
+        'title' => 'Tiêu đề',
+        'description' => 'Giới thiệu',
     ],
 
 ];

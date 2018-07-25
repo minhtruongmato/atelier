@@ -28,6 +28,7 @@
           </div>
           <!-- /.box-body -->
           <div class="box-footer">
+            <a href="{{ url('admin/library') }}" class="btn btn-default pull-left">Quay Lại</a>
             <button type="submit" class="btn btn-info pull-right">Thêm</button>
           </div>
           <!-- /.box-footer -->

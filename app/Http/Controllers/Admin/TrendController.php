@@ -178,15 +178,15 @@ class TrendController extends Controller
         if($action != 'edit'){
             $rules = [
                     'category_id' => 'required',
-                    'title' => 'required|max:60',
-                    'slug' => 'required|max:60',
+                    'title' => 'required',
+                    'slug' => 'required',
                     'image' => 'required',
                 ];
         }else{
             $rules = [
                     'category_id' => 'required',
-                    'title' => 'required|max:60',
-                    'slug' => 'required|max:60',
+                    'title' => 'required',
+                    'slug' => 'required',
                 ];
         }
         $this->validate($request, $rules);
