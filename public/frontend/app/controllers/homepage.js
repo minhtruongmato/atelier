@@ -1,5 +1,6 @@
 (function() {
-    app.controller('HomepageController', function ($scope, $http, API_URL, $uibModal, $mdDialog, menuProductFactory, productsFactory, listNewsFactory, listAdvisesFactory, blogFactory, $sce) {
+    app.controller('HomepageController', function ($scope, $http, API_URL, $uibModal, $mdDialog, menuProductFactory, productsFactory, listNewsFactory, listAdvisesFactory, blogFactory, companyFactory, $sce) {
+        $scope.$sce = $sce;
         $scope.libraries = [];
         $scope.categoryTrendForHomePage = [];
         
@@ -9,6 +10,7 @@
         $scope.latestAdvises = [];
         $scope.news = [];
         $scope.blog = [];
+        $scope.company = [];
     
         $scope.owlOptions = {
             nav: true,
@@ -127,12 +129,11 @@
         blogFactory.blog()
             .then(function (success) {
                 $scope.blog = success.data;
-                console.log($scope.blog);
+                
             }, function (error) {
             
             });
-        
-        
+
         $scope.open = function (item) {
             $scope.selected = item;
             $uibModal.open({

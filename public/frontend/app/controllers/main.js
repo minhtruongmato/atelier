@@ -1,5 +1,10 @@
 (function(){
-    app.controller('MainController', function($rootScope, $scope, $http, API_URL){
+    app.controller('MainController', function($rootScope, $scope, $http, API_URL, $sce, companyFactory){
+        $scope.$sce = $sce;
+        $scope.map = '';
+        $scope.address = '';
+        $scope.phone = '';
+        $scope.email = '';
         // Cookies.remove('tastingProducts', {path: '/'});
         // 
         $scope.storedProducts = (Cookies.get('cartProducts') != undefined) ? Cookies.get('cartProducts') : [];
@@ -149,10 +154,22 @@
             }, function errorCallback(arrayProduct) {
                 
             });
-        }       
+        }
+
+        // build company
+        companyFactory.company()
+            .then(function (success) {
+                $scope.map = $sce.trustAsHtml(success.data.map);
+                $scope.address = success.data.address;
+                $scope.phone = success.data.phone;
+                $scope.email = success.data.email;
+            }, function(error){
+
+            });
+
         $scope.login = function(){
             alert('Bạn phải đăng nhập');
-        };
+        }
 
         
     });

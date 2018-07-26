@@ -7,18 +7,18 @@
                 <table class="table">
                     <tr>
                         <td><i class="fa fa-map-marker" aria-hidden="true"></i></td>
-                        <td>31 Ngõ Giếng, Đông Các, Ô Chợ Dừa, Đống Đa, HN</td>
+                        <td><% address %></td>
                     </tr>
                     <tr>
                         <td><i class="fa fa-phone" aria-hidden="true"></i></td>
                         <td>
-                            <a href="tel:(+84) 024 6656 8899">(+84) 024 6656 8899</a>
+                            <a href="tel:<% phone %>"><% phone %></a>
                         </td>
                     </tr>
                     <tr>
                         <td><i class="fa fa-envelope-o" aria-hidden="true"></i></td>
                         <td>
-                            <a href="mailto:contact@atelier31.vn">contact@atelier31.vn</a>
+                            <a href="mailto:contact@atelier31.vn"><% email %></a>
                         </td>
                     </tr>
                 </table>
