@@ -152,8 +152,17 @@
         }       
         $scope.login = function(){
             alert('Bạn phải đăng nhập');
-        };
-
+        }
+    
+        //Show and Hide Search Section
+        $scope.isVisible = false;
         
+        $scope.showSearch = function(){
+            $scope.isVisible = $scope.isVisible = true;
+        };
+    
+        $scope.hideSearch = function(){
+            $scope.isVisible = $scope.isVisible = false;
+        };
     });
 })();

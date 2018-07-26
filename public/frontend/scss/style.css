@@ -286,6 +286,43 @@ section.section-header .container-fluid {
         font-weight: 500;
         text-transform: none;
         margin-top: 0; }
+section.search-section {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 899; }
+  section.search-section .container {
+    margin-top: 130px;
+    padding-top: 50px;
+    color: #fff; }
+    section.search-section .container .row #search-input .input-group input {
+      border-radius: 0;
+      border: none;
+      border-bottom: 1px solid #999;
+      box-shadow: none;
+      padding: 10px 15px;
+      height: 60px;
+      font-size: 1.5em;
+      color: #999;
+      background-color: transparent; }
+    section.search-section .container .row #search-input .input-group span.input-group-btn {
+      border-radius: 0;
+      border: none;
+      box-shadow: none; }
+      section.search-section .container .row #search-input .input-group span.input-group-btn button {
+        padding: 10px 15px;
+        height: 60px;
+        border-radius: 0;
+        border: none;
+        border-bottom: 1px solid #999;
+        box-shadow: none;
+        background-color: transparent; }
+    section.search-section .container .row #close-section button {
+      padding: 10px 15px;
+      margin-top: 8px; }
 
 /*
 ===================================

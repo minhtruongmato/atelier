@@ -103,7 +103,7 @@
         <nav class="nav-user">
             <ul>
                 <li>
-                    <a href="{{ url('') }}" target="_self">
+                    <a href="javascript:void(0);" target="_self" id="searchButton" ng-click="showSearch()">
                         <i class="fa fa-search" aria-hidden="false"></i> Tìm kiếm
                     </a>
                 </li>
@@ -144,3 +144,25 @@
         </li>
     </ul>
 </div>
+
+<section class="search-section" id="search-section" ng-show="isVisible">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-10" id="search-input">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Bạn đang tìm kiếm gì...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">
+                            <i class="fa fa-search" aria-hidden="true"></i> Tìm kiếm!
+                        </button>
+                    </span>
+                </div><!-- /input-group -->
+            </div>
+            <div class="col-xs-2" id="close-section">
+                <button class="btn btn-outline" type="submit" ng-click="hideSearch()">
+                    <i class="fa fa-close" aria-hidden="true"></i> Close
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
