@@ -92,6 +92,18 @@ var app = angular.module('atelierApp', ['ng', 'ngRoute', 'ngResource', 'ngMateri
             }
         }
     })
+    .factory('companyFactory', function($http, API_URL){
+        return{
+            company: function(){
+                // Fetch blog
+                return $http({
+                    method: 'GET',
+                    url: API_URL + 'company',
+                    //url: API_URL + 'fetch_two_blog',
+                });
+            }
+        }
+    })
 
     /* Directives */
     .directive('activeOnFirstItem', function(){

@@ -53,18 +53,30 @@ class TrendApiController extends Controller
         return response()->json($result, 200);
     }
 
-    public function fetchTrend(){
+    public function fetchTrendCategoryBySlug()
+    {
         $slug = Input::get('slug');
-        $result = DB::table('trend')
-            ->select('*')
-            ->where('slug', '=', $slug)
-            ->where('is_deleted', '=', 0)
-            ->get();
-//        echo '<pre>';
-//        print_r($result);die;
+        if($slug == ''){
+            $result = [
+                'title' => 'XU HƯỚNG NỘI THẤT ĐIỂN HÌNH',
+                'description' => 'Với lý tưởng duy mỹ luôn hướng tới sự hoàn hảo trong mọi công trình, chúng tôi luôn luôn theo sát và đảm bảo rằng những người tham gia kiến tạo nên sản phẩm của Artelier 31 dù là kỹ sư, thiết kế, người chọn vật tư, công nhân sản xuất, vận chuyển, lắp đặt hay bảo trì sản phẩm, tất cả đều phải tận tâm, tập trung cao độ và chỉn chu trong công việc của mình nhằm mang đến cho người tiêu dùng những sản phẩm chất lượng và dịch vụ thỏa mãn nhất.'
+            ];
+        }else{
+            $result = TrendCategory::where(['is_deleted' => 0, 'slug' => $slug])->first();
+        }
+        
         if(!$result){
             return response()->json('No item found', 404);
         }
-        return response()->json($result[0], 200);
+        return response()->json($result, 200);
+    }
+
+    public function fetchTrend(){
+        $slug = Input::get('slugDetail');
+        $result = Trend::where('slug', $slug)->where('is_deleted', 0)->first();
+        if(!$result){
+            return response()->json('No item found', 404);
+        }
+        return response()->json($result, 200);
     }
 }

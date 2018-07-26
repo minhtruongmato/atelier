@@ -123,8 +123,12 @@ Route::prefix('v1')->group(function() {
 
         //trend routes
         Route::get('trend-category', 'TrendApiController@fetchAllTrendCategory')->name('trend-category.fetchAllTrendCategory');
+        Route::get('detail-trend-category', 'TrendApiController@fetchTrendCategoryBySlug')->name('detail-trend-category.fetchTrendCategoryBySlug');
         Route::get('trend-category-for-homepage', 'TrendApiController@fetchAllTrendCategoryForHomePage')->name('trend-category-for-homepage.fetchAllTrendCategoryForHomePage');
         Route::get('trend', 'TrendApiController@fetchAllTrend')->name('trend.fetchAllTrend');
         Route::get('trend-detail', 'TrendApiController@fetchTrend')->name('trend.fetchTrend');
+
+        //company route
+        Route::get('company', 'CompanyController@fetchCompany')->name('company.fetchCompany');
     });
 });

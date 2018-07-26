@@ -334,22 +334,21 @@
 
                 <div class="container">
                     <div class="row">
-                        <div class="map col-xs-12">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18792.74236719761!2d105.8378046859102!3d21.006773993256186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac0f33bf8dad%3A0x31d0e909c37a459f!2zVmluY29tIENlbnRlciBCw6AgVHJp4buHdQ!5e0!3m2!1svi!2s!4v1531293697579" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        <div class="map col-xs-12" ng-bind-html="map">
                         </div>
                         <div class="left col-sm-4 hidden-xs">
                             <h2>Ghé thăm chúng tôi</h2>
                             <b>Trụ sở chính</b>
-                            <p>31 Ngõ Giếng, Đông Các, Ô Chợ Dừa, Đống Đa, HN</p>
+                            <p><% address %></p>
 
                             <h2>Liên lạc với chúng tôi ngay</h2>
                             <b>TEL</b>
                             <br>
-                            <a href="tel:(+84) 024 6656 8899">(+84) 024 6656 8899</a>
+                            <a href="tel:(+84) 024 6656 8899"><% phone %></a>
                             <br>
                             <b>Email</b>
                             <br>
-                            <a href="mailto:contact@atelier31.vn">contact@atelier31.vn</a>
+                            <a href="mailto:contact@atelier31.vn"><% email %></a>
                         </div>
 
                         <div class="right col-sm-8 col-xs-12">
