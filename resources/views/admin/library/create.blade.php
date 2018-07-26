@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-12 col-md-offset-0">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Thêm mới thư viện ảnh</div>
+                    <div class="panel-heading">Thêm mới sản phẩm</div>
                     <div class="panel-body">
                         <form class="form-horizontal" role="form" method="POST" action="{{ route('library.store') }}" enctype="multipart/form-data">
                             <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">

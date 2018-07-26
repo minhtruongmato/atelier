@@ -4,7 +4,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Quản lý sản phẩm
+                Quản lý thông tin công ty
             </h1>
             <ol class="breadcrumb">
                 <!-- li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li-->
@@ -15,4 +15,4 @@
     <!-- /.content -->
     </div>
 @endsection
-<!-- <script src="{{ asset ("public/admin/js/introduce.js") }}" type="text/javascript"></script> -->
+{{-- <script src="{{ asset ("public/admin/js/introduce.js") }}" type="text/javascript"></script> --}}
