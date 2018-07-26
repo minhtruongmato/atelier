@@ -6,7 +6,7 @@
   <div class="box-header">
     <div class="row">
         <div class="col-sm-4">
-          <a class="btn btn-primary" href="{{ route('library.create') }}">Thêm mới thư viện ảnh</a>
+          <a class="btn btn-primary" href="{{ route('library.create') }}">Thêm mới sản phẩm</a>
         </div>
     </div>
   </div>

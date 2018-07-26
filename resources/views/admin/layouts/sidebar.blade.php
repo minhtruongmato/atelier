@@ -20,49 +20,35 @@
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
         <!-- Optionally, you can add icons to the links -->
-        <li class="treeview {{(Request::segment(2) == 'introduce' || Request::segment(2) == 'library' || Request::segment(2) == 'image')? 'active' : '' }}">
-          <a href="#"><i class="fa fa-link"></i> <span>Bài viết giới thiệu</span>
+        <li class="treeview {{(Request::segment(2) == 'company')? 'active' : '' }}">
+          <a href="{{ url('admin/company') }}"><i class="fa fa-link"></i> <span>Thông tin Công Ty</span>
             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li class="{{(Request::segment(2) == 'introduce')? 'active' : '' }}">
-              <a href="{{ url('admin/introduce') }}">Danh sách bài viết giới thiệu</a>
-            </li>
-            <li class="{{(Request::segment(2) == 'library' || Request::segment(2) == 'image')? 'active' : '' }}">
-              <a href="{{ url('admin/library') }}">Thư viện ảnh</a>
-            </li>
-          </ul>
         </li>
-        <li class="treeview {{(Request::segment(2) == 'trademark' || Request::segment(2) == 'category' || Request::segment(2) == 'product' || Request::segment(2) == 'type' || Request::segment(2) == 'kind' || Request::segment(2) == 'origin')? 'active' : '' }}">
-          <a href="#"><i class="fa fa-link"></i> <span>Quản lý sản phẩm</span>
+
+        <li class="treeview {{(Request::segment(2) == 'banner')? 'active' : '' }}">
+          <a href="{{ url('admin/banner') }}"><i class="fa fa-link"></i> <span>Banner</span>
             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li class="{{(Request::segment(2) == 'type')? 'active' : '' }}">
-              <a href="{{ url('admin/type') }}">Loại sản phẩm</a>
-            </li>
-            <li class="{{(Request::segment(2) == 'kind')? 'active' : '' }}">
-              <a href="{{ url('admin/kind') }}">Dòng sản phẩm</a>
-            </li>
-            {{-- <li class="{{(Request::segment(2) == 'trademark')? 'active' : '' }}">
-              <a href="{{ url('admin/trademark') }}">Thương hiệu</a>
-            </li> --}}
-            {{--<li class="{{(Request::segment(2) == 'category')? 'active' : '' }}">
-              <a href="{{ url('admin/category') }}">Danh mục</a>
-            </li>--}}
-            <li class="{{(Request::segment(2) == 'product')? 'active' : '' }}">
-              <a href="{{ url('admin/product') }}">Sản phẩm</a>
-            </li>
-            {{-- <li class="{{(Request::segment(2) == 'origin')? 'active' : '' }}">
-              <a href="{{ url('admin/origin') }}">Xuất xứ</a>
-            </li> --}}
-          </ul>
         </li>
-        <li class="treeview {{(Request::segment(2) == 'order')? 'active' : '' }}">
+
+        <li class="treeview {{(Request::segment(2) == 'introduce')? 'active' : '' }}">
+          <a href="{{ url('admin/introduce') }}"><i class="fa fa-link"></i> <span>Danh sách bài viết giới thiệu</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
+
+        <li class="treeview {{(Request::segment(2) == 'library')? 'active' : '' }}">
+          <a href="{{ url('admin/library') }}"><i class="fa fa-link"></i> <span>Quản lý sản phẩm</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
+
+        {{-- <li class="treeview {{(Request::segment(2) == 'order')? 'active' : '' }}">
           <a href="#"><i class="fa fa-link"></i> <span>Quản lý đơn hàng</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -82,7 +68,7 @@
               <a href="{{ url('admin/order/cancel') }}">Đã bỏ qua</a>
             </li>
           </ul>
-        </li>
+        </li> --}}
         <li class="treeview {{(Request::segment(2) == 'blog-category' || Request::segment(2) == 'blog')? 'active' : '' }}">
           <a href="#"><i class="fa fa-link"></i> <span>Quản lý bài viết</span>
             <span class="pull-right-container">
@@ -131,12 +117,12 @@
           </ul>
         </li> --}}
 
-        <li class="treeview {{(Request::segment(2) == 'subscribe')? 'active' : '' }}">
+        {{-- <li class="treeview {{(Request::segment(2) == 'subscribe')? 'active' : '' }}">
           <a href="{{ url('admin/subscribe') }}"><i class="fa fa-link"></i> <span>Subscribe</span>
             <span class="pull-right-container">
             </span>
           </a>
-        </li>
+        </li> --}}
 {{--        <li><a href="{{ route('user-management.index') }}"><i class="fa fa-link"></i> <span>User management</span></a></li>--}}
       </ul>
       <!-- /.sidebar-menu -->

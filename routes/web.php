@@ -292,5 +292,9 @@ Route::prefix('admin')->group(function() {
         Route::post('banner/active', 'BannerController@active')->name('banner.active');
         Route::resource('banner', 'BannerController');
         Route::post('banner/update/{id}', 'BannerController@update')->name('banner.update');
+
+        //Company route
+        Route::resource('company', 'CompanyController');
+        Route::post('company/update/{id}', 'CompanyController@update')->name('company.update');
     });
 });
